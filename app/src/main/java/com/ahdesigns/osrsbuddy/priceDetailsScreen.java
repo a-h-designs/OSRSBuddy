@@ -110,9 +110,6 @@ public class priceDetailsScreen extends AppCompatActivity {
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(geURL, ServiceHandler.GET);
 
-            //Log for debug, can be deleted later
-            Log.d("Response: ", "> " + jsonStr);
-
             //Check to see if JSON string is not empty
             if (jsonStr != null) {
                 try {
