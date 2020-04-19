@@ -1,15 +1,15 @@
 # OSRSBuddy
 Android app to help with Old School RuneScape.
 
-Features.
+## Features.
 
-Completed:
+### Completed:
 
-Uncompleted:
-	Grand Exchange checker with High/Low alch prices.
+### Uncompleted:
+- Grand Exchange checker with High/Low alch prices.
 
-To Add:
-	Hiscores.
-	Maps.
-	Quest help.
-	Farming helper.
+### To Add:
+- Hiscores.
+- Maps.
+- Quest help.
+- Farming helper.
