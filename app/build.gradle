@@ -8,8 +8,8 @@ android {
         applicationId "com.ahdesigns.osrsbuddy"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 10
-        versionName '0.0.1.11'
+        versionCode 11
+        versionName '0.0.1.13'
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

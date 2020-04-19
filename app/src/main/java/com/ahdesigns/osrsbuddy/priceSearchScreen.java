@@ -34,7 +34,7 @@ public class priceSearchScreen extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Search The Grand Exchange");
+        getSupportActionBar().setTitle(R.string.search_ge_header);
 
         searchText = findViewById(R.id.searchText);
         buttonSearch = findViewById(R.id.buttonSearch);

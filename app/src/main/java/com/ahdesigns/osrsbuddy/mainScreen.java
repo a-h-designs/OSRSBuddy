@@ -39,6 +39,10 @@ public class mainScreen extends AppCompatActivity {
         startActivity(new Intent(this, priceSearchScreen.class));
     }
 
+    public void statActivity(View view) {
+        startActivity(new Intent(this, statSearchScreen.class));
+    }
+
     public void onBackPressed() {
     }
 

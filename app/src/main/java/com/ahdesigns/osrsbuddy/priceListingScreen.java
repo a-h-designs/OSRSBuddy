@@ -78,7 +78,7 @@ public class priceListingScreen extends AppCompatActivity {
 
             // Showing progress dialog
             pDialog = new ProgressDialog(priceListingScreen.this);
-            pDialog.setMessage("Please wait...");
+            pDialog.setMessage("Searching Item List...");
             pDialog.setCancelable(false);
             pDialog.show();
 

@@ -68,11 +68,14 @@
                 android:textSize="@dimen/page_text_size" />
 
             <TextView
+                android:clickable="true"
+                android:focusable="true"
                 android:id="@+id/stats"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
+                android:onClick="statActivity"
                 android:text="@string/stats"
                 android:textColor="@color/textColorPrimary"
                 android:textSize="@dimen/page_text_size" />

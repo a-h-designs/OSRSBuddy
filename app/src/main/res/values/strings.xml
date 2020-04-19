@@ -15,6 +15,7 @@
     <string name="rss">Runescape News</string>
     <!-- End mainScreen strings. -->
 
+    <string name="search_ge_header">Search The Grand Exchange</string>
     <string name="search_ge_eg">e.g. Old school bond</string>
 
     <!-- priceDetailsScreen. -->
@@ -26,5 +27,48 @@
     <string name="high_alch">&#160;High Alch</string>
     <string name="low_alch">&#160;Low Alch</string>
     <!-- End priceDetailsScreen. -->
+
+    <!-- statsMainScreen. -->
+    <string name="hiscore_header">Old School Hiscores</string>
+    <string name="stats_header">Search Player Stats</string>
+    <string name="stats_searcheg">e.g. Lynx Titan</string>
+    <!-- End statsMainScreen. -->
+
+    <!-- statsSearchScreen. -->
+    <string name="chat_head">Chat Head</string>
+    <string name="combat_level">Combat Level</string>
+    <string name="old_level">0</string>
+    <string name="text_0">0</string>
+    <string name="text_1">1</string>
+    <string name="skill">Skill</string>
+    <string name="level">Level</string>
+    <string name="rank">Rank</string>
+    <string name="exp">EXP</string>
+    <string name="score">Score</string>
+    <string name="overall">Overall</string>
+    <string name="attack">Attack</string>
+    <string name="defence">Defence</string>
+    <string name="strength">Strength</string>
+    <string name="hitpoints">Hitpoints</string>
+    <string name="ranged">Ranged</string>
+    <string name="prayer">Prayer</string>
+    <string name="magic">Magic</string>
+    <string name="cooking">Cooking</string>
+    <string name="woodcutting">Woodcutting</string>
+    <string name="fletching">Fletching</string>
+    <string name="fishing">Fishing</string>
+    <string name="firemaking">Firemaking</string>
+    <string name="crafting">Crafting</string>
+    <string name="smithing">Smithing</string>
+    <string name="mining">Mining</string>
+    <string name="herblore">Herblore</string>
+    <string name="agility">Agility</string>
+    <string name="thieving">Thieving</string>
+    <string name="slayer">Slayer</string>
+    <string name="farming">Farming</string>
+    <string name="runecraft">Runecraft</string>
+    <string name="hunter">Hunter</string>
+    <string name="construction">Construction</string>
+    <!-- End statsSearchScreen. -->
 
 </resources>
