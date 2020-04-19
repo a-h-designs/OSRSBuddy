@@ -33,10 +33,10 @@ public class priceListingScreen extends AppCompatActivity {
     IMPORTANT, THE BELOW ARE FOR THE TREE MENU SYSTEM
 
      */
-    //String itemID;
+
     int itemID, itemPrice;
 
-    String search;
+    String search, getURL;
 
     LinearLayout itemListView;
     //Set a progress dialog to show loading of data
@@ -57,6 +57,10 @@ public class priceListingScreen extends AppCompatActivity {
 
         //Load Views
         itemListView = findViewById(R.id.itemListingView);
+
+        // URL to get JSON
+        getURL = "http://ahdesigns.coolpage.biz/items.json";
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -88,12 +92,21 @@ public class priceListingScreen extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg0) {
 
+            // Creating service handler class
+            ServiceHandler sh = new ServiceHandler();
+
+            // Making a request to url and getting response
+            String jsonStr = sh.makeServiceCall(getURL, ServiceHandler.GET);
+
+            //Log for debug, can be deleted later
+            Log.d("Response: ", "> " + jsonStr);
+
             //Check to see if JSON string is not empty
-            if (readJSONFromAsset() != null) {
+            if (jsonStr != null) {
                 try {
 
                     //Create a new JSON object
-                    JSONObject jsonObj = new JSONObject(readJSONFromAsset());
+                    JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting the 'item' array from the JSON object
                     JSONArray itemArray = jsonObj.getJSONArray("items");
@@ -114,13 +127,12 @@ public class priceListingScreen extends AppCompatActivity {
                     //Catch any errors
                 } catch (JSONException e) {
                     e.printStackTrace();
-                } catch (Throwable t) {
-                    Toast.makeText(priceListingScreen.this, "No items found", Toast.LENGTH_LONG).show();
                 }
             } else {
                 //JSON was empty, there was an error on URL
                 Log.e("ServiceHandler", "Couldn't get any data from the url");
             }
+
             return null;
         }
 
@@ -170,22 +182,6 @@ public class priceListingScreen extends AppCompatActivity {
         intent.putExtra("itemID",itemID);
         intent.putExtra("itemPrice",itemPrice);
         startActivity(intent);
-    }
-
-    public String readJSONFromAsset() {
-        String json;
-        try {
-            InputStream is = getAssets().open("items.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
     }
 
     public void onBackPressed() {
