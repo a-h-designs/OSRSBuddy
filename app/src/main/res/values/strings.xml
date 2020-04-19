@@ -1,0 +1,30 @@
+<resources>
+    <!-- General app strings. -->
+    <string name="app_name">OSRS Buddy</string>
+    <string name="logo">OSRS Buddy Logo</string>
+    <string name="copyright">AHDesigns&#169; Copyright&#160;</string>
+    <string name="version">Version :&#160;</string>
+    <!-- End general app strings. -->
+
+    <!-- mainScreen strings. -->
+    <string name="main_header">Welcome</string>
+    <string name="price">Price Checker</string>
+    <string name="stats">Player Stats</string>
+    <string name="quests">Quests</string>
+    <string name="maps">Maps</string>
+    <string name="rss">Runescape News</string>
+    <!-- End mainScreen strings. -->
+
+    <string name="search_ge_eg">e.g. Old school bond</string>
+
+    <!-- priceDetailsScreen. -->
+    <string name="price_iteminfo">Item Info</string>
+    <string name="price_itemicon">Item Icon</string>
+    <string name="price_p2p">Members</string>
+    <string name="price_description">&#160;Description</string>
+    <string name="price_current">&#160;Current Prices</string>
+    <string name="high_alch">&#160;High Alch</string>
+    <string name="low_alch">&#160;Low Alch</string>
+    <!-- End priceDetailsScreen. -->
+
+</resources>

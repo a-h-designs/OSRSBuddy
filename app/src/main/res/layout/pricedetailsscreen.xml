@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pricedetailscreen_old"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/windowBackground">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black_20"
+            app:layout_scrollFlags="enterAlways"
+            app:popupTheme="@style/Theme.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:id="@+id/itemIcon"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/price_itemicon"
+                android:layout_centerHorizontal="true"/>
+
+            <ImageView
+                android:layout_width="@dimen/p2p_icon"
+                android:layout_height="@dimen/p2p_icon"
+                android:id="@+id/itemP2P"
+                android:layout_marginTop="10dp"
+                android:layout_alignBottom="@id/itemIcon"
+                android:layout_toEndOf="@id/itemIcon"
+                android:contentDescription="@string/price_p2p"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/price_description"
+                android:id="@+id/itemDescriptionHeader"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:layout_below="@+id/itemIcon"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/page_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/itemDescription"
+                android:layout_marginStart="@dimen/p2p_icon"
+                android:layout_below="@+id/itemDescriptionHeader"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/price_current"
+                android:id="@+id/itemPriceHeader"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:layout_below="@+id/itemDescription"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/page_text_size"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/p2p_icon"
+                android:layout_height="@dimen/p2p_icon"
+                android:id="@+id/gpIcon"
+                android:src="@drawable/gp_icon"
+                android:layout_below="@+id/itemPriceHeader"
+                android:layout_marginStart="@dimen/p2p_icon"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:contentDescription="@string/price_current"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/itemPrice"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_below="@+id/itemPriceHeader"
+                android:layout_toEndOf="@id/gpIcon"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size" />
+
+            <ImageView
+                android:layout_width="@dimen/p2p_icon"
+                android:layout_height="@dimen/p2p_icon"
+                android:id="@+id/highalchIcon"
+                android:src="@drawable/high_alch_icon"
+                android:layout_below="@+id/itemPrice"
+                android:layout_marginStart="@dimen/p2p_icon"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:contentDescription="@string/high_alch"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/highAlch"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_toEndOf="@id/highalchIcon"
+                android:layout_below="@+id/itemPrice"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size" />
+
+            <ImageView
+                android:layout_width="@dimen/p2p_icon"
+                android:layout_height="@dimen/p2p_icon"
+                android:id="@+id/lowalchIcon"
+                android:src="@drawable/low_alch_icon"
+                android:layout_below="@+id/highAlch"
+                android:layout_marginBottom="@dimen/layout_margin_bottom"
+                android:layout_marginStart="@dimen/p2p_icon"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:contentDescription="@string/low_alch"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lowAlch"
+                android:layout_marginBottom="@dimen/layout_margin_bottom"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_toEndOf="@id/lowalchIcon"
+                android:layout_below="@+id/highAlch"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/page_text_size" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
