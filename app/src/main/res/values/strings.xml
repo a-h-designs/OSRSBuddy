@@ -23,7 +23,13 @@
     <string name="price_itemicon">Item Icon</string>
     <string name="price_p2p">Members</string>
     <string name="price_description">&#160;Description</string>
-    <string name="price_current">&#160;Current Prices</string>
+    <string name="price_current">&#160;Current Price</string>
+    <string name="changes">&#160;Price Changes</string>
+    <string name="change_today">&#160;Today</string>
+    <string name="change_1_month">&#160;1 Month</string>
+    <string name="change_3_month">&#160;3 Month</string>
+    <string name="change_6_month">&#160;6 Month</string>
+    <string name="alch_prices">&#160;Alchemy Prices</string>
     <string name="high_alch">&#160;High Alch</string>
     <string name="low_alch">&#160;Low Alch</string>
     <!-- End priceDetailsScreen. -->
@@ -34,12 +40,13 @@
     <string name="stats_searcheg">e.g. Lynx Titan</string>
     <!-- End statsMainScreen. -->
 
-    <!-- statsSearchScreen. -->
+    <!-- statsSea:&#160;rchScreen. -->
     <string name="chat_head">Chat Head</string>
-    <string name="combat_level">Combat Level</string>
+    <string name="combat_level">Combat Level:&#160;</string>
     <string name="old_level">0</string>
     <string name="text_0">0</string>
     <string name="text_1">1</string>
+    <string name="text_10">10</string>
     <string name="skill">Skill</string>
     <string name="level">Level</string>
     <string name="rank">Rank</string>

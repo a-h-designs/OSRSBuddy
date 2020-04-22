@@ -3,6 +3,10 @@
     <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
     </style>
 
+    <style name="DialogTheme" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:background">@color/windowBackground</item>
+    </style>
+
     <!--<style name="MyMaterialSplashTheme" parent="MyMaterialTheme.Base">
         <item name="android:windowBackground">@drawable/splash_screen_logo</item>
     </style>!-->

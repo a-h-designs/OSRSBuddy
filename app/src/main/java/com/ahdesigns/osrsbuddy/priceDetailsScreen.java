@@ -35,19 +35,22 @@ public class priceDetailsScreen extends AppCompatActivity {
     double sn, sn1, sum, sum1;
 
     //Declare all of our TextViews
-    TextView itemDescription;
-    TextView currentPrice;
-    TextView highAlch;
-    TextView lowAlch;
-    ImageView itemIcon;
-    ImageView itemP2P;
+    TextView itemDescription, currentPrice,
+            changeToday, change1Month,
+            change3Month, change6Month,
+            highAlch, lowAlch;
+
+    ImageView itemIcon, itemP2P,
+            changeTodayTrend, change1MonthTrend,
+            change3MonthTrend, change6MonthTrend;
 
     //Assign Strings for the data we will pull from the JSON
-    String itemNameValue;
-    String itemDescriptionValue;
-    String currentPriceValue;
-    String itemIconValue;
-    String itemP2PValue;
+    String itemIconValue, itemP2PValue,
+            itemNameValue, itemDescriptionValue, currentPriceValue,
+            changeTodayTrendValue, changeTodayValue,
+            change1MonthTrendValue, change1MonthValue,
+            change3MonthTrendValue, change3MonthValue,
+            change6MonthTrendValue, change6MonthValue;
 
     //Set a progress dialog to show loading of data
     private ProgressDialog pDialog;
@@ -67,11 +70,19 @@ public class priceDetailsScreen extends AppCompatActivity {
         //Define textviews
         itemDescription = findViewById(R.id.itemDescription);
         currentPrice = findViewById(R.id.itemPrice);
+        changeToday = findViewById(R.id.changeToday);
+        change1Month = findViewById(R.id.change1Month);
+        change3Month = findViewById(R.id.change3Month);
+        change6Month = findViewById(R.id.change6Month);
         highAlch = findViewById(R.id.highAlch);
         lowAlch = findViewById(R.id.lowAlch);
         //Define icons
         itemIcon = findViewById(R.id.itemIcon);
         itemP2P = findViewById(R.id.itemP2P);
+        changeTodayTrend = findViewById(R.id.changeTodayTrend);
+        change1MonthTrend = findViewById(R.id.change1MonthTrend);
+        change3MonthTrend = findViewById(R.id.change3MonthTrend);
+        change6MonthTrend = findViewById(R.id.change6MonthTrend);
 
         // URL to get JSON
         geURL = "http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=" + itemID;
@@ -128,7 +139,6 @@ public class priceDetailsScreen extends AppCompatActivity {
                     //Get string of the URL for the item icon
                     itemIconValue = item.getString("icon_large");
 
-
                     // Getting the 'current' object from the 'item' JSON object
                     JSONObject current = item.getJSONObject("current");
 
@@ -136,7 +146,39 @@ public class priceDetailsScreen extends AppCompatActivity {
                     //Assign all string and int to variables
                     currentPriceValue = current.getString("price");
 
+                    // Getting the 'today' object from the 'item' JSON object
+                    JSONObject today = item.getJSONObject("today");
+
+                    //From the 'today' object, we want the below strings
+                    //Assign all string and int to variables
+                    changeTodayTrendValue = today.getString("trend");
+                    changeTodayValue = today.getString("price");
+
                     itemP2PValue = item.getString("members");
+
+                    // Getting the 'day30' object from the 'item' JSON object
+                    JSONObject day30 = item.getJSONObject("day30");
+
+                    //From the 'day30' object, we want the below strings
+                    //Assign all string and int to variables
+                    change1MonthTrendValue = day30.getString("trend");
+                    change1MonthValue = day30.getString("change");
+
+                    // Getting the 'day90' object from the 'item' JSON object
+                    JSONObject day90 = item.getJSONObject("day90");
+
+                    //From the 'day90' object, we want the below strings
+                    //Assign all string and int to variables
+                    change3MonthTrendValue = day90.getString("trend");
+                    change3MonthValue = day90.getString("change");
+
+                    // Getting the 'day180' object from the 'item' JSON object
+                    JSONObject day180 = item.getJSONObject("day180");
+
+                    //From the 'day180' object, we want the below strings
+                    //Assign all string and int to variables
+                    change6MonthTrendValue = day180.getString("trend");
+                    change6MonthValue = day180.getString("change");
 
                     //Catch any errors
                 } catch (JSONException e) {
@@ -168,32 +210,60 @@ public class priceDetailsScreen extends AppCompatActivity {
             sum = n1 * 0.6;
             sum1 = n1 * 0.4;
 
+            currentPrice.setText(currentPriceValue);
+            changeToday.setText(changeTodayValue);
+            change1Month.setText(change1MonthValue);
+            change3Month.setText(change3MonthValue);
+            change6Month.setText(change6MonthValue);
 
-            currentPrice.setText(currentPriceValue + " gp");
+            if (changeTodayTrendValue.equals("positive")) {
+                changeTodayTrend.setBackgroundResource(R.drawable.app_icon_positive);
+            } else if (changeTodayTrendValue.equals("negative")) {
+                changeTodayTrend.setBackgroundResource(R.drawable.app_icon_negative);
+            } else {
+                changeTodayTrend.setBackgroundResource(R.drawable.app_icon_no_change);
+            }
+            if (change1MonthTrendValue.equals("positive")) {
+                change1MonthTrend.setBackgroundResource(R.drawable.app_icon_positive);
+            } else if (change1MonthTrendValue.equals("negative")) {
+                change1MonthTrend.setBackgroundResource(R.drawable.app_icon_negative);
+            } else {
+                change1MonthTrend.setBackgroundResource(R.drawable.app_icon_no_change);
+            }
+            if (change3MonthTrendValue.equals("positive")) {
+                change3MonthTrend.setBackgroundResource(R.drawable.app_icon_positive);
+            } else if (change3MonthTrendValue.equals("negative")) {
+                change3MonthTrend.setBackgroundResource(R.drawable.app_icon_negative);
+            } else {
+                change3MonthTrend.setBackgroundResource(R.drawable.app_icon_no_change);
+            }
+            if (change6MonthTrendValue.equals("positive")) {
+                change6MonthTrend.setBackgroundResource(R.drawable.app_icon_positive);
+            } else if (change6MonthTrendValue.equals("negative")) {
+                change6MonthTrend.setBackgroundResource(R.drawable.app_icon_negative);
+            } else {
+                change6MonthTrend.setBackgroundResource(R.drawable.app_icon_no_change);
+            }
 
             if (sum >= 1000) {
                 sn = sum / 1000;
-                highAlch.setText(sn + "k gp");
-            }
-            if (sum >= 1000000) {
+                highAlch.setText(sn + "k");
+            } else if (sum >= 1000000) {
                 sn = sum / 1000000;
-                highAlch.setText(sn + "m gp");
+                highAlch.setText(sn + "m");
+            } else {
+                highAlch.setText((int) Math.round(sum));
             }
-            if (sum <= 999) {
-                highAlch.setText(Math.round(sum) + " gp");
-            }
-
             if (sum1 >= 1000) {
                 sn1 = sum1 / 1000;
-                lowAlch.setText(sn1 + "k gp");
-            }
-            if (sum1 >= 1000000) {
+                lowAlch.setText(sn1 + "k");
+            } else if (sum1 >= 1000000) {
                 sn1 = sum1 / 1000000;
-                lowAlch.setText(sn1 + "m gp");
+                lowAlch.setText(sn1 + "m");
+            } else {
+                lowAlch.setText((int) Math.round(sum1));
             }
-            if (sum1 <= 999) {
-                lowAlch.setText(Math.round(sum1) + " gp");
-            }
+
             if (itemP2PValue.equals("true")) {
                 itemP2P.setBackgroundResource(R.drawable.app_icon_p2p);
             } else {
