@@ -83,7 +83,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/overall">
 
                     <ImageView
                         android:contentDescription="@string/overall"
@@ -134,7 +135,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/attack">
 
                     <ImageView
                         android:contentDescription="@string/attack"
@@ -184,7 +186,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/defence">
 
                     <ImageView
                         android:contentDescription="@string/defence"
@@ -234,7 +237,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/strength">
 
                     <ImageView
                         android:contentDescription="@string/strength"
@@ -284,7 +288,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/hitpoints">
 
                     <ImageView
                         android:contentDescription="@string/hitpoints"
@@ -294,7 +299,7 @@
                         android:gravity="center"
                         android:layout_gravity="center"
                         android:background="@drawable/skill_icon_hitpoints"
-                        android:id="@+id/constitution_icon" />
+                        android:id="@+id/hitpoints_icon" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -334,7 +339,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/ranged">
 
                     <ImageView
                         android:contentDescription="@string/ranged"
@@ -384,7 +390,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/prayer">
 
                     <ImageView
                         android:contentDescription="@string/prayer"
@@ -434,7 +441,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/magic">
 
                     <ImageView
                         android:contentDescription="@string/magic"
@@ -484,7 +492,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/cooking">
 
                     <ImageView
                         android:contentDescription="@string/cooking"
@@ -534,7 +543,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/woodcutting">
 
                     <ImageView
                         android:contentDescription="@string/woodcutting"
@@ -584,7 +594,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/fletching">
 
                     <ImageView
                         android:contentDescription="@string/fletching"
@@ -634,7 +645,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/fishing">
 
                     <ImageView
                         android:contentDescription="@string/fishing"
@@ -686,7 +698,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/firemaking">
 
                     <ImageView
                         android:contentDescription="@string/firemaking"
@@ -736,7 +749,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/crafting">
 
                     <ImageView
                         android:contentDescription="@string/crafting"
@@ -786,7 +800,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/smithing">
 
                     <ImageView
                         android:contentDescription="@string/smithing"
@@ -836,7 +851,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/mining">
 
                     <ImageView
                         android:contentDescription="@string/mining"
@@ -886,7 +902,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/herblore">
 
                     <ImageView
                         android:contentDescription="@string/herblore"
@@ -936,7 +953,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/agility">
 
                     <ImageView
                         android:contentDescription="@string/agility"
@@ -986,7 +1004,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/thieving">
 
                     <ImageView
                         android:contentDescription="@string/thieving"
@@ -1036,7 +1055,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/slayer">
 
                     <ImageView
                         android:contentDescription="@string/slayer"
@@ -1086,7 +1106,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/farming">
 
                     <ImageView
                         android:contentDescription="@string/farming"
@@ -1136,7 +1157,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/runecraft">
 
                     <ImageView
                         android:contentDescription="@string/runecraft"
@@ -1186,7 +1208,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/hunter">
 
                     <ImageView
                         android:contentDescription="@string/hunter"
@@ -1236,7 +1259,8 @@
 
                 <TableRow
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/construction">
 
                     <ImageView
                         android:contentDescription="@string/construction"

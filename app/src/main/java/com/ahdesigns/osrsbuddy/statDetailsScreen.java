@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +19,16 @@ import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class statDetailsScreen extends AppCompatActivity {
+
+    TableRow overall,
+            attack, defence, strength,
+            hitpoints, ranged, prayer,
+            magic, cooking, woodcutting,
+            fletching, fishing, firemaking,
+            crafting, smithing, mining,
+            herblore, agility, thieving,
+            slayer, farming, runecraft,
+            hunter, construction;
 
     TextView overallrank, overalllvl, overallxp,
             attackrank, attacklvl, attackxp,
@@ -75,6 +87,32 @@ public class statDetailsScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.statdetailsscreen);
+
+        overall = findViewById(R.id.overall);
+        attack = findViewById(R.id.attack);
+        defence = findViewById(R.id.defence);
+        strength = findViewById(R.id.strength);
+        hitpoints = findViewById(R.id.hitpoints);
+        ranged = findViewById(R.id.ranged);
+        prayer = findViewById(R.id.prayer);
+        magic = findViewById(R.id.magic);
+        cooking = findViewById(R.id.cooking);
+        woodcutting = findViewById(R.id.woodcutting);
+        fletching = findViewById(R.id.fletching);
+        fishing = findViewById(R.id.fishing);
+        firemaking = findViewById(R.id.firemaking);
+        crafting = findViewById(R.id.crafting);
+        smithing = findViewById(R.id.smithing);
+        mining = findViewById(R.id.mining);
+        herblore = findViewById(R.id.herblore);
+        agility = findViewById(R.id.agility);
+        thieving = findViewById(R.id.thieving);
+        slayer = findViewById(R.id.slayer);
+        farming = findViewById(R.id.farming);
+        runecraft = findViewById(R.id.runecraft);
+        hunter = findViewById(R.id.hunter);
+        construction = findViewById(R.id.construction);
+
         overallrank = findViewById(R.id.overallrank);
         overalllvl = findViewById(R.id.overalllvl);
         overallxp = findViewById(R.id.overallxp);
@@ -444,363 +482,171 @@ public class statDetailsScreen extends AppCompatActivity {
 
                 //Updating textviews with hiscore values.
                 if (overallRankValue.trim().length() == 0) {
-                    overallrank.setText("0");
+                    overall.setVisibility(View.GONE);
                 } else {
                     overallrank.setText(df.format(Long.valueOf(overallRankValue)));
-                }
-                if (overallLvlValue.equals("0")) {
-                    overalllvl.setText("1");
-                } else {
                     overalllvl.setText(df.format(Long.valueOf(overallLvlValue)));
-                }
-                if (overallXpValue.trim().length() == 0) {
-                    overallxp.setText("0");
-                } else {
                     overallxp.setText(df.format(Long.valueOf(overallXpValue)));
                 }
                 if (attackRankValue.trim().length() == 0) {
-                    attackrank.setText("0");
+                    attack.setVisibility(View.GONE);
                 } else {
                     attackrank.setText(df.format(Long.valueOf(attackRankValue)));
-                }
-                if (attackLvlValue.equals("0")) {
-                    attacklvl.setText("1");
-                } else {
                     attacklvl.setText(df.format(Long.valueOf(attackLvlValue)));
-                }
-                if (attackXpValue.trim().length() == 0) {
-                    attackxp.setText("0");
-                } else {
                     attackxp.setText(df.format(Long.valueOf(attackXpValue)));
                 }
                 if (defenceRankValue.trim().length() == 0) {
-                    defencerank.setText("0");
+                    defence.setVisibility(View.GONE);
                 } else {
                     defencerank.setText(df.format(Long.valueOf(defenceRankValue)));
-                }
-                if (defenceLvlValue.equals("0")) {
-                    defencelvl.setText("1");
-                } else {
                     defencelvl.setText(df.format(Long.valueOf(defenceLvlValue)));
-                }
-                if (defenceXpValue.trim().length() == 0) {
-                    defencexp.setText("0");
-                } else {
                     defencexp.setText(df.format(Long.valueOf(defenceXpValue)));
                 }
                 if (strengthRankValue.trim().length() == 0) {
-                    strengthrank.setText("0");
+                    strength.setVisibility(View.GONE);
                 } else {
                     strengthrank.setText(df.format(Long.valueOf(strengthRankValue)));
-                }
-                if (strengthLvlValue.equals("0")) {
-                    strengthlvl.setText("1");
-                } else {
                     strengthlvl.setText(df.format(Long.valueOf(strengthLvlValue)));
-                }
-                if (strengthXpValue.trim().length() == 0) {
-                    strengthxp.setText("0");
-                } else {
                     strengthxp.setText(df.format(Long.valueOf(strengthXpValue)));
                 }
                 if (hitpointsRankValue.trim().length() == 0) {
-                    hitpointsrank.setText("0");
+                    hitpoints.setVisibility(View.GONE);
                 } else {
                     hitpointsrank.setText(df.format(Long.valueOf(hitpointsRankValue)));
-                }
-                if (hitpointsLvlValue.equals("0")) {
-                    hitpointslvl.setText("1");
-                } else {
                     hitpointslvl.setText(df.format(Long.valueOf(hitpointsLvlValue)));
-                }
-                if (hitpointsXpValue.trim().length() == 0) {
-                    hitpointsxp.setText("0");
-                } else {
                     hitpointsxp.setText(df.format(Long.valueOf(hitpointsXpValue)));
                 }
                 if (rangedRankValue.trim().length() == 0) {
-                    rangedrank.setText("0");
+                    ranged.setVisibility(View.GONE);
                 } else {
                     rangedrank.setText(df.format(Long.valueOf(rangedRankValue)));
-                }
-                if (rangedLvlValue.equals("0")) {
-                    rangedlvl.setText("1");
-                } else {
                     rangedlvl.setText(df.format(Long.valueOf(rangedLvlValue)));
-                }
-                if (rangedXpValue.trim().length() == 0) {
-                    rangedxp.setText("0");
-                } else {
                     rangedxp.setText(df.format(Long.valueOf(rangedXpValue)));
                 }
                 if (prayerRankValue.trim().length() == 0) {
-                    prayerrank.setText("0");
+                    prayer.setVisibility(View.GONE);
                 } else {
                     prayerrank.setText(df.format(Long.valueOf(prayerRankValue)));
-                }
-                if (prayerLvlValue.equals("0")) {
-                    prayerlvl.setText("1");
-                } else {
                     prayerlvl.setText(df.format(Long.valueOf(prayerLvlValue)));
-                }
-                if (prayerXpValue.trim().length() == 0) {
-                    prayerxp.setText("0");
-                } else {
                     prayerxp.setText(df.format(Long.valueOf(prayerXpValue)));
                 }
                 if (magicRankValue.trim().length() == 0) {
-                    magicrank.setText("0");
+                    magic.setVisibility(View.GONE);
                 } else {
                     magicrank.setText(df.format(Long.valueOf(magicRankValue)));
-                }
-                if (magicLvlValue.equals("0")) {
-                    magiclvl.setText("1");
-                } else {
                     magiclvl.setText(df.format(Long.valueOf(magicLvlValue)));
-                }
-                if (magicXpValue.trim().length() == 0) {
-                    magicxp.setText("0");
-                } else {
                     magicxp.setText(df.format(Long.valueOf(magicXpValue)));
                 }
                 if (cookingRankValue.trim().length() == 0) {
-                    cookingrank.setText("0");
+                    cooking.setVisibility(View.GONE);
                 } else {
                     cookingrank.setText(df.format(Long.valueOf(cookingRankValue)));
-                }
-                if (cookingLvlValue.equals("0")) {
-                    cookinglvl.setText("1");
-                } else {
                     cookinglvl.setText(df.format(Long.valueOf(cookingLvlValue)));
-                }
-                if (cookingXpValue.trim().length() == 0) {
-                    cookingxp.setText("0");
-                } else {
                     cookingxp.setText(df.format(Long.valueOf(cookingXpValue)));
                 }
                 if (woodcuttingRankValue.trim().length() == 0) {
-                    woodcuttingrank.setText("0");
+                    woodcutting.setVisibility(View.GONE);
                 } else {
                     woodcuttingrank.setText(df.format(Long.valueOf(woodcuttingRankValue)));
-                }
-                if (woodcuttingLvlValue.equals("0")) {
-                    woodcuttinglvl.setText("1");
-                } else {
                     woodcuttinglvl.setText(df.format(Long.valueOf(woodcuttingLvlValue)));
-                }
-                if (woodcuttingXpValue.trim().length() == 0) {
-                    woodcuttingxp.setText("0");
-                } else {
                     woodcuttingxp.setText(df.format(Long.valueOf(woodcuttingXpValue)));
                 }
                 if (fletchingRankValue.trim().length() == 0) {
-                    fletchingrank.setText("0");
+                    fletching.setVisibility(View.GONE);
                 } else {
                     fletchingrank.setText(df.format(Long.valueOf(fletchingRankValue)));
-                }
-                if (fletchingLvlValue.equals("0")) {
-                    fletchinglvl.setText("1");
-                } else {
                     fletchinglvl.setText(df.format(Long.valueOf(fletchingLvlValue)));
-                }
-                if (fletchingXpValue.trim().length() == 0) {
-                    fletchingxp.setText("0");
-                } else {
                     fletchingxp.setText(df.format(Long.valueOf(fletchingXpValue)));
                 }
                 if (fishingRankValue.trim().length() == 0) {
-                    fishingrank.setText("0");
+                    fishing.setVisibility(View.GONE);
                 } else {
                     fishingrank.setText(df.format(Long.valueOf(fishingRankValue)));
-                }
-                if (fishingLvlValue.equals("0")) {
-                    fishinglvl.setText("1");
-                } else {
                     fishinglvl.setText(df.format(Long.valueOf(fishingLvlValue)));
-                }
-                if (fishingXpValue.trim().length() == 0) {
-                    fishingxp.setText("0");
-                } else {
                     fishingxp.setText(df.format(Long.valueOf(fishingXpValue)));
                 }
                 if (firemakingRankValue.trim().length() == 0) {
-                    firemakingrank.setText("0");
+                    firemaking.setVisibility(View.GONE);
                 } else {
                     firemakingrank.setText(df.format(Long.valueOf(firemakingRankValue)));
-                }
-                if (firemakingLvlValue.equals("0")) {
-                    firemakinglvl.setText("1");
-                } else {
                     firemakinglvl.setText(df.format(Long.valueOf(firemakingLvlValue)));
-                }
-                if (firemakingXpValue.trim().length() == 0) {
-                    firemakingxp.setText("0");
-                } else {
                     firemakingxp.setText(df.format(Long.valueOf(firemakingXpValue)));
                 }
                 if (craftingRankValue.trim().length() == 0) {
-                    craftingrank.setText("0");
+                    crafting.setVisibility(View.GONE);
                 } else {
                     craftingrank.setText(df.format(Long.valueOf(craftingRankValue)));
-                }
-                if (craftingLvlValue.equals("0")) {
-                    craftinglvl.setText("1");
-                } else {
                     craftinglvl.setText(df.format(Long.valueOf(craftingLvlValue)));
-                }
-                if (craftingXpValue.trim().length() == 0) {
-                    craftingxp.setText("0");
-                } else {
                     craftingxp.setText(df.format(Long.valueOf(craftingXpValue)));
                 }
                 if (smithingRankValue.trim().length() == 0) {
-                    smithingrank.setText("0");
+                    smithing.setVisibility(View.GONE);
                 } else {
                     smithingrank.setText(df.format(Long.valueOf(smithingRankValue)));
-                }
-                if (smithingLvlValue.equals("0")) {
-                    smithinglvl.setText("1");
-                } else {
                     smithinglvl.setText(df.format(Long.valueOf(smithingLvlValue)));
-                }
-                if (smithingXpValue.trim().length() == 0) {
-                    smithingxp.setText("0");
-                } else {
                     smithingxp.setText(df.format(Long.valueOf(smithingXpValue)));
                 }
                 if (miningRankValue.trim().length() == 0) {
-                    miningrank.setText("0");
+                    mining.setVisibility(View.GONE);
                 }  else {
                     miningrank.setText(df.format(Long.valueOf(miningRankValue)));
-                }
-                if (miningLvlValue.equals("0")) {
-                    mininglvl.setText("1");
-                } else {
                     mininglvl.setText(df.format(Long.valueOf(miningLvlValue)));
-                }
-                if (miningXpValue.trim().length() == 0) {
-                    miningxp.setText("0");
-                } else {
                     miningxp.setText(df.format(Long.valueOf(miningXpValue)));
                 }
                 if (herbloreRankValue.trim().length() == 0) {
-                    herblorerank.setText("0");
+                    herblore.setVisibility(View.GONE);
                 } else {
                     herblorerank.setText(df.format(Long.valueOf(herbloreRankValue)));
-                }
-                if (herbloreLvlValue.equals("0")) {
-                    herblorelvl.setText("1");
-                } else {
                     herblorelvl.setText(df.format(Long.valueOf(herbloreLvlValue)));
-                }
-                if (herbloreXpValue.trim().length() == 0) {
-                    herblorexp.setText("0");
-                } else {
                     herblorexp.setText(df.format(Long.valueOf(herbloreXpValue)));
                 }
                 if (agilityRankValue.trim().length() == 0) {
-                    agilityrank.setText("0");
+                    agility.setVisibility(View.GONE);
                 } else {
                     agilityrank.setText(df.format(Long.valueOf(agilityRankValue)));
-                }
-                if (agilityLvlValue.equals("0")) {
-                    agilitylvl.setText("1");
-                } else {
                     agilitylvl.setText(df.format(Long.valueOf(agilityLvlValue)));
-                }
-                if (agilityXpValue.trim().length() == 0) {
-                    agilityxp.setText("0");
-                } else {
                     agilityxp.setText(df.format(Long.valueOf(agilityXpValue)));
                 }
                 if (thievingRankValue.trim().length() == 0) {
-                    thievingrank.setText("0");
+                    thieving.setVisibility(View.GONE);
                 } else {
                     thievingrank.setText(df.format(Long.valueOf(thievingRankValue)));
-                }
-                if (thievingLvlValue.equals("0")) {
-                    thievinglvl.setText("1");
-                } else {
                     thievinglvl.setText(df.format(Long.valueOf(thievingLvlValue)));
-                }
-                if (thievingXpValue.trim().length() == 0) {
-                    thievingxp.setText("0");
-                } else {
                     thievingxp.setText(df.format(Long.valueOf(thievingXpValue)));
                 }
                 if (slayerRankValue.trim().length() == 0) {
-                    slayerrank.setText("0");
+                    slayer.setVisibility(View.GONE);
                 } else {
                     slayerrank.setText(df.format(Long.valueOf(slayerRankValue)));
-                }
-                if (slayerLvlValue.equals("0")) {
-                    slayerlvl.setText("1");
-                } else {
                     slayerlvl.setText(df.format(Long.valueOf(slayerLvlValue)));
-                }
-                if (slayerXpValue.trim().length() == 0) {
-                    slayerxp.setText("0");
-                } else {
                     slayerxp.setText(df.format(Long.valueOf(slayerXpValue)));
                 }
                 if (farmingRankValue.trim().length() == 0) {
-                    farmingrank.setText("0");
+                    farming.setVisibility(View.GONE);
                 } else {
                     farmingrank.setText(df.format(Long.valueOf(farmingRankValue)));
-                }
-                if (farmingLvlValue.equals("0")) {
-                    farminglvl.setText("1");
-                } else {
                     farminglvl.setText(df.format(Long.valueOf(farmingLvlValue)));
-                }
-                if (farmingXpValue.trim().length() == 0) {
-                    farmingxp.setText("0");
-                } else {
                     farmingxp.setText(df.format(Long.valueOf(farmingXpValue)));
                 }
                 if (runecraftingRankValue.trim().length() == 0) {
-                    runecraftingrank.setText("0");
+                    runecraft.setVisibility(View.GONE);
                 } else {
                     runecraftingrank.setText(df.format(Long.valueOf(runecraftingRankValue)));
-                }
-                if (runecraftingLvlValue.equals("0")) {
-                    runecraftinglvl.setText("1");
-                } else {
                     runecraftinglvl.setText(df.format(Long.valueOf(runecraftingLvlValue)));
-                }
-                if (runecraftingXpValue.trim().length() == 0) {
-                    runecraftingxp.setText("0");
-                } else {
                     runecraftingxp.setText(df.format(Long.valueOf(runecraftingXpValue)));
                 }
                 if (hunterRankValue.trim().length() == 0) {
-                    hunterrank.setText("0");
+                    hunter.setVisibility(View.GONE);
                 } else {
                     hunterrank.setText(df.format(Long.valueOf(hunterRankValue)));
-                }
-                if (hunterLvlValue.equals("0")) {
-                    hunterlvl.setText("1");
-                } else {
                     hunterlvl.setText(df.format(Long.valueOf(hunterLvlValue)));
-                }
-                if (hunterXpValue.trim().length() == 0) {
-                    hunterxp.setText("0");
-                } else {
                     hunterxp.setText(df.format(Long.valueOf(hunterXpValue)));
                 }
                 if (constructionRankValue.trim().length() == 0) {
-                    constructionrank.setText("0");
+                    construction.setVisibility(View.GONE);
                 } else {
                     constructionrank.setText(df.format(Long.valueOf(constructionRankValue)));
-                }
-                if (constructionLvlValue.equals("0")) {
-                    constructionlvl.setText("1");
-                } else {
                     constructionlvl.setText(df.format(Long.valueOf(constructionLvlValue)));
-                }
-                if (constructionXpValue.trim().length() == 0) {
-                    constructionxp.setText("0");
-                } else {
                     constructionxp.setText(df.format(Long.valueOf(constructionXpValue)));
                 }
 
@@ -811,5 +657,8 @@ public class statDetailsScreen extends AppCompatActivity {
                 finish();
             }
         }
+    }
+
+    public void onBackPressed() {
     }
 }
