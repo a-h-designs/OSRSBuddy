@@ -66,7 +66,7 @@ public class statSearchScreen extends AppCompatActivity {
                 imm.hideSoftInputFromWindow(searchText.getWindowToken(), 0);
 
                 username = searchText.getText().toString();
-                Intent intent = new Intent(getApplicationContext(), statDetailsScreen.class);
+                Intent intent = new Intent(getApplicationContext(), statsDetailScreen.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
             }

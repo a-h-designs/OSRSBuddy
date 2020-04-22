@@ -195,9 +195,9 @@ public class priceDetailsScreen extends AppCompatActivity {
                 lowAlch.setText(Math.round(sum1) + " gp");
             }
             if (itemP2PValue.equals("true")) {
-                itemP2P.setBackgroundResource(R.drawable.p2picon);
+                itemP2P.setBackgroundResource(R.drawable.app_icon_p2p);
             } else {
-                itemP2P.setBackgroundResource(R.drawable.f2picon);
+                itemP2P.setBackgroundResource(R.drawable.app_icon_f2p);
             }
 
             //Use the download image task to assign the imageview the item icon

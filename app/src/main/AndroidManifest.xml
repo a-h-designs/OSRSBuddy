@@ -83,8 +83,8 @@
                 android:launchMode="singleTop"
                 android:value=".mainScreen" />
         </activity>
-
-        <activity android:name=".statDetailsScreen"
+        <activity
+            android:name=".statsDetailScreen"
             android:launchMode="singleTop"
             android:parentActivityName=".statSearchScreen"
             android:screenOrientation="portrait"

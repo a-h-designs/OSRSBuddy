@@ -1,11 +1,15 @@
+
+
+
 package com.ahdesigns.osrsbuddy;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +22,7 @@ import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.util.Objects;
 
-public class statDetailsScreen extends AppCompatActivity {
+public class hiscoreFragment extends Fragment {
 
     TableRow overall,
             attack, defence, strength,
@@ -83,118 +87,122 @@ public class statDetailsScreen extends AppCompatActivity {
 
     private ProgressDialog pDialog;
 
+    public hiscoreFragment() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.statdetailsscreen);
+    }
 
-        overall = findViewById(R.id.overall);
-        attack = findViewById(R.id.attack);
-        defence = findViewById(R.id.defence);
-        strength = findViewById(R.id.strength);
-        hitpoints = findViewById(R.id.hitpoints);
-        ranged = findViewById(R.id.ranged);
-        prayer = findViewById(R.id.prayer);
-        magic = findViewById(R.id.magic);
-        cooking = findViewById(R.id.cooking);
-        woodcutting = findViewById(R.id.woodcutting);
-        fletching = findViewById(R.id.fletching);
-        fishing = findViewById(R.id.fishing);
-        firemaking = findViewById(R.id.firemaking);
-        crafting = findViewById(R.id.crafting);
-        smithing = findViewById(R.id.smithing);
-        mining = findViewById(R.id.mining);
-        herblore = findViewById(R.id.herblore);
-        agility = findViewById(R.id.agility);
-        thieving = findViewById(R.id.thieving);
-        slayer = findViewById(R.id.slayer);
-        farming = findViewById(R.id.farming);
-        runecraft = findViewById(R.id.runecraft);
-        hunter = findViewById(R.id.hunter);
-        construction = findViewById(R.id.construction);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.hiscorefragment, container, false);
 
-        overallrank = findViewById(R.id.overallrank);
-        overalllvl = findViewById(R.id.overalllvl);
-        overallxp = findViewById(R.id.overallxp);
-        attackrank = findViewById(R.id.attackrank);
-        attacklvl = findViewById(R.id.attacklvl);
-        attackxp = findViewById(R.id.attackxp);
-        defencerank = findViewById(R.id.defencerank);
-        defencelvl = findViewById(R.id.defencelvl);
-        defencexp = findViewById(R.id.defencexp);
-        strengthrank = findViewById(R.id.strengthrank);
-        strengthlvl = findViewById(R.id.strengthlvl);
-        strengthxp = findViewById(R.id.strengthxp);
-        hitpointsrank = findViewById(R.id.hitpointsrank);
-        hitpointslvl = findViewById(R.id.hitpointslvl);
-        hitpointsxp = findViewById(R.id.hitpointsxp);
-        rangedrank = findViewById(R.id.rangedrank);
-        rangedlvl = findViewById(R.id.rangedlvl);
-        rangedxp = findViewById(R.id.rangedxp);
-        prayerrank = findViewById(R.id.prayerrank);
-        prayerlvl = findViewById(R.id.prayerlvl);
-        prayerxp = findViewById(R.id.prayerxp);
-        magicrank = findViewById(R.id.magicrank);
-        magiclvl = findViewById(R.id.magiclvl);
-        magicxp = findViewById(R.id.magicxp);
-        cookingrank = findViewById(R.id.cookingrank);
-        cookinglvl = findViewById(R.id.cookinglvl);
-        cookingxp = findViewById(R.id.cookingxp);
-        woodcuttingrank = findViewById(R.id.woodcuttingrank);
-        woodcuttinglvl = findViewById(R.id.woodcuttinglvl);
-        woodcuttingxp = findViewById(R.id.woodcuttingxp);
-        fletchingrank = findViewById(R.id.fletchingrank);
-        fletchinglvl = findViewById(R.id.fletchinglvl);
-        fletchingxp = findViewById(R.id.fletchingxp);
-        fishingrank = findViewById(R.id.fishingrank);
-        fishinglvl = findViewById(R.id.fishinglvl);
-        fishingxp = findViewById(R.id.fishingxp);
-        firemakingrank = findViewById(R.id.firemakingrank);
-        firemakinglvl = findViewById(R.id.firemakinglvl);
-        firemakingxp = findViewById(R.id.firemakingxp);
-        craftingrank = findViewById(R.id.craftingrank);
-        craftinglvl = findViewById(R.id.craftinglvl);
-        craftingxp = findViewById(R.id.craftingxp);
-        smithingrank = findViewById(R.id.smithingrank);
-        smithinglvl = findViewById(R.id.smithinglvl);
-        smithingxp = findViewById(R.id.smithingxp);
-        miningrank = findViewById(R.id.miningrank);
-        mininglvl = findViewById(R.id.mininglvl);
-        miningxp = findViewById(R.id.miningxp);
-        herblorerank = findViewById(R.id.herblorerank);
-        herblorelvl = findViewById(R.id.herblorelvl);
-        herblorexp = findViewById(R.id.herblorexp);
-        agilityrank = findViewById(R.id.agilityrank);
-        agilitylvl = findViewById(R.id.agilitylvl);
-        agilityxp = findViewById(R.id.agilityxp);
-        thievingrank = findViewById(R.id.thievingrank);
-        thievinglvl = findViewById(R.id.thievinglvl);
-        thievingxp = findViewById(R.id.thievingxp);
-        slayerrank = findViewById(R.id.slayerrank);
-        slayerlvl = findViewById(R.id.slayerlvl);
-        slayerxp = findViewById(R.id.slayerxp);
-        farmingrank = findViewById(R.id.farmingrank);
-        farminglvl = findViewById(R.id.farminglvl);
-        farmingxp = findViewById(R.id.farmingxp);
-        runecraftingrank = findViewById(R.id.runecraftrank);
-        runecraftinglvl = findViewById(R.id.runecraftlvl);
-        runecraftingxp = findViewById(R.id.runecraftxp);
-        hunterrank = findViewById(R.id.hunterrank);
-        hunterlvl = findViewById(R.id.hunterlvl);
-        hunterxp = findViewById(R.id.hunterxp);
-        constructionrank = findViewById(R.id.constructionrank);
-        constructionlvl = findViewById(R.id.constructionlvl);
-        constructionxp = findViewById(R.id.constructionxp);
+        overall = view.findViewById(R.id.overall);
+        attack = view.findViewById(R.id.attack);
+        defence = view.findViewById(R.id.defence);
+        strength = view.findViewById(R.id.strength);
+        hitpoints = view.findViewById(R.id.hitpoints);
+        ranged = view.findViewById(R.id.ranged);
+        prayer = view.findViewById(R.id.prayer);
+        magic = view.findViewById(R.id.magic);
+        cooking = view.findViewById(R.id.cooking);
+        woodcutting = view.findViewById(R.id.woodcutting);
+        fletching = view.findViewById(R.id.fletching);
+        fishing = view.findViewById(R.id.fishing);
+        firemaking = view.findViewById(R.id.firemaking);
+        crafting = view.findViewById(R.id.crafting);
+        smithing = view.findViewById(R.id.smithing);
+        mining = view.findViewById(R.id.mining);
+        herblore = view.findViewById(R.id.herblore);
+        agility = view.findViewById(R.id.agility);
+        thieving = view.findViewById(R.id.thieving);
+        slayer = view.findViewById(R.id.slayer);
+        farming = view.findViewById(R.id.farming);
+        runecraft = view.findViewById(R.id.runecraft);
+        hunter = view.findViewById(R.id.hunter);
+        construction = view.findViewById(R.id.construction);
 
-        Bundle extras = getIntent().getExtras();
+        overallrank = view.findViewById(R.id.overallrank);
+        overalllvl = view.findViewById(R.id.overalllvl);
+        overallxp = view.findViewById(R.id.overallxp);
+        attackrank = view.findViewById(R.id.attackrank);
+        attacklvl = view.findViewById(R.id.attacklvl);
+        attackxp = view.findViewById(R.id.attackxp);
+        defencerank = view.findViewById(R.id.defencerank);
+        defencelvl = view.findViewById(R.id.defencelvl);
+        defencexp = view.findViewById(R.id.defencexp);
+        strengthrank = view.findViewById(R.id.strengthrank);
+        strengthlvl = view.findViewById(R.id.strengthlvl);
+        strengthxp = view.findViewById(R.id.strengthxp);
+        hitpointsrank = view.findViewById(R.id.hitpointsrank);
+        hitpointslvl = view.findViewById(R.id.hitpointslvl);
+        hitpointsxp = view.findViewById(R.id.hitpointsxp);
+        rangedrank = view.findViewById(R.id.rangedrank);
+        rangedlvl = view.findViewById(R.id.rangedlvl);
+        rangedxp = view.findViewById(R.id.rangedxp);
+        prayerrank = view.findViewById(R.id.prayerrank);
+        prayerlvl = view.findViewById(R.id.prayerlvl);
+        prayerxp = view.findViewById(R.id.prayerxp);
+        magicrank = view.findViewById(R.id.magicrank);
+        magiclvl = view.findViewById(R.id.magiclvl);
+        magicxp = view.findViewById(R.id.magicxp);
+        cookingrank = view.findViewById(R.id.cookingrank);
+        cookinglvl = view.findViewById(R.id.cookinglvl);
+        cookingxp = view.findViewById(R.id.cookingxp);
+        woodcuttingrank = view.findViewById(R.id.woodcuttingrank);
+        woodcuttinglvl = view.findViewById(R.id.woodcuttinglvl);
+        woodcuttingxp = view.findViewById(R.id.woodcuttingxp);
+        fletchingrank = view.findViewById(R.id.fletchingrank);
+        fletchinglvl = view.findViewById(R.id.fletchinglvl);
+        fletchingxp = view.findViewById(R.id.fletchingxp);
+        fishingrank = view.findViewById(R.id.fishingrank);
+        fishinglvl = view.findViewById(R.id.fishinglvl);
+        fishingxp = view.findViewById(R.id.fishingxp);
+        firemakingrank = view.findViewById(R.id.firemakingrank);
+        firemakinglvl = view.findViewById(R.id.firemakinglvl);
+        firemakingxp = view.findViewById(R.id.firemakingxp);
+        craftingrank = view.findViewById(R.id.craftingrank);
+        craftinglvl = view.findViewById(R.id.craftinglvl);
+        craftingxp = view.findViewById(R.id.craftingxp);
+        smithingrank = view.findViewById(R.id.smithingrank);
+        smithinglvl = view.findViewById(R.id.smithinglvl);
+        smithingxp = view.findViewById(R.id.smithingxp);
+        miningrank = view.findViewById(R.id.miningrank);
+        mininglvl = view.findViewById(R.id.mininglvl);
+        miningxp = view.findViewById(R.id.miningxp);
+        herblorerank = view.findViewById(R.id.herblorerank);
+        herblorelvl = view.findViewById(R.id.herblorelvl);
+        herblorexp = view.findViewById(R.id.herblorexp);
+        agilityrank = view.findViewById(R.id.agilityrank);
+        agilitylvl = view.findViewById(R.id.agilitylvl);
+        agilityxp = view.findViewById(R.id.agilityxp);
+        thievingrank = view.findViewById(R.id.thievingrank);
+        thievinglvl = view.findViewById(R.id.thievinglvl);
+        thievingxp = view.findViewById(R.id.thievingxp);
+        slayerrank = view.findViewById(R.id.slayerrank);
+        slayerlvl = view.findViewById(R.id.slayerlvl);
+        slayerxp = view.findViewById(R.id.slayerxp);
+        farmingrank = view.findViewById(R.id.farmingrank);
+        farminglvl = view.findViewById(R.id.farminglvl);
+        farmingxp = view.findViewById(R.id.farmingxp);
+        runecraftingrank = view.findViewById(R.id.runecraftrank);
+        runecraftinglvl = view.findViewById(R.id.runecraftlvl);
+        runecraftingxp = view.findViewById(R.id.runecraftxp);
+        hunterrank = view.findViewById(R.id.hunterrank);
+        hunterlvl = view.findViewById(R.id.hunterlvl);
+        hunterxp = view.findViewById(R.id.hunterxp);
+        constructionrank = view.findViewById(R.id.constructionrank);
+        constructionlvl = view.findViewById(R.id.constructionlvl);
+        constructionxp = view.findViewById(R.id.constructionxp);
+
+        Bundle extras = Objects.requireNonNull(getActivity()).getIntent().getExtras();
         assert extras != null;
         username = extras.getString("username");
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(username);
 
         // URL to get JSON
         try {
@@ -204,6 +212,8 @@ public class statDetailsScreen extends AppCompatActivity {
         }
         //Call the getdata class
         new GetData().execute();
+
+        return view;
     }
 
     //Get data class to get json data
@@ -215,7 +225,7 @@ public class statDetailsScreen extends AppCompatActivity {
             super.onPreExecute();
 
             // Showing progress dialog
-            pDialog = new ProgressDialog(statDetailsScreen.this);
+            pDialog = new ProgressDialog(getActivity());
             pDialog.setMessage("Searching Hiscores...");
             pDialog.setCancelable(false);
             pDialog.show();
@@ -653,12 +663,9 @@ public class statDetailsScreen extends AppCompatActivity {
             } else {
                 if (pDialog.isShowing())
                     pDialog.dismiss();
-                Toast.makeText(getApplicationContext(), username + " was not found in the Overall table", Toast.LENGTH_SHORT).show();
-                finish();
+                Toast.makeText(Objects.requireNonNull(getActivity()).getApplicationContext(), username + " was not found in the Overall table", Toast.LENGTH_SHORT).show();
+                getActivity().finish();
             }
         }
-    }
-
-    public void onBackPressed() {
     }
 }

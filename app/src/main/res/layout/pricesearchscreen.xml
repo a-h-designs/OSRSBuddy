@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonSearch"
-            android:src="@drawable/search"
+            android:src="@drawable/app_icon_search"
             android:background="@color/windowBackground"
             android:onClick="itemSearch"
             android:layout_marginTop="@dimen/layout_margin_top"
