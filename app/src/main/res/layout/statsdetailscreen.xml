@@ -86,6 +86,16 @@
                         android:text="@string/combat_level"
                         android:textSize="@dimen/page_text_size"/>
 
+                    <TextView
+                        android:id="@+id/style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/combat"
+                        android:layout_marginBottom="@dimen/layout_margin_bottom"
+                        android:textColor="@android:color/white"
+                        android:text="@string/combat_style"
+                        android:textSize="@dimen/page_text_size"/>
+
                 </RelativeLayout>
 
             </RelativeLayout>

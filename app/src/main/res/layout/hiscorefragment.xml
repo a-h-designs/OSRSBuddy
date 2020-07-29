@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/level"
+                android:text="@string/rank"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/rank"
+                android:text="@string/level"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -84,19 +84,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/overalllvl"
+                android:id="@+id/overallrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/overallrank"
+                android:id="@+id/overalllvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -135,19 +135,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/attacklvl"
+                android:id="@+id/attackrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/attackrank"
+                android:id="@+id/attacklvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -186,19 +186,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/defencelvl"
+                android:id="@+id/defencerank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/defencerank"
+                android:id="@+id/defencelvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -237,19 +237,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/strengthlvl"
+                android:id="@+id/strengthrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/strengthrank"
+                android:id="@+id/strengthlvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -288,19 +288,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/hitpointslvl"
+                android:id="@+id/hitpointsrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/hitpointsrank"
+                android:id="@+id/hitpointslvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -339,19 +339,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rangedlvl"
+                android:id="@+id/rangedrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rangedrank"
+                android:id="@+id/rangedlvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -390,19 +390,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/prayerlvl"
+                android:id="@+id/prayerrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/prayerrank"
+                android:id="@+id/prayerlvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -441,19 +441,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/magiclvl"
+                android:id="@+id/magicrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/magicrank"
+                android:id="@+id/magiclvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -492,19 +492,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cookinglvl"
+                android:id="@+id/cookingrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/cookingrank"
+                android:id="@+id/cookinglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -543,19 +543,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/woodcuttinglvl"
+                android:id="@+id/woodcuttingrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/woodcuttingrank"
+                android:id="@+id/woodcuttinglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -594,19 +594,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/fletchinglvl"
+                android:id="@+id/fletchingrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/fletchingrank"
+                android:id="@+id/fletchinglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -645,19 +645,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/fishinglvl"
+                android:id="@+id/fishingrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/fishingrank"
+                android:id="@+id/fishinglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -697,19 +697,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/firemakinglvl"
+                android:id="@+id/firemakingrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/firemakingrank"
+                android:id="@+id/firemakinglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -748,19 +748,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/craftinglvl"
+                android:id="@+id/craftingrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/craftingrank"
+                android:id="@+id/craftinglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -799,19 +799,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/smithinglvl"
+                android:id="@+id/smithingrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/smithingrank"
+                android:id="@+id/smithinglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -850,19 +850,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/mininglvl"
+                android:id="@+id/miningrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/miningrank"
+                android:id="@+id/mininglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -901,19 +901,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/herblorelvl"
+                android:id="@+id/herblorerank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/herblorerank"
+                android:id="@+id/herblorelvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -952,19 +952,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/agilitylvl"
+                android:id="@+id/agilityrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/agilityrank"
+                android:id="@+id/agilitylvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -1003,19 +1003,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/thievinglvl"
+                android:id="@+id/thievingrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/thievingrank"
+                android:id="@+id/thievinglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -1054,21 +1054,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/slayerlvl"
-                android:layout_gravity="center|start"
-                android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/slayerrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
                 android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/slayerlvl"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_1"
+                android:textColor="@android:color/white" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -1105,19 +1105,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/farminglvl"
+                android:id="@+id/farmingrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/farmingrank"
+                android:id="@+id/farminglvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -1156,19 +1156,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/runecraftlvl"
+                android:id="@+id/runecraftrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/runecraftrank"
+                android:id="@+id/runecraftlvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -1207,19 +1207,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/hunterlvl"
+                android:id="@+id/hunterrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/hunterrank"
+                android:id="@+id/hunterlvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView
@@ -1258,19 +1258,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/constructionlvl"
+                android:id="@+id/constructionrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_1"
+                android:text="@string/text_0"
                 android:textColor="@android:color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/constructionrank"
+                android:id="@+id/constructionlvl"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_1"
                 android:textColor="@android:color/white" />
 
             <TextView

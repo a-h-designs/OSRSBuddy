@@ -16,6 +16,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Objects;
 
 public class priceDetailsScreen extends AppCompatActivity {
@@ -54,7 +56,6 @@ public class priceDetailsScreen extends AppCompatActivity {
 
     //Set a progress dialog to show loading of data
     private ProgressDialog pDialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,6 +198,18 @@ public class priceDetailsScreen extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
+            DecimalFormat df = new DecimalFormat();
+            DecimalFormat df1 = new DecimalFormat();
+            DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+            dfs.setGroupingSeparator(',');
+            dfs.setDecimalSeparator('.');
+            df.setDecimalFormatSymbols(dfs);
+            df.setMinimumFractionDigits(1);
+            df.setMaximumFractionDigits(1);
+            df1.setDecimalFormatSymbols(dfs);
+            df1.setMinimumFractionDigits(0);
+            df1.setMaximumFractionDigits(0);
+
             //After we have obtained the JSON data
             // Dismiss the progress dialog
             if (pDialog.isShowing())
@@ -245,23 +258,28 @@ public class priceDetailsScreen extends AppCompatActivity {
                 change6MonthTrend.setBackgroundResource(R.drawable.app_icon_no_change);
             }
 
-            if (sum >= 1000) {
-                sn = sum / 1000;
-                highAlch.setText(sn + "k");
-            } else if (sum >= 1000000) {
-                sn = sum / 1000000;
-                highAlch.setText(sn + "m");
-            } else {
-                highAlch.setText((int) Math.round(sum));
+            if (sum < 10000) {
+                highAlch.setText(df1.format(sum));
             }
-            if (sum1 >= 1000) {
+            if (sum >= 10000) {
+                sn = sum / 1000;
+                highAlch.setText(df.format(sn) + "k");
+            }
+            if (sum >= 1000000) {
+                sn = sum / 1000000;
+                highAlch.setText(df.format(sn) + "m");
+            }
+
+            if (sum1 < 10000) {
+                lowAlch.setText(df1.format(sum1));
+            }
+            if (sum1 >= 10000) {
                 sn1 = sum1 / 1000;
-                lowAlch.setText(sn1 + "k");
-            } else if (sum1 >= 1000000) {
+                lowAlch.setText(df.format(sn1) + "k");
+            }
+            if (sum1 >= 1000000) {
                 sn1 = sum1 / 1000000;
-                lowAlch.setText(sn1 + "m");
-            } else {
-                lowAlch.setText((int) Math.round(sum1));
+                lowAlch.setText(df.format(sn1) + "m");
             }
 
             if (itemP2PValue.equals("true")) {

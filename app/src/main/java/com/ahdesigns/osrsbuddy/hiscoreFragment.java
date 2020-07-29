@@ -22,6 +22,8 @@ import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.util.Objects;
 
+import static java.lang.Math.floor;
+
 public class hiscoreFragment extends Fragment {
 
     TableRow overall,
@@ -57,9 +59,10 @@ public class hiscoreFragment extends Fragment {
             farmingrank, farminglvl, farmingxp,
             runecraftingrank, runecraftinglvl, runecraftingxp,
             hunterrank, hunterlvl, hunterxp,
-            constructionrank, constructionlvl, constructionxp;
+            constructionrank, constructionlvl, constructionxp,
+            combat, style;
 
-    String jsonURL, username,
+    String jsonURL, username, url,
             overallRankValue, overallLvlValue, overallXpValue,
             attackRankValue, attackLvlValue, attackXpValue,
             defenceRankValue, defenceLvlValue, defenceXpValue,
@@ -85,6 +88,8 @@ public class hiscoreFragment extends Fragment {
             hunterRankValue, hunterLvlValue, hunterXpValue,
             constructionRankValue, constructionLvlValue, constructionXpValue;
 
+    double warrior, ranger, mager, baseCombatLevel, warriorCombatLevel, rangeCombatLevel, mageCombatLevel;
+
     private ProgressDialog pDialog;
 
     public hiscoreFragment() {
@@ -102,6 +107,8 @@ public class hiscoreFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.hiscorefragment, container, false);
 
+        combat = getActivity().findViewById(R.id.combat);
+        style = getActivity().findViewById(R.id.style);
         overall = view.findViewById(R.id.overall);
         attack = view.findViewById(R.id.attack);
         defence = view.findViewById(R.id.defence);
@@ -203,10 +210,16 @@ public class hiscoreFragment extends Fragment {
         Bundle extras = Objects.requireNonNull(getActivity()).getIntent().getExtras();
         assert extras != null;
         username = extras.getString("username");
+        url = extras.getString("url");
 
         // URL to get JSON
         try {
-            jsonURL = "http://ahdesigns.coolpage.biz/old_hiscores.php?user=" + URLEncoder.encode(username, "UTF-8");
+            assert url != null;
+            if ("normal".equals(url)) {
+                jsonURL = "http://ahdesigns.coolpage.biz/old_hiscores.php?user=" + URLEncoder.encode(username, "UTF-8");
+            } else {
+                jsonURL = "http://ahdesigns.coolpage.biz/old_hiscores_" + url + ".php?user=" + URLEncoder.encode(username, "UTF-8");
+            }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -482,6 +495,7 @@ public class hiscoreFragment extends Fragment {
             if(overallRankValue != null) {
 
                 DecimalFormat df = new DecimalFormat();
+                DecimalFormat df1 = new DecimalFormat("#.##");
                 df.setGroupingUsed(true);
                 df.setGroupingSize(3);
 
@@ -521,6 +535,7 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (hitpointsRankValue.trim().length() == 0) {
                     hitpoints.setVisibility(View.GONE);
+                    hitpointsLvlValue = String.valueOf(10);
                 } else {
                     hitpointsrank.setText(df.format(Long.valueOf(hitpointsRankValue)));
                     hitpointslvl.setText(df.format(Long.valueOf(hitpointsLvlValue)));
@@ -659,6 +674,36 @@ public class hiscoreFragment extends Fragment {
                     constructionlvl.setText(df.format(Long.valueOf(constructionLvlValue)));
                     constructionxp.setText(df.format(Long.valueOf(constructionXpValue)));
                 }
+
+                baseCombatLevel = 0.25 * (Integer.parseInt(defenceLvlValue) + Integer.parseInt(hitpointsLvlValue) + floor(Integer.parseInt(prayerLvlValue)/2));
+                warrior = 0.325 * (Integer.parseInt(attackLvlValue) + Integer.parseInt(strengthLvlValue));
+                ranger = 0.325 * (floor(Integer.parseInt(rangedLvlValue)/2) + Integer.parseInt(rangedLvlValue));
+                mager =  0.325 * (floor(Integer.parseInt(magicLvlValue)/2) + Integer.parseInt(magicLvlValue));
+
+                if (warrior > mager  && warrior > ranger)
+                {
+                    warriorCombatLevel = baseCombatLevel + warrior;
+                    warriorCombatLevel = Double.parseDouble(df1.format(warriorCombatLevel));
+                    combat.setText("Combat Level:  " + warriorCombatLevel);
+                    style.setText("Combat Style: Warrior");
+                }
+
+                if (mager > warrior && mager > ranger)
+                {
+                    mageCombatLevel = baseCombatLevel + mager;
+                    mageCombatLevel = Double.parseDouble(df1.format(mageCombatLevel));
+                    combat.setText("Combat Level:  " + mageCombatLevel);
+                    style.setText("Combat Style: Mage");
+                }
+
+                if (ranger > warrior && ranger > mager)
+                {
+                    rangeCombatLevel = baseCombatLevel + ranger;
+                    rangeCombatLevel = Double.parseDouble(df1.format(rangeCombatLevel));
+                    combat.setText("Combat Level:  " + rangeCombatLevel);
+                    style.setText("Combat Style: Archer");
+                }
+
 
             } else {
                 if (pDialog.isShowing())

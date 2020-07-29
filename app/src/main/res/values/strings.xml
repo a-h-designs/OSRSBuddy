@@ -43,6 +43,7 @@
     <!-- statsSea:&#160;rchScreen. -->
     <string name="chat_head">Chat Head</string>
     <string name="combat_level">Combat Level:&#160;</string>
+    <string name="combat_style">Combat Style:&#160;</string>
     <string name="old_level">0</string>
     <string name="text_0">0</string>
     <string name="text_1">1</string>
@@ -50,7 +51,7 @@
     <string name="skill">Skill</string>
     <string name="level">Level</string>
     <string name="rank">Rank</string>
-    <string name="exp">EXP</string>
+    <string name="exp">XP</string>
     <string name="activity">Activity</string>
     <string name="score">Score</string>
     <string name="overall">Overall</string>

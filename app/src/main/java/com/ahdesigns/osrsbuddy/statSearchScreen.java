@@ -13,6 +13,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +23,11 @@ public class statSearchScreen extends AppCompatActivity {
 
     EditText searchText;
     ImageButton buttonSearch;
+    RadioButton normal, ironman, uironman,
+            hironman, deadman, leagues,
+            tournament;
 
-    String username;
+    String username, url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,13 @@ public class statSearchScreen extends AppCompatActivity {
 
         searchText = findViewById(R.id.searchText);
         buttonSearch = findViewById(R.id.buttonSearch);
+        normal = findViewById(R.id.normal);
+        ironman = findViewById(R.id.ironman);
+        uironman = findViewById(R.id.uironman);
+        hironman = findViewById(R.id.hironman);
+        deadman = findViewById(R.id.deadman);
+        leagues = findViewById(R.id.leagues);
+        tournament = findViewById(R.id.tournament);
 
         searchText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
@@ -68,6 +79,21 @@ public class statSearchScreen extends AppCompatActivity {
                 username = searchText.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), statsDetailScreen.class);
                 intent.putExtra("username", username);
+                if (normal.isChecked()) {
+                    intent.putExtra("url", "normal");
+                } else if (ironman.isChecked()) {
+                    intent.putExtra("url", "ironman");
+                } else if (uironman.isChecked()) {
+                    intent.putExtra("url", "ultimate");
+                } else if (hironman.isChecked()) {
+                    intent.putExtra("url", "hardcore");
+                } else if (deadman.isChecked()) {
+                    intent.putExtra("url", "deadman");
+                } else if (leagues.isChecked()) {
+                    intent.putExtra("url", "seasonal");
+                } else  if (tournament.isChecked()) {
+                    intent.putExtra("url", "tournament");
+                }
                 startActivity(intent);
             }
         } else {

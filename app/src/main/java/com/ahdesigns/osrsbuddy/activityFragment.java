@@ -97,7 +97,7 @@ public class activityFragment extends Fragment {
             zalcanorank, zalcanoscore,
             zulrahrank, zulrahscore;
 
-    String jsonURL, username,
+    String jsonURL, username, url,
             leagueRankValue, leagueScoreValue,
             bhhRankValue, bhhScoreValue,
             bhrRankValue, bhrScoreValue,
@@ -337,10 +337,16 @@ public class activityFragment extends Fragment {
         Bundle extras = Objects.requireNonNull(getActivity()).getIntent().getExtras();
         assert extras != null;
         username = extras.getString("username");
+        url = extras.getString("url");
 
         // URL to get JSON
         try {
-            jsonURL = "http://ahdesigns.coolpage.biz/old_hiscores.php?user=" + URLEncoder.encode(username, "UTF-8");
+            assert url != null;
+            if ("normal".equals(url)) {
+                jsonURL = "http://ahdesigns.coolpage.biz/old_hiscores.php?user=" + URLEncoder.encode(username, "UTF-8");
+            } else {
+                jsonURL = "http://ahdesigns.coolpage.biz/old_hiscores_" + url + ".php?user=" + URLEncoder.encode(username, "UTF-8");
+            }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -1180,12 +1186,12 @@ public class activityFragment extends Fragment {
                     zulrahrank.setText(df.format(Long.valueOf(zulrahRankValue)));
                     zulrahscore.setText(df.format(Long.valueOf(zulrahScoreValue)));
                 }
-            } else {
+            }/* else {
                 if (pDialog.isShowing())
                     pDialog.dismiss();
                 Toast.makeText(Objects.requireNonNull(getActivity()).getApplicationContext(), username + "  was not found in the Overall table", Toast.LENGTH_SHORT).show();
                 getActivity().finish();
-            }
+            }*/
         }
     }
 }
