@@ -5,7 +5,7 @@ Android app to help with Old School RuneScape.
 
 - [x] Grand Exchange checker with High/Low alch prices.
 - [x] Hiscores.
-- [x] Skill Calculator.
+- [ ] Skill Calculator.
 - [ ] Maps.
 - [ ] Quest help.
 - [ ] Farming helper.
