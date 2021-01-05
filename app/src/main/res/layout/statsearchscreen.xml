@@ -37,6 +37,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/searchText"
+                android:autofillHints="@string/stats_searcheg"
                 android:hint="@string/stats_searcheg"
                 android:textColor="@color/textColorPrimary"
                 android:imeOptions="actionSearch"
