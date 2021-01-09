@@ -29,32 +29,23 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
+            android:id="@+id/searchView"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:id="@+id/searchView"
             android:orientation="horizontal">
+
             <EditText
+                android:id="@+id/searchText"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/searchText"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_marginBottom="@dimen/layout_margin_bottom"
                 android:autofillHints="@string/stats_searcheg"
                 android:hint="@string/stats_searcheg"
-                android:textColor="@color/textColorPrimary"
                 android:imeOptions="actionSearch"
-                android:maxLength="100"
                 android:inputType="text"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_marginBottom="@dimen/layout_margin_bottom" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/buttonSearch"
-                android:src="@drawable/app_icon_search"
-                android:background="@color/windowBackground"
-                android:onClick="statSearch"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_marginBottom="@dimen/layout_margin_bottom" />
+                android:maxLength="100"
+                android:textColor="@color/textColorPrimary" />
         </LinearLayout>
 
         <TableLayout
@@ -64,157 +55,202 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <RadioButton
+                <ImageView
                     android:id="@+id/attack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:drawableEnd="@drawable/skill_icon_attack" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_attack"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/hitpoints"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_hitpoints" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_hitpoints"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/mining"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_mining" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_mining"
+                    android:onClick="statSearch" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <RadioButton
+                <ImageView
                     android:id="@+id/strength"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_strength" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_strength"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/agility"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_agility" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_agility"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/smithing"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_smithing" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_smithing"
+                    android:onClick="statSearch" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <RadioButton
+                <ImageView
                     android:id="@+id/defence"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_defence" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_defence"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/herblore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_herblore" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_herblore"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/fishing"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_fishing" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_fishing"
+                    android:onClick="statSearch" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <RadioButton
+                <ImageView
                     android:id="@+id/ranged"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_ranged" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_ranged"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/thieving"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_thieving" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_thieving"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/cooking"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_cooking" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_cooking"
+                    android:onClick="statSearch" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <RadioButton
+                <ImageView
                     android:id="@+id/prayer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_prayer" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_prayer"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/crafting"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_crafting" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_crafting"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/firemaking"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_firemaking" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_firemaking"
+                    android:onClick="statSearch" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <RadioButton
+                <ImageView
                     android:id="@+id/magic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_magic" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_magic"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/fletching"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_fletching" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_fletching"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/woodcutting"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_woodcutting" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_woodcutting"
+                    android:onClick="statSearch" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <RadioButton
+                <ImageView
                     android:id="@+id/runecraft"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_runecraft" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_runecraft"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/slayer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_slayer" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_slayer"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/farming"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_farming" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_farming"
+                    android:onClick="statSearch" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <RadioButton
+                <ImageView
                     android:id="@+id/construction"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_construction" />
-                <RadioButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_construction"
+                    android:onClick="statSearch" />
+                <ImageView
                     android:id="@+id/hunter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/skill_icon_hunter" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:src="@drawable/calculator_icon_hunter"
+                    android:onClick="statSearch" />
             </TableRow>
 
         </TableLayout>
