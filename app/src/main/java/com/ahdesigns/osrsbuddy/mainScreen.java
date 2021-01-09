@@ -43,6 +43,10 @@ public class mainScreen extends AppCompatActivity {
         startActivity(new Intent(this, statSearchScreen.class));
     }
 
+    public void calculatorActivity(View view) {
+        startActivity(new Intent(this, skillCalculatorSearchScreen.class));
+    }
+
     public void onBackPressed() {
     }
 

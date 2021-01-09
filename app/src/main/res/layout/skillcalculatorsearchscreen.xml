@@ -1,9 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/skillcalculatorsearchscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".skillCalculatorSearchScreen">
+    android:orientation="vertical"
+    android:background="@color/windowBackground">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black_20"
+            app:layout_scrollFlags="enterAlways"
+            app:popupTheme="@style/Theme.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/searchView"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/searchText"
+                android:autofillHints="@string/stats_searcheg"
+                android:hint="@string/stats_searcheg"
+                android:textColor="@color/textColorPrimary"
+                android:imeOptions="actionSearch"
+                android:maxLength="100"
+                android:inputType="text"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_marginBottom="@dimen/layout_margin_bottom" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonSearch"
+                android:src="@drawable/app_icon_search"
+                android:background="@color/windowBackground"
+                android:onClick="statSearch"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_marginBottom="@dimen/layout_margin_bottom" />
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/attack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:drawableEnd="@drawable/skill_icon_attack" />
+                <RadioButton
+                    android:id="@+id/hitpoints"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_hitpoints" />
+                <RadioButton
+                    android:id="@+id/mining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_mining" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/strength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_strength" />
+                <RadioButton
+                    android:id="@+id/agility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_agility" />
+                <RadioButton
+                    android:id="@+id/smithing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_smithing" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/defence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_defence" />
+                <RadioButton
+                    android:id="@+id/herblore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_herblore" />
+                <RadioButton
+                    android:id="@+id/fishing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_fishing" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/ranged"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_ranged" />
+                <RadioButton
+                    android:id="@+id/thieving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_thieving" />
+                <RadioButton
+                    android:id="@+id/cooking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_cooking" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/prayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_prayer" />
+                <RadioButton
+                    android:id="@+id/crafting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_crafting" />
+                <RadioButton
+                    android:id="@+id/firemaking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_firemaking" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/magic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_magic" />
+                <RadioButton
+                    android:id="@+id/fletching"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_fletching" />
+                <RadioButton
+                    android:id="@+id/woodcutting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_woodcutting" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/runecraft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_runecraft" />
+                <RadioButton
+                    android:id="@+id/slayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_slayer" />
+                <RadioButton
+                    android:id="@+id/farming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_farming" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/construction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_construction" />
+                <RadioButton
+                    android:id="@+id/hunter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/skill_icon_hunter" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
