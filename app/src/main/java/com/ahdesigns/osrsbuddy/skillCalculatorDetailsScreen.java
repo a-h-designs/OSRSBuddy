@@ -338,14 +338,119 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                 if (pDialog.isShowing())
                     pDialog.dismiss();
 
+                if(skill.equals("attack")) {
+                    num = attackXpValue;
+                    currentLevel.setText(attackLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("defence")) {
+                    num = defenceXpValue;
+                    currentLevel.setText(defenceLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("strength")) {
+                    num = strengthXpValue;
+                    currentLevel.setText(strengthLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("hitpoints")) {
+                    num = hitpointsXpValue;
+                    currentLevel.setText(hitpointsLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("ranged")) {
+                    num = rangedXpValue;
+                    currentLevel.setText(rangedLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("prayer")) {
+                    num = prayerXpValue;
+                    currentLevel.setText(prayerLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("magic")) {
+                    num = magicXpValue;
+                    currentLevel.setText(magicLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("cooking")) {
+                    num = cookingXpValue;
+                    currentLevel.setText(cookingLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("woodcutting")) {
+                    num = woodcuttingXpValue;
+                    currentLevel.setText(woodcuttingLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("fletching")) {
+                    num = fletchingXpValue;
+                    currentLevel.setText(fletchingLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("fishing")) {
+                    num = fishingXpValue;
+                    currentLevel.setText(fishingLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("firemaking")) {
+                    num = firemakingXpValue;
+                    currentLevel.setText(firemakingLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("crafting")) {
+                    num = craftingXpValue;
+                    currentLevel.setText(craftingLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("smithing")) {
+                    num = smithingXpValue;
+                    currentLevel.setText(smithingLvlValue);
+                    calculateXP(num);
+                }
                 if(skill.equals("mining")) {
                     num = miningXpValue;
                     currentLevel.setText(miningLvlValue);
                     calculateXP(num);
                 }
+                if(skill.equals("herblore")) {
+                    num = herbloreXpValue;
+                    currentLevel.setText(herbloreLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("agility")) {
+                    num = agilityXpValue;
+                    currentLevel.setText(agilityLvlValue);
+                    calculateXP(num);
+                }
                 if(skill.equals("thieving")) {
                     num = thievingXpValue;
                     currentLevel.setText(thievingLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("slayer")) {
+                    num = slayerXpValue;
+                    currentLevel.setText(slayerLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("farming")) {
+                    num = farmingXpValue;
+                    currentLevel.setText(farmingLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("runecraft")) {
+                    num = runecraftingXpValue;
+                    currentLevel.setText(runecraftingLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("hunter")) {
+                    num = hunterXpValue;
+                    currentLevel.setText(hunterLvlValue);
+                    calculateXP(num);
+                }
+                if(skill.equals("construction")) {
+                    num = constructionXpValue;
+                    currentLevel.setText(constructionLvlValue);
                     calculateXP(num);
                 }
             } else {
@@ -369,48 +474,430 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
         if(currentLevel.getText() != null) {
             switch (currentLvl) {
-                case "50":
+                case "15":
+                    xpLeft = Integer.parseInt("2746") - Integer.parseInt(num);
                     nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf("111945")));
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "16":
+                    xpLeft = Integer.parseInt("3115") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "17":
+                    xpLeft = Integer.parseInt("3523") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "18":
+                    xpLeft = Integer.parseInt("3973") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "19":
+                    xpLeft = Integer.parseInt("4470") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "20":
+                    xpLeft = Integer.parseInt("5018") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "21":
+                    xpLeft = Integer.parseInt("5624") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "22":
+                    xpLeft = Integer.parseInt("6291") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "23":
+                    xpLeft = Integer.parseInt("7028") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "24":
+                    xpLeft = Integer.parseInt("7842") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "25":
+                    xpLeft = Integer.parseInt("8740") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "26":
+                    xpLeft = Integer.parseInt("9730") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "27":
+                    xpLeft = Integer.parseInt("10824") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "28":
+                    xpLeft = Integer.parseInt("12031") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "29":
+                    xpLeft = Integer.parseInt("13363") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "30":
+                    xpLeft = Integer.parseInt("14833") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "31":
+                    xpLeft = Integer.parseInt("16456") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "32":
+                    xpLeft = Integer.parseInt("18247") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "33":
+                    xpLeft = Integer.parseInt("20224") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "34":
+                    xpLeft = Integer.parseInt("22406") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "35":
+                    xpLeft = Integer.parseInt("24815") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "36":
+                    xpLeft = Integer.parseInt("27473") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "37":
+                    xpLeft = Integer.parseInt("30408") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "38":
+                    xpLeft = Integer.parseInt("33648") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "39":
+                    xpLeft = Integer.parseInt("37224") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "40":
+                    xpLeft = Integer.parseInt("41171") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "41":
+                    xpLeft = Integer.parseInt("45529") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "42":
+                    xpLeft = Integer.parseInt("50339") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "43":
+                    xpLeft = Integer.parseInt("55649") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "44":
+                    xpLeft = Integer.parseInt("61512") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "45":
+                    xpLeft = Integer.parseInt("67983") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "46":
+                    xpLeft = Integer.parseInt("75127") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "47":
+                    xpLeft = Integer.parseInt("83014") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "48":
+                    xpLeft = Integer.parseInt("91721") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "49":
+                    xpLeft = Integer.parseInt("101333") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "50":
+                    xpLeft = Integer.parseInt("111945") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 case "51":
+                    xpLeft = Integer.parseInt("123660") - Integer.parseInt(num);
                     nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf("123660")));
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 case "52":
+                    xpLeft = Integer.parseInt("136594") - Integer.parseInt(num);
                     nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf("136594")));
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 case "53":
+                    xpLeft = Integer.parseInt("150872") - Integer.parseInt(num);
                     nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf("150872")));
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 case "54":
+                    xpLeft = Integer.parseInt("166636") - Integer.parseInt(num);
                     nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf("166636")));
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 case "55":
+                    xpLeft = Integer.parseInt("184040") - Integer.parseInt(num);
                     nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf("184040")));
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "56":
+                    xpLeft = Integer.parseInt("203254") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "57":
+                    xpLeft = Integer.parseInt("224466") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "58":
+                    xpLeft = Integer.parseInt("247886") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "59":
+                    xpLeft = Integer.parseInt("273742") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "60":
+                    xpLeft = Integer.parseInt("302288") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "61":
+                    xpLeft = Integer.parseInt("333804") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "62":
+                    xpLeft = Integer.parseInt("368599") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "63":
+                    xpLeft = Integer.parseInt("407015") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "64":
+                    xpLeft = Integer.parseInt("449428") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "65":
+                    xpLeft = Integer.parseInt("496254") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "66":
+                    xpLeft = Integer.parseInt("547953") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "67":
+                    xpLeft = Integer.parseInt("605032") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "68":
+                    xpLeft = Integer.parseInt("668051") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "69":
+                    xpLeft = Integer.parseInt("737627") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "70":
+                    xpLeft = Integer.parseInt("814445") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "71":
+                    xpLeft = Integer.parseInt("899257") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 case "72":
                     xpLeft = Integer.parseInt("992895") - Integer.parseInt(num);
                     nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(String.valueOf(xpLeft))));
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "73":
+                    xpLeft = Integer.parseInt("1096278") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 case "74":
+                    xpLeft = Integer.parseInt("1210421") - Integer.parseInt(num);
                     nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf("1210421")));
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 case "75":
                     xpLeft = Integer.parseInt("1336443") - Integer.parseInt(num);
-                    nextLevel.setText(b);
-                    nextXP.setText(df.format(Long.valueOf(String.valueOf(xpLeft))));
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "76":
+                    xpLeft = Integer.parseInt("1475581") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "77":
+                    xpLeft = Integer.parseInt("1629200") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "78":
+                    xpLeft = Integer.parseInt("1798808") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "79":
+                    xpLeft = Integer.parseInt("1986068") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "80":
+                    xpLeft = Integer.parseInt("2192818") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "81":
+                    xpLeft = Integer.parseInt("2421087") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "82":
+                    xpLeft = Integer.parseInt("2673114") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "83":
+                    xpLeft = Integer.parseInt("2951373") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "84":
+                    xpLeft = Integer.parseInt("3258594") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "85":
+                    xpLeft = Integer.parseInt("3597792") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "86":
+                    xpLeft = Integer.parseInt("3972294") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "87":
+                    xpLeft = Integer.parseInt("4385776") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "88":
+                    xpLeft = Integer.parseInt("4842295") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "89":
+                    xpLeft = Integer.parseInt("5346332") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "90":
+                    xpLeft = Integer.parseInt("5902831") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "91":
+                    xpLeft = Integer.parseInt("6517253") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "92":
+                    xpLeft = Integer.parseInt("7195629") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "93":
+                    xpLeft = Integer.parseInt("7944614") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "94":
+                    xpLeft = Integer.parseInt("8771558") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "95":
+                    xpLeft = Integer.parseInt("9684577") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "96":
+                    xpLeft = Integer.parseInt("10692629") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 case "97":
                     xpLeft = Integer.parseInt("11805606") - Integer.parseInt(num);
                     nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(String.valueOf(xpLeft))));
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "98":
+                    xpLeft = Integer.parseInt("13034431") - Integer.parseInt(num);
+                    nextLevel.setText(nextLvl);
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
+                    break;
+                case "99":
+                    xpLeft = Integer.parseInt("200000000") - Integer.parseInt(num);
+                    nextLevel.setText("Max XP");
+                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
                     break;
                 default:
                     nextLevel.setText("2");
