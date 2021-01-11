@@ -3,6 +3,7 @@
 
 package com.ahdesigns.osrsbuddy;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -230,6 +231,7 @@ public class hiscoreFragment extends Fragment {
     }
 
     //Get data class to get json data
+    @SuppressLint("StaticFieldLeak")
     private class GetData extends AsyncTask<Void, Void, Void> {
 
         //Before data will be looked up
@@ -483,11 +485,11 @@ public class hiscoreFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-            } else {
             }
             return null;
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
