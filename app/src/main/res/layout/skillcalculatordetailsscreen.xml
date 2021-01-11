@@ -1,52 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/skillcalculatordetailsscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/windowBackground"
-    tools:context=".skillCalculatorDetailsScreen"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/windowBackground">
 
-    <TextView
-        android:id="@+id/text"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/textColorPrimary">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    </TextView>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black_20"
+            app:layout_scrollFlags="enterAlways"
+            app:popupTheme="@style/Theme.AppCompat.Light" />
 
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/textColorPrimary">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/calculatorHeader"
+            android:layout_marginBottom="@dimen/layout_margin_bottom"
+            android:layout_marginTop="@dimen/layout_margin_top">
 
-    </TextView>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/calculatorChat">
 
-    <TextView
-        android:id="@+id/targetLevel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/textColorPrimary"
-        android:text="@string/text_51">
+                <ImageView
+                    android:contentDescription="@string/chat_head"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/chatHead"
+                    android:layout_marginEnd="@dimen/layout_margin_end"
+                    android:layout_marginStart="@dimen/layout_margin_start"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
 
-    </TextView>
+            </RelativeLayout>
 
-    <TextView
-        android:id="@+id/nextLevel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/textColorPrimary">
+            <RelativeLayout
+                android:id="@+id/calculatorScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/calculatorChat"
+                android:layout_centerVertical="true">
 
-    </TextView>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/calculatorLevels">
 
-    <TextView
-        android:id="@+id/nextXP"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/textColorPrimary">
+                    <TextView
+                        android:id="@+id/currentLevelHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/layout_margin_bottom"
+                        android:textColor="@android:color/white"
+                        android:text="@string/current_level"
+                        android:textSize="@dimen/page_text_size"/>
 
-    </TextView>
+                    <TextView
+                        android:layout_toEndOf="@id/currentLevelHeader"
+                        android:id="@+id/currentLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/layout_margin_bottom"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/page_text_size"/>
 
-</LinearLayout>
+                    <TextView
+                        android:id="@+id/nextLevelHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/currentLevelHeader"
+                        android:layout_marginBottom="@dimen/layout_margin_bottom"
+                        android:textColor="@android:color/white"
+                        android:text="@string/next_level"
+                        android:textSize="@dimen/page_text_size"/>
+
+                    <TextView
+                        android:layout_toEndOf="@id/nextLevelHeader"
+                        android:id="@+id/nextLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/currentLevel"
+                        android:layout_marginBottom="@dimen/layout_margin_bottom"
+                        android:textColor="@android:color/white"
+                        android:text="@string/text_0"
+                        android:textSize="@dimen/page_text_size"/>
+
+                    <TextView
+                        android:id="@+id/xpLeftHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nextLevelHeader"
+                        android:layout_marginBottom="@dimen/layout_margin_bottom"
+                        android:textColor="@android:color/white"
+                        android:text="@string/xp_left"
+                        android:textSize="@dimen/page_text_size"/>
+
+                    <TextView
+                        android:layout_toEndOf="@id/xpLeftHeader"
+                        android:id="@+id/nextXP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nextLevel"
+                        android:layout_marginBottom="@dimen/layout_margin_bottom"
+                        android:textColor="@android:color/white"
+                        android:text="@string/text_0"
+                        android:textSize="@dimen/page_text_size"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+</android.support.design.widget.CoordinatorLayout>
