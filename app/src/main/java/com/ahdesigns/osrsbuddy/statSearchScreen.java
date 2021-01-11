@@ -27,7 +27,7 @@ public class statSearchScreen extends AppCompatActivity {
             hironman, deadman, leagues,
             tournament;
 
-    String username, url;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +79,7 @@ public class statSearchScreen extends AppCompatActivity {
                 username = searchText.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), statsDetailScreen.class);
                 intent.putExtra("username", username);
+
                 if (normal.isChecked()) {
                     intent.putExtra("url", "normal");
                 } else if (ironman.isChecked()) {

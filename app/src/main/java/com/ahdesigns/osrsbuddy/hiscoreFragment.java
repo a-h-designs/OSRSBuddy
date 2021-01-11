@@ -535,7 +535,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (hitpointsRankValue.trim().length() == 0) {
                     hitpoints.setVisibility(View.GONE);
-                    hitpointsLvlValue = String.valueOf(10);
                 } else {
                     hitpointsrank.setText(df.format(Long.valueOf(hitpointsRankValue)));
                     hitpointslvl.setText(df.format(Long.valueOf(hitpointsLvlValue)));

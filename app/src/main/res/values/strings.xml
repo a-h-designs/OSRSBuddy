@@ -41,14 +41,99 @@
     <string name="stats_searcheg">e.g. Lynx Titan</string>
     <!-- End statsMainScreen. -->
 
-    <!-- statsSea:&#160;rchScreen. -->
+    <!-- statsSearchScreen. -->
     <string name="chat_head">Chat Head</string>
     <string name="combat_level">Combat Level:&#160;</string>
     <string name="combat_style">Combat Style:&#160;</string>
-    <string name="old_level">0</string>
     <string name="text_0">0</string>
     <string name="text_1">1</string>
+    <string name="text_2">2</string>
     <string name="text_10">10</string>
+    <string name="text_15">15</string>
+    <string name="text_16">16</string>
+    <string name="text_17">17</string>
+    <string name="text_18">18</string>
+    <string name="text_19">19</string>
+    <string name="text_20">20</string>
+    <string name="text_21">21</string>
+    <string name="text_22">22</string>
+    <string name="text_23">23</string>
+    <string name="text_24">24</string>
+    <string name="text_25">25</string>
+    <string name="text_26">26</string>
+    <string name="text_27">27</string>
+    <string name="text_28">28</string>
+    <string name="text_29">29</string>
+    <string name="text_30">30</string>
+    <string name="text_31">31</string>
+    <string name="text_32">32</string>
+    <string name="text_33">33</string>
+    <string name="text_34">34</string>
+    <string name="text_35">35</string>
+    <string name="text_36">36</string>
+    <string name="text_37">37</string>
+    <string name="text_38">38</string>
+    <string name="text_39">39</string>
+    <string name="text_40">40</string>
+    <string name="text_41">41</string>
+    <string name="text_42">42</string>
+    <string name="text_43">43</string>
+    <string name="text_44">44</string>
+    <string name="text_45">45</string>
+    <string name="text_46">46</string>
+    <string name="text_47">47</string>
+    <string name="text_48">48</string>
+    <string name="text_49">49</string>
+    <string name="text_50">50</string>
+    <string name="text_51">51</string>
+    <string name="text_52">52</string>
+    <string name="text_53">53</string>
+    <string name="text_54">54</string>
+    <string name="text_55">55</string>
+    <string name="text_56">56</string>
+    <string name="text_57">57</string>
+    <string name="text_58">58</string>
+    <string name="text_59">59</string>
+    <string name="text_60">60</string>
+    <string name="text_61">61</string>
+    <string name="text_62">62</string>
+    <string name="text_63">63</string>
+    <string name="text_64">64</string>
+    <string name="text_65">65</string>
+    <string name="text_66">66</string>
+    <string name="text_67">67</string>
+    <string name="text_68">68</string>
+    <string name="text_69">69</string>
+    <string name="text_70">70</string>
+    <string name="text_71">71</string>
+    <string name="text_72">72</string>
+    <string name="text_73">73</string>
+    <string name="text_74">74</string>
+    <string name="text_75">75</string>
+    <string name="text_76">76</string>
+    <string name="text_77">77</string>
+    <string name="text_78">78</string>
+    <string name="text_79">79</string>
+    <string name="text_80">80</string>
+    <string name="text_81">81</string>
+    <string name="text_82">82</string>
+    <string name="text_83">83</string>
+    <string name="text_84">84</string>
+    <string name="text_85">85</string>
+    <string name="text_86">86</string>
+    <string name="text_87">87</string>
+    <string name="text_88">88</string>
+    <string name="text_89">89</string>
+    <string name="text_90">90</string>
+    <string name="text_91">91</string>
+    <string name="text_92">92</string>
+    <string name="text_93">93</string>
+    <string name="text_94">94</string>
+    <string name="text_95">95</string>
+    <string name="text_96">96</string>
+    <string name="text_97">97</string>
+    <string name="text_98">98</string>
+    <string name="text_99">99</string>
     <string name="skill">Skill</string>
     <string name="level">Level</string>
     <string name="rank">Rank</string>
@@ -135,4 +220,10 @@
     <string name="wintertodt">Wintertodt</string>
     <string name="zalcano">Zalcano</string>
     <string name="zulrah">Zulrah</string>
+
+    <!-- skillCalculatorSearchScreen. -->
+    <string name="calculator_header">Skill Calculator</string>
+    <string name="calculator_searcheg">e.g. Lynx Titan</string>
+    <!-- End statsMainScreen. -->
+
 </resources>

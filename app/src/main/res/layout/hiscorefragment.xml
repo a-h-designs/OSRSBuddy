@@ -291,7 +291,7 @@
                 android:id="@+id/hitpointsrank"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="@dimen/layout_margin_start"
-                android:text="@string/text_0"
+                android:text="@string/text_10"
                 android:textColor="@android:color/white" />
 
             <TextView

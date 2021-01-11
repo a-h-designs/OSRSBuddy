@@ -61,21 +61,24 @@
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_attack"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/attack" />
                 <ImageView
                     android:id="@+id/hitpoints"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_hitpoints"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/hitpoints" />
                 <ImageView
                     android:id="@+id/mining"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_mining"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/mining" />
             </TableRow>
 
             <TableRow
@@ -87,21 +90,24 @@
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_strength"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/strength" />
                 <ImageView
                     android:id="@+id/agility"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_agility"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/agility" />
                 <ImageView
                     android:id="@+id/smithing"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_smithing"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/smithing" />
             </TableRow>
 
             <TableRow
@@ -113,21 +119,24 @@
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_defence"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/defence" />
                 <ImageView
                     android:id="@+id/herblore"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_herblore"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/herblore" />
                 <ImageView
                     android:id="@+id/fishing"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_fishing"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/fishing" />
             </TableRow>
 
             <TableRow
@@ -139,21 +148,24 @@
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_ranged"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/ranged" />
                 <ImageView
                     android:id="@+id/thieving"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_thieving"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/thieving" />
                 <ImageView
                     android:id="@+id/cooking"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_cooking"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/cooking" />
             </TableRow>
 
             <TableRow
@@ -165,21 +177,24 @@
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_prayer"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/prayer" />
                 <ImageView
                     android:id="@+id/crafting"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_crafting"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/crafting" />
                 <ImageView
                     android:id="@+id/firemaking"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_firemaking"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/firemaking" />
             </TableRow>
 
             <TableRow
@@ -191,21 +206,24 @@
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_magic"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/magic" />
                 <ImageView
                     android:id="@+id/fletching"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_fletching"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/fletching" />
                 <ImageView
                     android:id="@+id/woodcutting"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_woodcutting"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/woodcutting" />
             </TableRow>
 
             <TableRow
@@ -217,21 +235,24 @@
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_runecraft"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/runecraft" />
                 <ImageView
                     android:id="@+id/slayer"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_slayer"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/slayer" />
                 <ImageView
                     android:id="@+id/farming"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_farming"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/farming" />
             </TableRow>
 
             <TableRow
@@ -243,14 +264,16 @@
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_construction"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/construction" />
                 <ImageView
                     android:id="@+id/hunter"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="@dimen/layout_margin_top"
                     android:src="@drawable/calculator_icon_hunter"
-                    android:onClick="statSearch" />
+                    android:onClick="calculatorSearch"
+                    android:contentDescription="@string/hunter" />
             </TableRow>
 
         </TableLayout>

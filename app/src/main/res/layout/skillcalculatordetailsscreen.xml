@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".skillCalculatorDetailsScreen">
+    android:background="@color/windowBackground"
+    tools:context=".skillCalculatorDetailsScreen"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorPrimary">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorPrimary">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/targetLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorPrimary"
+        android:text="@string/text_51">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/nextLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorPrimary">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/nextXP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorPrimary">
+
+    </TextView>
+
+</LinearLayout>
