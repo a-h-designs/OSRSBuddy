@@ -54,7 +54,8 @@
                 android:background="@color/windowBackground"
                 android:onClick="statSearch"
                 android:layout_marginTop="@dimen/layout_margin_top"
-                android:layout_marginBottom="@dimen/layout_margin_bottom" />
+                android:layout_marginBottom="@dimen/layout_margin_bottom"
+                android:contentDescription="@string/search_ge_header" />
         </LinearLayout>
 
         <RadioGroup

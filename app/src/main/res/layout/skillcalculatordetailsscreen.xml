@@ -45,88 +45,84 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/calculatorScreen"
+                android:id="@+id/calculatorLevels"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/calculatorChat"
                 android:layout_centerVertical="true">
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/currentLevelHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/calculatorLevels">
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    android:textColor="@android:color/white"
+                    android:text="@string/current_level"
+                    android:textSize="@dimen/page_text_size"/>
 
-                    <TextView
-                        android:id="@+id/currentLevelHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/layout_margin_bottom"
-                        android:textColor="@android:color/white"
-                        android:text="@string/current_level"
-                        android:textSize="@dimen/page_text_size"/>
-
-                    <TextView
-                        android:layout_toEndOf="@id/currentLevelHeader"
-                        android:id="@+id/currentLevel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/layout_margin_bottom"
-                        android:textColor="@android:color/white"
-                        android:text="@string/text_0"
-                        android:textSize="@dimen/page_text_size"/>
-
-                    <TextView
-                        android:id="@+id/nextLevelHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/currentLevelHeader"
-                        android:layout_marginBottom="@dimen/layout_margin_bottom"
-                        android:textColor="@android:color/white"
-                        android:text="@string/next_level"
-                        android:textSize="@dimen/page_text_size"/>
-
-                    <TextView
-                        android:layout_toEndOf="@id/nextLevelHeader"
-                        android:id="@+id/nextLevel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/currentLevel"
-                        android:layout_marginBottom="@dimen/layout_margin_bottom"
-                        android:textColor="@android:color/white"
-                        android:text="@string/text_0"
-                        android:textSize="@dimen/page_text_size"/>
-
-                    <TextView
-                        android:id="@+id/xpLeftHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/nextLevelHeader"
-                        android:layout_marginBottom="@dimen/layout_margin_bottom"
-                        android:textColor="@android:color/white"
-                        android:text="@string/xp_left"
-                        android:textSize="@dimen/page_text_size"/>
-
-                    <TextView
-                        android:layout_toEndOf="@id/xpLeftHeader"
-                        android:id="@+id/nextXP"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/nextLevel"
-                        android:layout_marginBottom="@dimen/layout_margin_bottom"
-                        android:textColor="@android:color/white"
-                        android:text="@string/text_0"
-                        android:textSize="@dimen/page_text_size"/>
-
-                </RelativeLayout>
-                <RelativeLayout
+                <TextView
+                    android:layout_toEndOf="@id/currentLevelHeader"
+                    android:id="@+id/currentLevel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/calculatorItems"
-                    android:layout_below="@+id/calculatorLevels">
-                </RelativeLayout>
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    android:textColor="@android:color/white"
+                    android:text="@string/text_0"
+                    android:textSize="@dimen/page_text_size"/>
+
+                <TextView
+                    android:id="@+id/nextLevelHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/currentLevelHeader"
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    android:textColor="@android:color/white"
+                    android:text="@string/next_level"
+                    android:textSize="@dimen/page_text_size"/>
+
+                <TextView
+                    android:layout_toEndOf="@id/nextLevelHeader"
+                    android:id="@+id/nextLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/currentLevel"
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    android:textColor="@android:color/white"
+                    android:text="@string/text_0"
+                    android:textSize="@dimen/page_text_size"/>
+
+                <TextView
+                    android:id="@+id/xpLeftHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nextLevelHeader"
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    android:textColor="@android:color/white"
+                    android:text="@string/xp_left"
+                    android:textSize="@dimen/page_text_size"/>
+
+                <TextView
+                    android:layout_toEndOf="@id/xpLeftHeader"
+                    android:id="@+id/nextXP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nextLevel"
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    android:textColor="@android:color/white"
+                    android:text="@string/text_0"
+                    android:textSize="@dimen/page_text_size"/>
+
             </RelativeLayout>
         </RelativeLayout>
 
     </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calculatorItems"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

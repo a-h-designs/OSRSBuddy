@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/copper"
+            android:contentDescription="@string/overall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mining_icon_copper" />
+
+        <TextView
+            android:id="@+id/coppertxt"
+            android:layout_toEndOf="@+id/copper"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center_vertical"
+            android:text="@string/skill"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/coal"
+            android:layout_below="@+id/copper"
+            android:contentDescription="@string/overall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mining_icon_coal" />
+
+        <TextView
+            android:id="@+id/coaltxt"
+            android:layout_toEndOf="@id/coal"
+            android:layout_below="@id/coppertxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center_vertical"
+            android:text="@string/skill"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/paydirt"
+            android:layout_below="@+id/coal"
+            android:contentDescription="@string/overall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mining_icon_paydirt" />
+
+        <TextView
+            android:id="@+id/paydirttxt"
+            android:layout_toEndOf="@id/paydirt"
+            android:layout_below="@id/coaltxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center_vertical"
+            android:text="@string/skill"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/gold"
+            android:layout_below="@+id/paydirt"
+            android:contentDescription="@string/overall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mining_icon_gold" />
+
+        <TextView
+            android:id="@+id/goldtxt"
+            android:layout_toEndOf="@id/gold"
+            android:layout_below="@id/paydirttxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center_vertical"
+            android:text="@string/skill"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/mith"
+            android:layout_below="@+id/gold"
+            android:contentDescription="@string/overall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mining_icon_mith" />
+
+        <TextView
+            android:id="@+id/mithtxt"
+            android:layout_toEndOf="@id/mith"
+            android:layout_below="@id/goldtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center_vertical"
+            android:text="@string/skill"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/addy"
+            android:layout_below="@+id/mith"
+            android:contentDescription="@string/overall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mining_icon_addy" />
+
+        <TextView
+            android:id="@+id/addytxt"
+            android:layout_toEndOf="@id/addy"
+            android:layout_below="@id/mithtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center_vertical"
+            android:text="@string/skill"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/rune"
+            android:layout_below="@+id/addy"
+            android:contentDescription="@string/overall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mining_icon_rune" />
+
+        <TextView
+            android:id="@+id/runetxt"
+            android:layout_toEndOf="@id/rune"
+            android:layout_below="@id/addytxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center_vertical"
+            android:text="@string/skill"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/amethyst"
+            android:layout_below="@+id/rune"
+            android:contentDescription="@string/overall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@drawable/mining_icon_amethyst" />
+
+        <TextView
+            android:id="@+id/amethysttxt"
+            android:layout_toEndOf="@id/amethyst"
+            android:layout_below="@id/runetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/layout_margin_top"
+            android:gravity="center_vertical"
+            android:text="@string/skill"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+</ScrollView>

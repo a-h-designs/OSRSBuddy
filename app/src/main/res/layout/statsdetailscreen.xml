@@ -59,7 +59,8 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/game_icon_ultimate_ironman"
                         android:layout_centerVertical="true"
-                        android:id="@+id/chatIcon"/>
+                        android:id="@+id/chatIcon"
+                        android:contentDescription="@string/chat_head" />
 
                     <TextView
                         android:id="@+id/user"

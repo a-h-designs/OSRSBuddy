@@ -6,7 +6,10 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,7 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Objects;
 
 public class skillCalculatorDetailsScreen extends AppCompatActivity {
@@ -24,9 +28,9 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
     TextView currentLevel, nextLevel, nextXP;
 
-    String username, skill, num, nextLvl, b,
+    String username, skill, num, nextLvl,
             title, imageSrc, jsonURL,
-            url, currentLvl, overallRankValue,
+            currentLvl, overallRankValue,
             attackLvlValue, attackXpValue,
             defenceLvlValue, defenceXpValue,
             strengthLvlValue, strengthXpValue,
@@ -51,15 +55,31 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
             hunterLvlValue, hunterXpValue,
             constructionLvlValue, constructionXpValue;
 
-    int resImage, sum, xpLeft;
+    int resImage, sum, xpLeft,
+            copperToGo,
+            coal, coalToGo,
+            paydirt, paydirtToGo,
+            gold, goldToGo,
+            mith, mithToGo,
+            addy, addyToGo,
+            rune, runeToGo,
+            amethyst, amethystToGo;
+
+    double copper;
 
     private ProgressDialog pDialog;
+
+    private RelativeLayout layout;
+    private LayoutInflater inflate;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.skillcalculatordetailsscreen);
+
+        inflate = LayoutInflater.from(getApplicationContext());
+        layout = findViewById(R.id.calculatorItems);
 
         skillImage = findViewById(R.id.chatHead);
 
@@ -80,7 +100,7 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
         getSupportActionBar().setTitle(title);
 
         try {
-            assert url != null;
+            assert skill != null;
             jsonURL = "http://ahdesigns.coolpage.biz/old_hiscores.php?user=" + URLEncoder.encode(username, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -338,6 +358,10 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                 if (pDialog.isShowing())
                     pDialog.dismiss();
 
+                DecimalFormat df = new DecimalFormat();
+                df.setGroupingUsed(true);
+                df.setGroupingSize(3);
+
                 if(skill.equals("attack")) {
                     num = attackXpValue;
                     currentLevel.setText(attackLvlValue);
@@ -412,6 +436,48 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     num = miningXpValue;
                     currentLevel.setText(miningLvlValue);
                     calculateXP(num);
+                    View mining = inflate.inflate(R.layout.miningcalculator , null, false);
+                    layout.addView(mining);
+                    TextView coppertxt = findViewById(R.id.coppertxt);
+                    TextView coalTxt = findViewById(R.id.coaltxt);
+                    TextView paydirtTxt = findViewById(R.id.paydirttxt);
+                    TextView goldTxt = findViewById(R.id.goldtxt);
+                    TextView mithTxt = findViewById(R.id.mithtxt);
+                    TextView addyTxt = findViewById(R.id.addytxt);
+                    TextView runeTxt = findViewById(R.id.runetxt);
+                    TextView amethystTxt = findViewById(R.id.amethysttxt);
+                    copper = 17.5;
+                    coal = 50;
+                    paydirt = 60;
+                    gold = 65;
+                    mith = 80;
+                    addy = 95;
+                    rune = 125;
+                    amethyst = 240;
+                    copperToGo = (int) (xpLeft / copper);
+                    coalToGo = xpLeft / coal;
+                    paydirtToGo = xpLeft / paydirt;
+                    goldToGo = xpLeft / gold;
+                    mithToGo = xpLeft / mith;
+                    addyToGo = xpLeft / addy;
+                    runeToGo = xpLeft / rune;
+                    amethystToGo = xpLeft / amethyst;
+                    String co = NumberFormat.getIntegerInstance().format(copperToGo);
+                    String c = NumberFormat.getIntegerInstance().format(coalToGo);
+                    String pd = NumberFormat.getIntegerInstance().format(paydirtToGo);
+                    String g = NumberFormat.getIntegerInstance().format(goldToGo);
+                    String m = NumberFormat.getIntegerInstance().format(mithToGo);
+                    String a = NumberFormat.getIntegerInstance().format(addyToGo);
+                    String r = NumberFormat.getIntegerInstance().format(runeToGo);
+                    String am = NumberFormat.getIntegerInstance().format(amethystToGo);
+                    coppertxt.setText(co);
+                    coalTxt.setText(c);
+                    paydirtTxt.setText(pd);
+                    goldTxt.setText(g);
+                    mithTxt.setText(m);
+                    addyTxt.setText(a);
+                    runeTxt.setText(r);
+                    amethystTxt.setText(am);
                 }
                 if(skill.equals("herblore")) {
                     num = herbloreXpValue;

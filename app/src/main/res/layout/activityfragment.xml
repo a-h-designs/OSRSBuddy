@@ -513,6 +513,48 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:id="@+id/zeal">
+
+            <ImageView
+                android:contentDescription="@string/zeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_margin_top"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/game_icon_soulwarszeal"
+                android:id="@+id/zeal_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:text="@string/zeal"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/zealrank"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/zealscore"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:text="@string/text_0"
+                android:textColor="#ffffff" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
             android:id="@+id/sire">
 
             <ImageView

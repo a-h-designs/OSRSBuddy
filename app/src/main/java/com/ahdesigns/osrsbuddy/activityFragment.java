@@ -24,7 +24,8 @@ public class activityFragment extends Fragment {
     TableRow league, bhh, bhr,
             csa, csb, cse,
             csm, csh, csel,
-            csma, lms, sire,
+            csma, lms,
+            zeal, sire,
             hydra, barrows, bryophyta,
             callisto, cerberus, cox,
             coxcm, elemental, fanatic,
@@ -52,6 +53,7 @@ public class activityFragment extends Fragment {
             cselrank, cselscore,
             csmarank, csmascore,
             lmsrank, lmsscore,
+            zealrank, zealscore,
             sirerank, sirescore,
             hydrarank, hydrascore,
             barrowsrank, barrowsscore,
@@ -109,6 +111,7 @@ public class activityFragment extends Fragment {
             cselRankValue, cselScoreValue,
             csmaRankValue, csmaScoreValue,
             lmsRankValue, lmsScoreValue,
+            zealRankValue, zealScoreValue,
             sireRankValue, sireScoreValue,
             hydraRankValue, hydraScoreValue,
             barrowsRankValue, barrowsScoreValue,
@@ -178,6 +181,7 @@ public class activityFragment extends Fragment {
         csel = view.findViewById(R.id.csel);
         csma = view.findViewById(R.id.csma);
         lms = view.findViewById(R.id.lms);
+        zeal = view.findViewById(R.id.zeal);
         sire = view.findViewById(R.id.sire);
         hydra = view.findViewById(R.id.hydra);
         barrows = view.findViewById(R.id.barrows);
@@ -245,6 +249,8 @@ public class activityFragment extends Fragment {
         csmascore = view.findViewById(R.id.csmascore);
         lmsrank = view.findViewById(R.id.lmsrank);
         lmsscore = view.findViewById(R.id.lmsscore);
+        zealrank = view.findViewById(R.id.zealrank);
+        zealscore = view.findViewById(R.id.zealscore);
         sirerank = view.findViewById(R.id.sirerank);
         sirescore = view.findViewById(R.id.sirescore);
         hydrarank = view.findViewById(R.id.hydrarank);
@@ -476,6 +482,14 @@ public class activityFragment extends Fragment {
                     //Assign all string and int to variables
                     lmsRankValue = lms.getString("rank");
                     lmsScoreValue = lms.getString("score");
+
+                    // Getting the 'zeal' object from the JSON object
+                    JSONObject zeal = jsonObj.getJSONObject("zeal");
+
+                    //From the 'sire' object, we want the below strings
+                    //Assign all string and int to variables
+                    zealRankValue = zeal.getString("rank");
+                    zealScoreValue = zeal.getString("score");
 
                     // Getting the 'sire' object from the JSON object
                     JSONObject sire = jsonObj.getJSONObject("sire");
@@ -921,6 +935,12 @@ public class activityFragment extends Fragment {
                 } else {
                     lmsrank.setText(df.format(Long.valueOf(lmsRankValue)));
                     lmsscore.setText(df.format(Long.valueOf(lmsScoreValue)));
+                }
+                if (zealRankValue.trim().length() == 0) {
+                    zeal.setVisibility(View.GONE);
+                } else {
+                    zealrank.setText(df.format(Long.valueOf(zealRankValue)));
+                    zealscore.setText(df.format(Long.valueOf(zealScoreValue)));
                 }
                 if (sireRankValue.trim().length() == 0) {
                     sire.setVisibility(View.GONE);
