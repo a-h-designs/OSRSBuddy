@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +29,8 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
     TextView currentLevel, nextLevel, nextXP;
 
-    String username, skill, num, nextLvl,
+    String username, skill, num,
+            nextLvl,
             title, imageSrc, jsonURL,
             currentLvl, overallRankValue,
             attackLvlValue, attackXpValue,
@@ -56,7 +58,7 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
             constructionLvlValue, constructionXpValue;
 
     int resImage, sum, xpLeft,
-            copperToGo,
+            num2, copperToGo,
             coal, coalToGo,
             paydirt, paydirtToGo,
             gold, goldToGo,
@@ -435,49 +437,9 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                 if(skill.equals("mining")) {
                     num = miningXpValue;
                     currentLevel.setText(miningLvlValue);
+                    num2 = Integer.parseInt(miningLvlValue);
                     calculateXP(num);
-                    View mining = inflate.inflate(R.layout.miningcalculator , null, false);
-                    layout.addView(mining);
-                    TextView coppertxt = findViewById(R.id.coppertxt);
-                    TextView coalTxt = findViewById(R.id.coaltxt);
-                    TextView paydirtTxt = findViewById(R.id.paydirttxt);
-                    TextView goldTxt = findViewById(R.id.goldtxt);
-                    TextView mithTxt = findViewById(R.id.mithtxt);
-                    TextView addyTxt = findViewById(R.id.addytxt);
-                    TextView runeTxt = findViewById(R.id.runetxt);
-                    TextView amethystTxt = findViewById(R.id.amethysttxt);
-                    copper = 17.5;
-                    coal = 50;
-                    paydirt = 60;
-                    gold = 65;
-                    mith = 80;
-                    addy = 95;
-                    rune = 125;
-                    amethyst = 240;
-                    copperToGo = (int) (xpLeft / copper);
-                    coalToGo = xpLeft / coal;
-                    paydirtToGo = xpLeft / paydirt;
-                    goldToGo = xpLeft / gold;
-                    mithToGo = xpLeft / mith;
-                    addyToGo = xpLeft / addy;
-                    runeToGo = xpLeft / rune;
-                    amethystToGo = xpLeft / amethyst;
-                    String co = NumberFormat.getIntegerInstance().format(copperToGo);
-                    String c = NumberFormat.getIntegerInstance().format(coalToGo);
-                    String pd = NumberFormat.getIntegerInstance().format(paydirtToGo);
-                    String g = NumberFormat.getIntegerInstance().format(goldToGo);
-                    String m = NumberFormat.getIntegerInstance().format(mithToGo);
-                    String a = NumberFormat.getIntegerInstance().format(addyToGo);
-                    String r = NumberFormat.getIntegerInstance().format(runeToGo);
-                    String am = NumberFormat.getIntegerInstance().format(amethystToGo);
-                    coppertxt.setText(co);
-                    coalTxt.setText(c);
-                    paydirtTxt.setText(pd);
-                    goldTxt.setText(g);
-                    mithTxt.setText(m);
-                    addyTxt.setText(a);
-                    runeTxt.setText(r);
-                    amethystTxt.setText(am);
+                    miningCalculate(num2);
                 }
                 if(skill.equals("herblore")) {
                     num = herbloreXpValue;
@@ -970,6 +932,84 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     nextXP.setText(df.format(Long.valueOf("83")));
                     break;
             }
+        }
+    }
+
+    @SuppressLint("InflateParams")
+    public void miningCalculate(Integer num2) {
+        View mining = inflate.inflate(R.layout.miningcalculator , null, false);
+        layout.addView(mining);
+        TableRow coalrow = findViewById(R.id.coalrow);
+        TableRow paydirtrow = findViewById(R.id.paydirtrow);
+        TableRow goldrow = findViewById(R.id.goldrow);
+        TableRow mithrow = findViewById(R.id.mithrow);
+        TableRow addyrow = findViewById(R.id.addyrow);
+        TableRow runerow = findViewById(R.id.runerow);
+        TableRow amethystrow = findViewById(R.id.amethystrow);
+        TextView coppertxt = findViewById(R.id.coppertxt);
+        TextView coalTxt = findViewById(R.id.coaltxt);
+        TextView paydirtTxt = findViewById(R.id.paydirttxt);
+        TextView goldTxt = findViewById(R.id.goldtxt);
+        TextView mithTxt = findViewById(R.id.mithtxt);
+        TextView addyTxt = findViewById(R.id.addytxt);
+        TextView runeTxt = findViewById(R.id.runetxt);
+        TextView amethystTxt = findViewById(R.id.amethysttxt);
+        copper = 17.5;
+        coal = 50;
+        paydirt = 60;
+        gold = 65;
+        mith = 80;
+        addy = 95;
+        rune = 125;
+        amethyst = 240;
+        copperToGo = (int) (xpLeft / copper);
+        coalToGo = xpLeft / coal;
+        paydirtToGo = xpLeft / paydirt;
+        goldToGo = xpLeft / gold;
+        mithToGo = xpLeft / mith;
+        addyToGo = xpLeft / addy;
+        runeToGo = xpLeft / rune;
+        amethystToGo = xpLeft / amethyst;
+        String co = NumberFormat.getIntegerInstance().format(copperToGo);
+        String c = NumberFormat.getIntegerInstance().format(coalToGo);
+        String pd = NumberFormat.getIntegerInstance().format(paydirtToGo);
+        String g = NumberFormat.getIntegerInstance().format(goldToGo);
+        String m = NumberFormat.getIntegerInstance().format(mithToGo);
+        String a = NumberFormat.getIntegerInstance().format(addyToGo);
+        String r = NumberFormat.getIntegerInstance().format(runeToGo);
+        String am = NumberFormat.getIntegerInstance().format(amethystToGo);
+        coppertxt.setText(co);
+        if (num2 >= 30) {
+            coalTxt.setText(c);
+            paydirtTxt.setText(pd);
+        } else {
+            coalrow.setVisibility(View.GONE);
+            paydirtrow.setVisibility(View.GONE);
+        }
+        if (num2 >= 40) {
+            goldTxt.setText(g);
+        } else {
+            goldrow.setVisibility(View.GONE);
+        }
+        if (num2 >= 55) {
+            mithTxt.setText(m);
+        } else {
+            mithrow.setVisibility(View.GONE);
+        }
+        if (num2 >= 70) {
+            addyTxt.setText(a);
+        } else {
+            addyrow.setVisibility(View.GONE);
+        }
+        if (num2 >= 85) {
+            runeTxt.setText(r);
+        } else {
+            runerow.setVisibility(View.GONE);
+        }
+        if (num2 >= 92) {
+            amethystTxt.setText(am);
+        } else {
+            amethystrow.setVisibility(View.GONE);
         }
     }
 }

@@ -146,6 +146,13 @@
     <string name="current_level">Current Level:&#160;</string>
     <string name="next_level">Next Level:&#160;</string>
     <string name="xp_left">XP Left:&#160;</string>
+    <string name="amount">Amount</string>
+    <string name="text_30">30</string>
+    <string name="text_40">40</string>
+    <string name="text_55">55</string>
+    <string name="text_70">70</string>
+    <string name="text_85">85</string>
+    <string name="text_92">92</string>
     <!-- End skillCalculatorDetailsScreen. -->
 
 </resources>
