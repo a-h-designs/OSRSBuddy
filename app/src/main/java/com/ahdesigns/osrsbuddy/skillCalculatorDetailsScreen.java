@@ -2,6 +2,7 @@ package com.ahdesigns.osrsbuddy;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +20,6 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.Objects;
 
 public class skillCalculatorDetailsScreen extends AppCompatActivity {
@@ -29,45 +28,25 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
     TextView currentLevel, nextLevel, nextXP;
 
+    View mining;
+
     String username, skill, num,
             nextLvl,
             title, imageSrc, jsonURL,
-            currentLvl, overallRankValue,
-            attackLvlValue, attackXpValue,
-            defenceLvlValue, defenceXpValue,
-            strengthLvlValue, strengthXpValue,
-            hitpointsLvlValue,hitpointsXpValue,
-            rangedLvlValue, rangedXpValue,
-            prayerLvlValue, prayerXpValue,
-            magicLvlValue, magicXpValue,
-            cookingLvlValue, cookingXpValue,
-            woodcuttingLvlValue, woodcuttingXpValue,
-            fletchingLvlValue, fletchingXpValue,
-            fishingLvlValue, fishingXpValue,
-            firemakingLvlValue, firemakingXpValue,
-            craftingLvlValue, craftingXpValue,
-            smithingLvlValue, smithingXpValue,
-            miningLvlValue, miningXpValue,
-            herbloreLvlValue, herbloreXpValue,
-            agilityLvlValue, agilityXpValue,
-            thievingLvlValue, thievingXpValue,
-            slayerLvlValue, slayerXpValue,
-            farmingLvlValue, farmingXpValue,
-            runecraftingLvlValue, runecraftingXpValue,
-            hunterLvlValue, hunterXpValue,
-            constructionLvlValue, constructionXpValue;
+            //hiscore strings
+            currentLvl, overallRankValue, attackLvlValue, attackXpValue, defenceLvlValue,
+            defenceXpValue, strengthLvlValue, strengthXpValue, hitpointsLvlValue,hitpointsXpValue,
+            rangedLvlValue, rangedXpValue, prayerLvlValue, prayerXpValue, magicLvlValue,
+            magicXpValue, cookingLvlValue, cookingXpValue, woodcuttingLvlValue, woodcuttingXpValue,
+            fletchingLvlValue, fletchingXpValue, fishingLvlValue, fishingXpValue,
+            firemakingLvlValue, firemakingXpValue, craftingLvlValue, craftingXpValue,
+            smithingLvlValue, smithingXpValue, miningLvlValue, miningXpValue, herbloreLvlValue,
+            herbloreXpValue, agilityLvlValue, agilityXpValue, thievingLvlValue, thievingXpValue,
+            slayerLvlValue, slayerXpValue, farmingLvlValue, farmingXpValue, runecraftingLvlValue,
+            runecraftingXpValue, hunterLvlValue, hunterXpValue, constructionLvlValue,
+            constructionXpValue;
 
-    int resImage, sum, xpLeft,
-            num2, copperToGo,
-            coal, coalToGo,
-            paydirt, paydirtToGo,
-            gold, goldToGo,
-            mith, mithToGo,
-            addy, addyToGo,
-            rune, runeToGo,
-            amethyst, amethystToGo;
-
-    double copper;
+    int resImage, sum, xpLeft, num2;
 
     private ProgressDialog pDialog;
 
@@ -349,11 +328,14 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
             return null;
         }
 
+        @SuppressLint("InflateParams")
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
             if(overallRankValue != null) {
+
+                calculateXP calcXP = new calculateXP();
 
                 //After we have obtained the JSON data
                 // Dismiss the progress dialog
@@ -367,119 +349,286 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                 if(skill.equals("attack")) {
                     num = attackXpValue;
                     currentLevel.setText(attackLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("defence")) {
                     num = defenceXpValue;
                     currentLevel.setText(defenceLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("strength")) {
                     num = strengthXpValue;
                     currentLevel.setText(strengthLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("hitpoints")) {
                     num = hitpointsXpValue;
                     currentLevel.setText(hitpointsLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("ranged")) {
                     num = rangedXpValue;
                     currentLevel.setText(rangedLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("prayer")) {
                     num = prayerXpValue;
                     currentLevel.setText(prayerLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("magic")) {
                     num = magicXpValue;
                     currentLevel.setText(magicLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("cooking")) {
                     num = cookingXpValue;
                     currentLevel.setText(cookingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("woodcutting")) {
                     num = woodcuttingXpValue;
                     currentLevel.setText(woodcuttingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("fletching")) {
                     num = fletchingXpValue;
                     currentLevel.setText(fletchingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("fishing")) {
                     num = fishingXpValue;
                     currentLevel.setText(fishingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("firemaking")) {
                     num = firemakingXpValue;
                     currentLevel.setText(firemakingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("crafting")) {
                     num = craftingXpValue;
                     currentLevel.setText(craftingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("smithing")) {
                     num = smithingXpValue;
                     currentLevel.setText(smithingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("mining")) {
+                    mining = inflate.inflate(R.layout.miningcalculator , null, false);
+                    RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                            RelativeLayout.LayoutParams.MATCH_PARENT,
+                            RelativeLayout.LayoutParams.MATCH_PARENT);
+                    mining.setLayoutParams(imageViewParam);
+                    layout.addView(mining);
+                    miningCalculator mineCalc = new miningCalculator();
                     num = miningXpValue;
                     currentLevel.setText(miningLvlValue);
+                    currentLvl = currentLevel.getText().toString();
                     num2 = Integer.parseInt(miningLvlValue);
-                    calculateXP(num);
-                    miningCalculate(num2);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
+                    mineCalc.calculate(num2, xpLeft, mining);
                 }
                 if(skill.equals("herblore")) {
                     num = herbloreXpValue;
                     currentLevel.setText(herbloreLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("agility")) {
                     num = agilityXpValue;
                     currentLevel.setText(agilityLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("thieving")) {
                     num = thievingXpValue;
                     currentLevel.setText(thievingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("slayer")) {
                     num = slayerXpValue;
                     currentLevel.setText(slayerLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("farming")) {
                     num = farmingXpValue;
                     currentLevel.setText(farmingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("runecraft")) {
                     num = runecraftingXpValue;
                     currentLevel.setText(runecraftingLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("hunter")) {
                     num = hunterXpValue;
                     currentLevel.setText(hunterLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
                 if(skill.equals("construction")) {
                     num = constructionXpValue;
                     currentLevel.setText(constructionLvlValue);
-                    calculateXP(num);
+                    currentLvl = currentLevel.getText().toString();
+                    num2 = Integer.parseInt(miningLvlValue);
+                    calcXP.calculate(num, currentLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
+                    nextLvl = String.valueOf(sum);
+                    nextLevel.setText(nextLvl);
                 }
             } else {
                 if (pDialog.isShowing())
@@ -490,526 +639,6 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("SetTextI18n")
-    public void calculateXP(String num){
-        DecimalFormat df = new DecimalFormat();
-        df.setGroupingUsed(true);
-        df.setGroupingSize(3);
-
-        currentLvl = currentLevel.getText().toString();
-        sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
-        nextLvl = String.valueOf(sum);
-
-        if(currentLevel.getText() != null) {
-            switch (currentLvl) {
-                case "15":
-                    xpLeft = Integer.parseInt("2746") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "16":
-                    xpLeft = Integer.parseInt("3115") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "17":
-                    xpLeft = Integer.parseInt("3523") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "18":
-                    xpLeft = Integer.parseInt("3973") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "19":
-                    xpLeft = Integer.parseInt("4470") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "20":
-                    xpLeft = Integer.parseInt("5018") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "21":
-                    xpLeft = Integer.parseInt("5624") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "22":
-                    xpLeft = Integer.parseInt("6291") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "23":
-                    xpLeft = Integer.parseInt("7028") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "24":
-                    xpLeft = Integer.parseInt("7842") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "25":
-                    xpLeft = Integer.parseInt("8740") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "26":
-                    xpLeft = Integer.parseInt("9730") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "27":
-                    xpLeft = Integer.parseInt("10824") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "28":
-                    xpLeft = Integer.parseInt("12031") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "29":
-                    xpLeft = Integer.parseInt("13363") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "30":
-                    xpLeft = Integer.parseInt("14833") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "31":
-                    xpLeft = Integer.parseInt("16456") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "32":
-                    xpLeft = Integer.parseInt("18247") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "33":
-                    xpLeft = Integer.parseInt("20224") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "34":
-                    xpLeft = Integer.parseInt("22406") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "35":
-                    xpLeft = Integer.parseInt("24815") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "36":
-                    xpLeft = Integer.parseInt("27473") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "37":
-                    xpLeft = Integer.parseInt("30408") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "38":
-                    xpLeft = Integer.parseInt("33648") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "39":
-                    xpLeft = Integer.parseInt("37224") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "40":
-                    xpLeft = Integer.parseInt("41171") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "41":
-                    xpLeft = Integer.parseInt("45529") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "42":
-                    xpLeft = Integer.parseInt("50339") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "43":
-                    xpLeft = Integer.parseInt("55649") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "44":
-                    xpLeft = Integer.parseInt("61512") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "45":
-                    xpLeft = Integer.parseInt("67983") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "46":
-                    xpLeft = Integer.parseInt("75127") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "47":
-                    xpLeft = Integer.parseInt("83014") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "48":
-                    xpLeft = Integer.parseInt("91721") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "49":
-                    xpLeft = Integer.parseInt("101333") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "50":
-                    xpLeft = Integer.parseInt("111945") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "51":
-                    xpLeft = Integer.parseInt("123660") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "52":
-                    xpLeft = Integer.parseInt("136594") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "53":
-                    xpLeft = Integer.parseInt("150872") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "54":
-                    xpLeft = Integer.parseInt("166636") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "55":
-                    xpLeft = Integer.parseInt("184040") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "56":
-                    xpLeft = Integer.parseInt("203254") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "57":
-                    xpLeft = Integer.parseInt("224466") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "58":
-                    xpLeft = Integer.parseInt("247886") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "59":
-                    xpLeft = Integer.parseInt("273742") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "60":
-                    xpLeft = Integer.parseInt("302288") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "61":
-                    xpLeft = Integer.parseInt("333804") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "62":
-                    xpLeft = Integer.parseInt("368599") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "63":
-                    xpLeft = Integer.parseInt("407015") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "64":
-                    xpLeft = Integer.parseInt("449428") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "65":
-                    xpLeft = Integer.parseInt("496254") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "66":
-                    xpLeft = Integer.parseInt("547953") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "67":
-                    xpLeft = Integer.parseInt("605032") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "68":
-                    xpLeft = Integer.parseInt("668051") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "69":
-                    xpLeft = Integer.parseInt("737627") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "70":
-                    xpLeft = Integer.parseInt("814445") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "71":
-                    xpLeft = Integer.parseInt("899257") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "72":
-                    xpLeft = Integer.parseInt("992895") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "73":
-                    xpLeft = Integer.parseInt("1096278") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "74":
-                    xpLeft = Integer.parseInt("1210421") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "75":
-                    xpLeft = Integer.parseInt("1336443") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "76":
-                    xpLeft = Integer.parseInt("1475581") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "77":
-                    xpLeft = Integer.parseInt("1629200") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "78":
-                    xpLeft = Integer.parseInt("1798808") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "79":
-                    xpLeft = Integer.parseInt("1986068") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "80":
-                    xpLeft = Integer.parseInt("2192818") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "81":
-                    xpLeft = Integer.parseInt("2421087") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "82":
-                    xpLeft = Integer.parseInt("2673114") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "83":
-                    xpLeft = Integer.parseInt("2951373") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "84":
-                    xpLeft = Integer.parseInt("3258594") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "85":
-                    xpLeft = Integer.parseInt("3597792") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "86":
-                    xpLeft = Integer.parseInt("3972294") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "87":
-                    xpLeft = Integer.parseInt("4385776") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "88":
-                    xpLeft = Integer.parseInt("4842295") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "89":
-                    xpLeft = Integer.parseInt("5346332") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "90":
-                    xpLeft = Integer.parseInt("5902831") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "91":
-                    xpLeft = Integer.parseInt("6517253") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "92":
-                    xpLeft = Integer.parseInt("7195629") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "93":
-                    xpLeft = Integer.parseInt("7944614") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "94":
-                    xpLeft = Integer.parseInt("8771558") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "95":
-                    xpLeft = Integer.parseInt("9684577") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "96":
-                    xpLeft = Integer.parseInt("10692629") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "97":
-                    xpLeft = Integer.parseInt("11805606") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "98":
-                    xpLeft = Integer.parseInt("13034431") - Integer.parseInt(num);
-                    nextLevel.setText(nextLvl);
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                case "99":
-                    xpLeft = Integer.parseInt("200000000") - Integer.parseInt(num);
-                    nextLevel.setText("Max XP");
-                    nextXP.setText(df.format(Long.valueOf(xpLeft)));
-                    break;
-                default:
-                    nextLevel.setText("2");
-                    nextXP.setText(df.format(Long.valueOf("83")));
-                    break;
-            }
-        }
-    }
-
-    @SuppressLint("InflateParams")
-    public void miningCalculate(Integer num2) {
-        View mining = inflate.inflate(R.layout.miningcalculator , null, false);
-        layout.addView(mining);
-        TableRow coalrow = findViewById(R.id.coalrow);
-        TableRow paydirtrow = findViewById(R.id.paydirtrow);
-        TableRow goldrow = findViewById(R.id.goldrow);
-        TableRow mithrow = findViewById(R.id.mithrow);
-        TableRow addyrow = findViewById(R.id.addyrow);
-        TableRow runerow = findViewById(R.id.runerow);
-        TableRow amethystrow = findViewById(R.id.amethystrow);
-        TextView coppertxt = findViewById(R.id.coppertxt);
-        TextView coalTxt = findViewById(R.id.coaltxt);
-        TextView paydirtTxt = findViewById(R.id.paydirttxt);
-        TextView goldTxt = findViewById(R.id.goldtxt);
-        TextView mithTxt = findViewById(R.id.mithtxt);
-        TextView addyTxt = findViewById(R.id.addytxt);
-        TextView runeTxt = findViewById(R.id.runetxt);
-        TextView amethystTxt = findViewById(R.id.amethysttxt);
-        copper = 17.5;
-        coal = 50;
-        paydirt = 60;
-        gold = 65;
-        mith = 80;
-        addy = 95;
-        rune = 125;
-        amethyst = 240;
-        copperToGo = (int) (xpLeft / copper);
-        coalToGo = xpLeft / coal;
-        paydirtToGo = xpLeft / paydirt;
-        goldToGo = xpLeft / gold;
-        mithToGo = xpLeft / mith;
-        addyToGo = xpLeft / addy;
-        runeToGo = xpLeft / rune;
-        amethystToGo = xpLeft / amethyst;
-        String co = NumberFormat.getIntegerInstance().format(copperToGo);
-        String c = NumberFormat.getIntegerInstance().format(coalToGo);
-        String pd = NumberFormat.getIntegerInstance().format(paydirtToGo);
-        String g = NumberFormat.getIntegerInstance().format(goldToGo);
-        String m = NumberFormat.getIntegerInstance().format(mithToGo);
-        String a = NumberFormat.getIntegerInstance().format(addyToGo);
-        String r = NumberFormat.getIntegerInstance().format(runeToGo);
-        String am = NumberFormat.getIntegerInstance().format(amethystToGo);
-        coppertxt.setText(co);
-        if (num2 >= 30) {
-            coalTxt.setText(c);
-            paydirtTxt.setText(pd);
-        } else {
-            coalrow.setVisibility(View.GONE);
-            paydirtrow.setVisibility(View.GONE);
-        }
-        if (num2 >= 40) {
-            goldTxt.setText(g);
-        } else {
-            goldrow.setVisibility(View.GONE);
-        }
-        if (num2 >= 55) {
-            mithTxt.setText(m);
-        } else {
-            mithrow.setVisibility(View.GONE);
-        }
-        if (num2 >= 70) {
-            addyTxt.setText(a);
-        } else {
-            addyrow.setVisibility(View.GONE);
-        }
-        if (num2 >= 85) {
-            runeTxt.setText(r);
-        } else {
-            runerow.setVisibility(View.GONE);
-        }
-        if (num2 >= 92) {
-            amethystTxt.setText(am);
-        } else {
-            amethystrow.setVisibility(View.GONE);
-        }
+    public void onBackPressed() {
     }
 }

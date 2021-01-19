@@ -2,7 +2,6 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/windowBackground"
     android:id="@+id/mainscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,12 +16,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.v7.widget.Toolbar
-            android:background="@color/black_20"
             android:id="@+id/toolbar"
             android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
             app:layout_scrollFlags="enterAlways"
-            app:popupTheme="@style/Theme.AppCompat.Light" />
+            app:popupTheme="@style/Theme.AppCompat" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -46,13 +44,12 @@
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <ImageView
-                android:background="@mipmap/ic_launcher"
-                android:contentDescription="@string/logo"
                 android:id="@+id/appIcon"
-                android:layout_height="@dimen/app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="20dp"
-                android:layout_width="@dimen/app_icon" />
+                android:background="@drawable/app_icon"
+                android:contentDescription="@string/logo" />
 
             <TextView
                 android:clickable="true"
@@ -64,7 +61,6 @@
                 android:layout_width="wrap_content"
                 android:onClick="priceActivity"
                 android:text="@string/price"
-                android:textColor="@color/textColorPrimary"
                 android:textSize="@dimen/page_text_size" />
 
             <TextView
@@ -77,7 +73,6 @@
                 android:layout_width="wrap_content"
                 android:onClick="statActivity"
                 android:text="@string/stats"
-                android:textColor="@color/textColorPrimary"
                 android:textSize="@dimen/page_text_size" />
 
             <TextView
@@ -90,7 +85,6 @@
                 android:layout_width="wrap_content"
                 android:onClick="calculatorActivity"
                 android:text="@string/calculator"
-                android:textColor="@color/textColorPrimary"
                 android:textSize="@dimen/page_text_size" />
 
             <TextView

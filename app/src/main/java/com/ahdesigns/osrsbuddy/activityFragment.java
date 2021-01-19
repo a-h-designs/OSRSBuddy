@@ -1,5 +1,6 @@
 package com.ahdesigns.osrsbuddy;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -7,9 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,27 +19,6 @@ import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class activityFragment extends Fragment {
-
-    TableRow league, bhh, bhr,
-            csa, csb, cse,
-            csm, csh, csel,
-            csma, lms,
-            zeal, sire,
-            hydra, barrows, bryophyta,
-            callisto, cerberus, cox,
-            coxcm, elemental, fanatic,
-            zilyana, corporeal, carchaeologist,
-            prime, rex, supreme,
-            darchaeologist, graardor, mole,
-            guardians, hespori, kqueen,
-            kbd, kraken, kree,
-            kril, mimic, nightmare,
-            obor, sarachnis, scorpia,
-            skotizo, gauntlet, cgauntlet,
-            tob, tsd, zuk,
-            jad, venenatis, vetion,
-            vorkath, wintertodt, zalcano,
-            zulrah;
 
     TextView leaguerank, leaguescore,
             bhhrank, bhhscore,
@@ -169,63 +147,6 @@ public class activityFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activityfragment, container, false);
-
-        league = view.findViewById(R.id.league);
-        bhh = view.findViewById(R.id.bhh);
-        bhr = view.findViewById(R.id.bhr);
-        csa = view.findViewById(R.id.csa);
-        csb = view.findViewById(R.id.csb);
-        cse = view.findViewById(R.id.cse);
-        csm = view.findViewById(R.id.csm);
-        csh = view.findViewById(R.id.csh);
-        csel = view.findViewById(R.id.csel);
-        csma = view.findViewById(R.id.csma);
-        lms = view.findViewById(R.id.lms);
-        zeal = view.findViewById(R.id.zeal);
-        sire = view.findViewById(R.id.sire);
-        hydra = view.findViewById(R.id.hydra);
-        barrows = view.findViewById(R.id.barrows);
-        bryophyta = view.findViewById(R.id.bryophyta);
-        callisto = view.findViewById(R.id.callisto);
-        cerberus = view.findViewById(R.id.cerberus);
-        cox = view.findViewById(R.id.cox);
-        coxcm = view.findViewById(R.id.coxcm);
-        elemental = view.findViewById(R.id.elemental);
-        fanatic = view.findViewById(R.id.fanatic);
-        zilyana = view.findViewById(R.id.zilyana);
-        corporeal = view.findViewById(R.id.corporeal);
-        carchaeologist = view.findViewById(R.id.carchaeologist);
-        prime = view.findViewById(R.id.prime);
-        rex = view.findViewById(R.id.rex);
-        supreme = view.findViewById(R.id.supreme);
-        darchaeologist = view.findViewById(R.id.darchaeologist);
-        graardor = view.findViewById(R.id.graardor);
-        mole = view.findViewById(R.id.mole);
-        guardians = view.findViewById(R.id.guardians);
-        hespori = view.findViewById(R.id.hespori);
-        kqueen = view.findViewById(R.id.kqueen);
-        kbd = view.findViewById(R.id.kbd);
-        kraken = view.findViewById(R.id.kraken);
-        kree = view.findViewById(R.id.kree);
-        kril = view.findViewById(R.id.kril);
-        mimic = view.findViewById(R.id.mimic);
-        nightmare = view.findViewById(R.id.nightmare);
-        obor = view.findViewById(R.id.obor);
-        sarachnis = view.findViewById(R.id.sarachnis);
-        scorpia = view.findViewById(R.id.scorpia);
-        skotizo = view.findViewById(R.id.skotizo);
-        gauntlet = view.findViewById(R.id.gauntlet);
-        cgauntlet = view.findViewById(R.id.cgauntlet);
-        tob = view.findViewById(R.id.tob);
-        tsd = view.findViewById(R.id.tsd);
-        zuk = view.findViewById(R.id.zuk);
-        jad = view.findViewById(R.id.jad);
-        venenatis = view.findViewById(R.id.venenatis);
-        vetion = view.findViewById(R.id.vetion);
-        vorkath = view.findViewById(R.id.vorkath);
-        wintertodt = view.findViewById(R.id.wintertodt);
-        zalcano = view.findViewById(R.id.zalcano);
-        zulrah = view.findViewById(R.id.zulrah);
 
         leaguerank = view.findViewById(R.id.leaguerank);
         leaguescore = view.findViewById(R.id.leaguescore);
@@ -363,6 +284,7 @@ public class activityFragment extends Fragment {
     }
 
     //Get data class to get json data
+    @SuppressLint("StaticFieldLeak")
     private class GetData extends AsyncTask<Void, Void, Void> {
 
         //Before data will be looked up
@@ -849,7 +771,6 @@ public class activityFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-            } else {
             }
             return null;
         }
@@ -870,348 +791,231 @@ public class activityFragment extends Fragment {
                     pDialog.dismiss();
 
                 //Updating textviews with hiscore values.
-                if (leagueRankValue.trim().length() == 0) {
-                    league.setVisibility(View.GONE);
-                } else {
+                if (leagueRankValue.trim().length() > 0) {
                     leaguerank.setText(df.format(Long.valueOf(leagueRankValue)));
                     leaguescore.setText(df.format(Long.valueOf(leagueScoreValue)));
                 }
-                if (bhhRankValue.trim().length() == 0) {
-                    bhh.setVisibility(View.GONE);
-                } else {
+                if (bhhRankValue.trim().length() > 0) {
                     bhhrank.setText(df.format(Long.valueOf(bhhRankValue)));
                     bhhscore.setText(df.format(Long.valueOf(bhhScoreValue)));
                 }
-                if (bhrRankValue.trim().length() == 0) {
-                    bhr.setVisibility(View.GONE);
-                } else {
+                if (bhrRankValue.trim().length() > 0) {
                     bhrrank.setText(df.format(Long.valueOf(bhrRankValue)));
                     bhrscore.setText(df.format(Long.valueOf(bhrScoreValue)));
                 }
-                if (csaRankValue.trim().length() == 0) {
-                    csa.setVisibility(View.GONE);
-                } else {
+                if (csaRankValue.trim().length() > 0) {
                     csarank.setText(df.format(Long.valueOf(csaRankValue)));
                     csascore.setText(df.format(Long.valueOf(csaScoreValue)));
                 }
-                if (csbRankValue.trim().length() == 0) {
-                    csb.setVisibility(View.GONE);
-                } else {
+                if (csbRankValue.trim().length() > 0) {
                     csbrank.setText(df.format(Long.valueOf(csbRankValue)));
                     csbscore.setText(df.format(Long.valueOf(csbScoreValue)));
                 }
-                if (cseRankValue.trim().length() == 0) {
-                    cse.setVisibility(View.GONE);
-                } else {
+                if (cseRankValue.trim().length() > 0) {
                     cserank.setText(df.format(Long.valueOf(cseRankValue)));
                     csescore.setText(df.format(Long.valueOf(cseScoreValue)));
                 }
-                if (csmRankValue.trim().length() == 0) {
-                    csm.setVisibility(View.GONE);
-                } else {
+                if (csmRankValue.trim().length() > 0) {
                     csmrank.setText(df.format(Long.valueOf(csmRankValue)));
                     csmscore.setText(df.format(Long.valueOf(csmScoreValue)));
                 }
-                if (cshRankValue.trim().length() == 0) {
-                    csh.setVisibility(View.GONE);
-                } else {
+                if (cshRankValue.trim().length() > 0) {
                     cshrank.setText(df.format(Long.valueOf(cshRankValue)));
                     cshscore.setText(df.format(Long.valueOf(cshScoreValue)));
                 }
-                if (cselRankValue.trim().length() == 0) {
-                    csel.setVisibility(View.GONE);
-                } else {
+                if (cselRankValue.trim().length() > 0) {
                     cselrank.setText(df.format(Long.valueOf(cselRankValue)));
                     cselscore.setText(df.format(Long.valueOf(cselScoreValue)));
                 }
-                if (csmaRankValue.trim().length() == 0) {
-                    csma.setVisibility(View.GONE);
-                } else {
+                if (csmaRankValue.trim().length() > 0) {
                     csmarank.setText(df.format(Long.valueOf(csmaRankValue)));
                     csmascore.setText(df.format(Long.valueOf(csmaScoreValue)));
                 }
-                if (lmsRankValue.trim().length() == 0) {
-                    lms.setVisibility(View.GONE);
-                } else {
+                if (lmsRankValue.trim().length() > 0) {
                     lmsrank.setText(df.format(Long.valueOf(lmsRankValue)));
                     lmsscore.setText(df.format(Long.valueOf(lmsScoreValue)));
                 }
-                if (zealRankValue.trim().length() == 0) {
-                    zeal.setVisibility(View.GONE);
-                } else {
+                if (zealRankValue.trim().length() > 0) {
                     zealrank.setText(df.format(Long.valueOf(zealRankValue)));
                     zealscore.setText(df.format(Long.valueOf(zealScoreValue)));
                 }
-                if (sireRankValue.trim().length() == 0) {
-                    sire.setVisibility(View.GONE);
-                } else {
+                if (sireRankValue.trim().length() > 0) {
                     sirerank.setText(df.format(Long.valueOf(sireRankValue)));
                     sirescore.setText(df.format(Long.valueOf(sireScoreValue)));
                 }
-                if (hydraRankValue.trim().length() == 0) {
-                    hydra.setVisibility(View.GONE);
-                } else {
+                if (hydraRankValue.trim().length() > 0) {
                     hydrarank.setText(df.format(Long.valueOf(hydraRankValue)));
                     hydrascore.setText(df.format(Long.valueOf(hydraScoreValue)));
                 }
-                if (barrowsRankValue.trim().length() == 0) {
-                    barrows.setVisibility(View.GONE);
-                } else {
+                if (barrowsRankValue.trim().length() > 0) {
                     barrowsrank.setText(df.format(Long.valueOf(barrowsRankValue)));
                     barrowsscore.setText(df.format(Long.valueOf(barrowsScoreValue)));
                 }
-                if (bryophytaRankValue.trim().length() == 0) {
-                    bryophyta.setVisibility(View.GONE);
-                } else {
+                if (bryophytaRankValue.trim().length() > 0) {
                     bryophytarank.setText(df.format(Long.valueOf(bryophytaRankValue)));
                     bryophytascore.setText(df.format(Long.valueOf(bryophytaScoreValue)));
                 }
-                if (callistoRankValue.trim().length() == 0) {
-                    callisto.setVisibility(View.GONE);
-                }  else {
+                if (callistoRankValue.trim().length() > 0) {
                     callistorank.setText(df.format(Long.valueOf(callistoRankValue)));
                     callistoscore.setText(df.format(Long.valueOf(callistoScoreValue)));
                 }
-                if (cerberusRankValue.trim().length() == 0) {
-                    cerberus.setVisibility(View.GONE);
-                } else {
+                if (cerberusRankValue.trim().length() > 0) {
                     cerberusrank.setText(df.format(Long.valueOf(cerberusRankValue)));
                     cerberusscore.setText(df.format(Long.valueOf(cerberusScoreValue)));
                 }
-                if (coxRankValue.trim().length() == 0) {
-                    cox.setVisibility(View.GONE);
-                } else {
+                if (coxRankValue.trim().length() > 0) {
                     coxrank.setText(df.format(Long.valueOf(coxRankValue)));
                     coxscore.setText(df.format(Long.valueOf(coxScoreValue)));
                 }
-                if (coxcmRankValue.trim().length() == 0) {
-                    coxcm.setVisibility(View.GONE);
-                } else {
+                if (coxcmRankValue.trim().length() > 0) {
                     coxcmrank.setText(df.format(Long.valueOf(coxcmRankValue)));
                     coxcmscore.setText(df.format(Long.valueOf(coxcmScoreValue)));
                 }
-                if (elementalRankValue.trim().length() == 0) {
-                    elemental.setVisibility(View.GONE);
-                } else {
+                if (elementalRankValue.trim().length() > 0) {
                     elementalrank.setText(df.format(Long.valueOf(elementalRankValue)));
                     elementalscore.setText(df.format(Long.valueOf(elementalScoreValue)));
                 }
-                if (fanaticRankValue.trim().length() == 0) {
-                    fanatic.setVisibility(View.GONE);
-                } else {
+                if (fanaticRankValue.trim().length() > 0) {
                     fanaticrank.setText(df.format(Long.valueOf(fanaticRankValue)));
                     fanaticscore.setText(df.format(Long.valueOf(fanaticScoreValue)));
                 }
-                if (zilyanaRankValue.trim().length() == 0) {
-                    zilyana.setVisibility(View.GONE);
-                } else {
+                if (zilyanaRankValue.trim().length() > 0) {
                     zilyanarank.setText(df.format(Long.valueOf(zilyanaRankValue)));
                     zilyanascore.setText(df.format(Long.valueOf(zilyanaScoreValue)));
                 }
-                if (corporealRankValue.trim().length() == 0) {
-                    corporeal.setVisibility(View.GONE);
-                } else {
+                if (corporealRankValue.trim().length() > 0) {
                     corporealrank.setText(df.format(Long.valueOf(corporealRankValue)));
                     corporealscore.setText(df.format(Long.valueOf(corporealScoreValue)));
                 }
-                if (carchaeologistRankValue.trim().length() == 0) {
-                    carchaeologist.setVisibility(View.GONE);
-                } else {
+                if (carchaeologistRankValue.trim().length() > 0) {
                     carchaeologistrank.setText(df.format(Long.valueOf(carchaeologistRankValue)));
                     carchaeologistscore.setText(df.format(Long.valueOf(carchaeologistScoreValue)));
                 }
-                if (primeRankValue.trim().length() == 0) {
-                    prime.setVisibility(View.GONE);
-                } else {
+                if (primeRankValue.trim().length() > 0) {
                     primerank.setText(df.format(Long.valueOf(primeRankValue)));
                     primescore.setText(df.format(Long.valueOf(primeScoreValue)));
                 }
-                if (rexRankValue.trim().length() == 0) {
-                    rex.setVisibility(View.GONE);
-                } else {
+                if (rexRankValue.trim().length() > 0) {
                     rexrank.setText(df.format(Long.valueOf(rexRankValue)));
                     rexscore.setText(df.format(Long.valueOf(rexScoreValue)));
                 }
-                if (supremeRankValue.trim().length() == 0) {
-                    supreme.setVisibility(View.GONE);
-                } else {
+                if (supremeRankValue.trim().length() > 0) {
                     supremerank.setText(df.format(Long.valueOf(supremeRankValue)));
                     supremescore.setText(df.format(Long.valueOf(supremeScoreValue)));
                 }
-                if (darchaeologistRankValue.trim().length() == 0) {
-                    darchaeologist.setVisibility(View.GONE);
-                } else {
+                if (darchaeologistRankValue.trim().length() > 0) {
                     darchaeologistrank.setText(df.format(Long.valueOf(darchaeologistRankValue)));
                     darchaeologistscore.setText(df.format(Long.valueOf(darchaeologistScoreValue)));
                 }
-                if (graardorRankValue.trim().length() == 0) {
-                    graardor.setVisibility(View.GONE);
-                } else {
+                if (graardorRankValue.trim().length() > 0) {
                     graardorrank.setText(df.format(Long.valueOf(graardorRankValue)));
                     graardorscore.setText(df.format(Long.valueOf(graardorScoreValue)));
                 }
-                if (moleRankValue.trim().length() == 0) {
-                    mole.setVisibility(View.GONE);
-                } else {
+                if (moleRankValue.trim().length() > 0) {
                     molerank.setText(df.format(Long.valueOf(moleRankValue)));
                     molescore.setText(df.format(Long.valueOf(moleScoreValue)));
                 }
-                if (guardiansRankValue.trim().length() == 0) {
-                    guardians.setVisibility(View.GONE);
-                } else {
+                if (guardiansRankValue.trim().length() > 0) {
                     guardiansrank.setText(df.format(Long.valueOf(guardiansRankValue)));
                     guardiansscore.setText(df.format(Long.valueOf(guardiansScoreValue)));
                 }
-                if (hesporiRankValue.trim().length() == 0) {
-                    hespori.setVisibility(View.GONE);
-                } else {
+                if (hesporiRankValue.trim().length() > 0) {
                     hesporirank.setText(df.format(Long.valueOf(hesporiRankValue)));
                     hesporiscore.setText(df.format(Long.valueOf(hesporiScoreValue)));
                 }
-                if (kqueenRankValue.trim().length() == 0) {
-                    kqueen.setVisibility(View.GONE);
-                } else {
+                if (kqueenRankValue.trim().length() > 0) {
                     kqueenrank.setText(df.format(Long.valueOf(kqueenRankValue)));
                     kqueenscore.setText(df.format(Long.valueOf(kqueenScoreValue)));
                 }
-                if (kbdRankValue.trim().length() == 0) {
-                    kbd.setVisibility(View.GONE);
-                } else {
+                if (kbdRankValue.trim().length() > 0) {
                     kbdrank.setText(df.format(Long.valueOf(kbdRankValue)));
                     kbdscore.setText(df.format(Long.valueOf(kbdScoreValue)));
                 }
-                if (krakenRankValue.trim().length() == 0) {
-                    kraken.setVisibility(View.GONE);
-                } else {
+                if (krakenRankValue.trim().length() > 0) {
                     krakenrank.setText(df.format(Long.valueOf(krakenRankValue)));
                     krakenscore.setText(df.format(Long.valueOf(krakenScoreValue)));
                 }
-                if (kreeRankValue.trim().length() == 0) {
-                    kree.setVisibility(View.GONE);
-                } else {
+                if (kreeRankValue.trim().length() > 0) {
                     kreerank.setText(df.format(Long.valueOf(kreeRankValue)));
                     kreescore.setText(df.format(Long.valueOf(kreeScoreValue)));
                 }
-                if (krilRankValue.trim().length() == 0) {
-                    kril.setVisibility(View.GONE);
-                } else {
+                if (krilRankValue.trim().length() > 0) {
                     krilrank.setText(df.format(Long.valueOf(krilRankValue)));
                     krilscore.setText(df.format(Long.valueOf(krilScoreValue)));
                 }
-                if (mimicRankValue.trim().length() == 0) {
-                    mimic.setVisibility(View.GONE);
-                } else {
+                if (mimicRankValue.trim().length() > 0) {
                     mimicrank.setText(df.format(Long.valueOf(mimicRankValue)));
                     mimicscore.setText(df.format(Long.valueOf(mimicScoreValue)));
                 }
-                if (nightmareRankValue.trim().length() == 0) {
-                    nightmare.setVisibility(View.GONE);
-                } else {
+                if (nightmareRankValue.trim().length() > 0) {
                     nightmarerank.setText(df.format(Long.valueOf(nightmareRankValue)));
                     nightmarescore.setText(df.format(Long.valueOf(nightmareScoreValue)));
                 }
-                if (oborRankValue.trim().length() == 0) {
-                    obor.setVisibility(View.GONE);
-                }  else {
+                if (oborRankValue.trim().length() > 0) {
                     oborrank.setText(df.format(Long.valueOf(oborRankValue)));
                     oborscore.setText(df.format(Long.valueOf(oborScoreValue)));
                 }
-                if (sarachnisRankValue.trim().length() == 0) {
-                    sarachnis.setVisibility(View.GONE);
-                } else {
+                if (sarachnisRankValue.trim().length() > 0) {
                     sarachnisrank.setText(df.format(Long.valueOf(sarachnisRankValue)));
                     sarachnisscore.setText(df.format(Long.valueOf(sarachnisScoreValue)));
                 }
-                if (scorpiaRankValue.trim().length() == 0) {
-                    scorpia.setVisibility(View.GONE);
-                } else {
+                if (scorpiaRankValue.trim().length() > 0) {
                     scorpiarank.setText(df.format(Long.valueOf(scorpiaRankValue)));
                     scorpiascore.setText(df.format(Long.valueOf(scorpiaScoreValue)));
                 }
-                if (skotizoRankValue.trim().length() == 0) {
-                    skotizo.setVisibility(View.GONE);
-                } else {
+                if (skotizoRankValue.trim().length() > 0) {
                     skotizorank.setText(df.format(Long.valueOf(skotizoRankValue)));
                     skotizoscore.setText(df.format(Long.valueOf(skotizoScoreValue)));
                 }
-                if (gauntletRankValue.trim().length() == 0) {
-                    gauntlet.setVisibility(View.GONE);
-                } else {
+                if (gauntletRankValue.trim().length() > 0) {
                     gauntletrank.setText(df.format(Long.valueOf(gauntletRankValue)));
                     gauntletscore.setText(df.format(Long.valueOf(gauntletScoreValue)));
                 }
-                if (cgauntletRankValue.trim().length() == 0) {
-                    cgauntlet.setVisibility(View.GONE);
-                } else {
+                if (cgauntletRankValue.trim().length() > 0) {
                     cgauntletrank.setText(df.format(Long.valueOf(cgauntletRankValue)));
                     cgauntletscore.setText(df.format(Long.valueOf(cgauntletScoreValue)));
                 }
-                if (tobRankValue.trim().length() == 0) {
-                    tob.setVisibility(View.GONE);
-                } else {
+                if (tobRankValue.trim().length() > 0) {
                     tobrank.setText(df.format(Long.valueOf(tobRankValue)));
                     tobscore.setText(df.format(Long.valueOf(tobScoreValue)));
                 }
-                if (tsdRankValue.trim().length() == 0) {
-                    tsd.setVisibility(View.GONE);
-                } else {
+                if (tsdRankValue.trim().length() > 0) {
                     tsdrank.setText(df.format(Long.valueOf(tsdRankValue)));
                     tsdscore.setText(df.format(Long.valueOf(tsdScoreValue)));
                 }
-                if (zukRankValue.trim().length() == 0) {
-                    zuk.setVisibility(View.GONE);
-                } else {
+                if (zukRankValue.trim().length() > 0) {
                     zukrank.setText(df.format(Long.valueOf(zukRankValue)));
                     zukscore.setText(df.format(Long.valueOf(zukScoreValue)));
                 }
-                if (jadRankValue.trim().length() == 0) {
-                    jad.setVisibility(View.GONE);
-                } else {
+                if (jadRankValue.trim().length() > 0) {
                     jadrank.setText(df.format(Long.valueOf(jadRankValue)));
                     jadscore.setText(df.format(Long.valueOf(jadScoreValue)));
                 }
-                if (venenatisRankValue.trim().length() == 0) {
-                    venenatis.setVisibility(View.GONE);
-                } else {
+                if (venenatisRankValue.trim().length() > 0) {
                     venenatisrank.setText(df.format(Long.valueOf(venenatisRankValue)));
                     venenatisscore.setText(df.format(Long.valueOf(venenatisScoreValue)));
                 }
-                if (vetionRankValue.trim().length() == 0) {
-                    vetion.setVisibility(View.GONE);
-                } else {
+                if (vetionRankValue.trim().length() > 0) {
                     vetionrank.setText(df.format(Long.valueOf(vetionRankValue)));
                     vetionscore.setText(df.format(Long.valueOf(vetionScoreValue)));
                 }
-                if (vorkathRankValue.trim().length() == 0) {
-                    vorkath.setVisibility(View.GONE);
-                } else {
+                if (vorkathRankValue.trim().length() > 0) {
                     vorkathrank.setText(df.format(Long.valueOf(vorkathRankValue)));
                     vorkathscore.setText(df.format(Long.valueOf(vorkathScoreValue)));
                 }
-                if (wintertodtRankValue.trim().length() == 0) {
-                    wintertodt.setVisibility(View.GONE);
-                } else {
+                if (wintertodtRankValue.trim().length() > 0) {
                     wintertodtrank.setText(df.format(Long.valueOf(wintertodtRankValue)));
                     wintertodtscore.setText(df.format(Long.valueOf(wintertodtScoreValue)));
                 }
-                if (zalcanoRankValue.trim().length() == 0) {
-                    zalcano.setVisibility(View.GONE);
-                } else {
+                if (zalcanoRankValue.trim().length() > 0) {
                     zalcanorank.setText(df.format(Long.valueOf(zalcanoRankValue)));
                     zalcanoscore.setText(df.format(Long.valueOf(zalcanoScoreValue)));
                 }
-                if (zulrahRankValue.trim().length() == 0) {
-                    zulrah.setVisibility(View.GONE);
-                } else {
+                if (zulrahRankValue.trim().length() > 0) {
                     zulrahrank.setText(df.format(Long.valueOf(zulrahRankValue)));
                     zulrahscore.setText(df.format(Long.valueOf(zulrahScoreValue)));
                 }
-            }/* else {
-                if (pDialog.isShowing())
-                    pDialog.dismiss();
-                Toast.makeText(Objects.requireNonNull(getActivity()).getApplicationContext(), username + "  was not found in the Overall table", Toast.LENGTH_SHORT).show();
-                getActivity().finish();
-            }*/
+            }
         }
     }
 }

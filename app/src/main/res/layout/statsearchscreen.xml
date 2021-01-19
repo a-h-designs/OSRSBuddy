@@ -4,8 +4,7 @@
     android:id="@+id/statsearchscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/windowBackground">
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -16,9 +15,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/black_20"
             app:layout_scrollFlags="enterAlways"
-            app:popupTheme="@style/Theme.AppCompat.Light" />
+            app:popupTheme="@style/Theme.AppCompat" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -39,7 +37,6 @@
                 android:id="@+id/searchText"
                 android:autofillHints="@string/stats_searcheg"
                 android:hint="@string/stats_searcheg"
-                android:textColor="@color/textColorPrimary"
                 android:imeOptions="actionSearch"
                 android:maxLength="100"
                 android:inputType="text"
@@ -66,44 +63,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Hiccores"
-                android:textColor="@color/textColorPrimary" />
+                android:text="Hiscores" />
             <RadioButton
                 android:id="@+id/ironman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ironman"
-                android:textColor="@color/textColorPrimary" />
+                android:text="Ironman" />
             <RadioButton
                 android:id="@+id/uironman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ultimate Ironman"
-                android:textColor="@color/textColorPrimary" />
+                android:text="Ultimate Ironman" />
             <RadioButton
                 android:id="@+id/hironman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hardcore Ironman"
-                android:textColor="@color/textColorPrimary" />
+                android:text="Hardcore Ironman" />
             <RadioButton
                 android:id="@+id/deadman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Deadman Mode"
-                android:textColor="@color/textColorPrimary" />
+                android:text="Deadman Mode" />
             <RadioButton
                 android:id="@+id/leagues"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Leagues"
-                android:textColor="@color/textColorPrimary" />
+                android:text="Leagues" />
             <RadioButton
                 android:id="@+id/tournament"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tournament"
-                android:textColor="@color/textColorPrimary" />
+                android:text="Tournament" />
         </RadioGroup>
 
     </LinearLayout>

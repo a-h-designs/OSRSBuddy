@@ -45,6 +45,7 @@
     <string name="chat_head">Chat Head</string>
     <string name="combat_level">Combat Level:&#160;</string>
     <string name="combat_style">Combat Style:&#160;</string>
+    <string name="text">-</string>
     <string name="text_0">0</string>
     <string name="text_1">1</string>
     <string name="text_2">2</string>
@@ -146,13 +147,46 @@
     <string name="current_level">Current Level:&#160;</string>
     <string name="next_level">Next Level:&#160;</string>
     <string name="xp_left">XP Left:&#160;</string>
+    <string name="text_product">Product</string>
     <string name="amount">Amount</string>
+    <string name="text_15">15</string>
+    <string name="text_20">20</string>
     <string name="text_30">30</string>
+    <string name="text_35">35</string>
+    <string name="text_38">38</string>
     <string name="text_40">40</string>
+    <string name="text_45">45</string>
     <string name="text_55">55</string>
     <string name="text_70">70</string>
     <string name="text_85">85</string>
     <string name="text_92">92</string>
     <!-- End skillCalculatorDetailsScreen. -->
+
+    <!-- ores. -->
+    <string name="ores_clay">&#160;Clay</string>
+    <string name="ores_rune_ess">&#160;Rune Essence</string>
+    <string name="ores_copper">&#160;Copper Ore</string>
+    <string name="ores_tin">&#160;Tin Ore</string>
+    <string name="ores_limestone">&#160;Limestone</string>
+    <string name="ores_iron">&#160;Iron ore</string>
+    <string name="ores_silver">&#160;Silver ore</string>
+    <string name="ores_pure_ess">&#160;Pure essence</string>
+    <string name="ores_coal">&#160;Coal</string>
+    <string name="ores_paydirt">&#160;Pay-dirt</string>
+    <string name="ores_sandstone_1kg">&#160;Sandstone (1kg)</string>
+    <string name="ores_sandstone_2kg">&#160;Sandstone (2kg)</string>
+    <string name="ores_sandstone_5kg">&#160;Sandstone (5kg)</string>
+    <string name="ores_sandstone_10kg">&#160;Sandstone (10kg)</string>
+    <string name="ores_dense_ess">&#160;Dense essence block</string>
+    <string name="ores_gold">&#160;Gold ore</string>
+    <string name="ores_gem">&#160;Gem rock</string>
+    <string name="ores_granite_500g">&#160;Granite (500g)</string>
+    <string name="ores_granite_2kg">&#160;Granite (2kg)</string>
+    <string name="ores_granite_5kg">&#160;Granite (5kg)</string>
+    <string name="ores_mith">&#160;Mithril ore</string>
+    <string name="ores_addy">&#160;Adamantite ore</string>
+    <string name="ores_rune">&#160;Runite ore</string>
+    <string name="ores_amethyst">&#160;Amethyst</string>
+    <!-- End ores. -->
 
 </resources>

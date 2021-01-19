@@ -4,8 +4,7 @@
     android:id="@+id/pricedetailscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/windowBackground">
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -16,9 +15,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/black_20"
             app:layout_scrollFlags="enterAlways"
-            app:popupTheme="@style/Theme.AppCompat.Light" />
+            app:popupTheme="@style/Theme.AppCompat" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -66,7 +64,6 @@
                 android:id="@+id/itemDescription"
                 android:layout_marginStart="@dimen/p2p_icon"
                 android:layout_below="@id/itemDescriptionHeader"
-                android:textColor="#ffffff"
                 android:textSize="@dimen/page_text_size" />
 
             <TextView
@@ -99,7 +96,6 @@
                 android:layout_marginTop="@dimen/layout_margin_top"
                 android:layout_below="@id/itemPriceHeader"
                 android:layout_toEndOf="@id/gpIcon"
-                android:textColor="#ffffff"
                 android:textSize="@dimen/page_text_size" />
 
             <TextView
@@ -142,7 +138,6 @@
                         android:layout_gravity="center|start"
                         android:layout_marginStart="@dimen/layout_margin_left"
                         android:layout_marginTop="@dimen/layout_margin_top"
-                        android:textColor="#ffffff"
                         android:textSize="@dimen/page_text_size" />
 
                     <TextView
@@ -152,7 +147,6 @@
                         android:text="@string/change_today"
                         android:layout_marginStart="@dimen/layout_margin_left"
                         android:layout_marginTop="@dimen/layout_margin_top"
-                        android:textColor="#ffffff"
                         android:textSize="@dimen/page_text_size" />
 
                 </TableRow>
@@ -176,7 +170,6 @@
                         android:layout_gravity="center|start"
                         android:layout_marginStart="@dimen/layout_margin_left"
                         android:layout_marginTop="@dimen/layout_margin_top"
-                        android:textColor="#ffffff"
                         android:textSize="@dimen/page_text_size" />
 
                     <TextView
@@ -186,7 +179,6 @@
                         android:text="@string/change_1_month"
                         android:layout_marginStart="@dimen/layout_margin_left"
                         android:layout_marginTop="@dimen/layout_margin_top"
-                        android:textColor="#ffffff"
                         android:textSize="@dimen/page_text_size" />
                 </TableRow>
                 <TableRow
@@ -209,7 +201,6 @@
                         android:layout_gravity="center|start"
                         android:layout_marginStart="@dimen/layout_margin_left"
                         android:layout_marginTop="@dimen/layout_margin_top"
-                        android:textColor="#ffffff"
                         android:textSize="@dimen/page_text_size" />
 
                     <TextView
@@ -219,7 +210,6 @@
                         android:text="@string/change_3_month"
                         android:layout_marginStart="@dimen/layout_margin_left"
                         android:layout_marginTop="@dimen/layout_margin_top"
-                        android:textColor="#ffffff"
                         android:textSize="@dimen/page_text_size" />
                 </TableRow>
                 <TableRow
@@ -242,7 +232,6 @@
                         android:layout_gravity="center|start"
                         android:layout_marginStart="@dimen/layout_margin_left"
                         android:layout_marginTop="@dimen/layout_margin_top"
-                        android:textColor="#ffffff"
                         android:textSize="@dimen/page_text_size" />
 
                     <TextView
@@ -252,7 +241,6 @@
                         android:text="@string/change_6_month"
                         android:layout_marginStart="@dimen/layout_margin_left"
                         android:layout_marginTop="@dimen/layout_margin_top"
-                        android:textColor="#ffffff"
                         android:textSize="@dimen/page_text_size" />
                 </TableRow>
             </TableLayout>
@@ -287,7 +275,6 @@
                 android:layout_marginTop="@dimen/layout_margin_top"
                 android:layout_below="@id/alchPriceHeader"
                 android:layout_toEndOf="@id/highalchIcon"
-                android:textColor="#ffffff"
                 android:textSize="@dimen/page_text_size" />
 
             <ImageView
@@ -310,7 +297,6 @@
                 android:layout_marginTop="@dimen/layout_margin_top"
                 android:layout_below="@id/highAlch"
                 android:layout_toEndOf="@id/lowalchIcon"
-                android:textColor="#ffffff"
                 android:textSize="@dimen/page_text_size" />
 
         </RelativeLayout>

@@ -37,12 +37,6 @@
             android:parentActivityName=".mainScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:launchMode="singleTop"
-                android:value=".mainScreen" />
         </activity>
         <activity
             android:name=".priceListingScreen"
@@ -50,12 +44,6 @@
             android:parentActivityName=".priceSearchScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:launchMode="singleTop"
-                android:value=".priceSearchScreen" />
         </activity>
         <activity
             android:name=".priceDetailsScreen"
@@ -63,12 +51,6 @@
             android:parentActivityName=".priceListingScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:launchMode="singleTop"
-                android:value=".priceListingScreen" />
         </activity>
         <activity
             android:name=".statSearchScreen"
@@ -76,12 +58,6 @@
             android:parentActivityName=".mainScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:launchMode="singleTop"
-                android:value=".mainScreen" />
         </activity>
         <activity
             android:name=".statsDetailScreen"
@@ -89,12 +65,6 @@
             android:parentActivityName=".statSearchScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:launchMode="singleTop"
-                android:value=".statSearchScreen" />
         </activity>
         <activity
             android:name=".skillCalculatorSearchScreen"
@@ -102,12 +72,6 @@
             android:parentActivityName=".mainScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:launchMode="singleTop"
-                android:value=".mainScreen" />
         </activity>
         <activity
             android:name=".skillCalculatorDetailsScreen"
@@ -115,12 +79,6 @@
             android:parentActivityName=".skillCalculatorSearchScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:launchMode="singleTop"
-                android:value=".skillCalculatorSearchScreen" />
         </activity>
     </application>
 

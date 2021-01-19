@@ -4,8 +4,7 @@
     android:id="@+id/statsdetailscreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/windowBackground">
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -16,9 +15,15 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/black_20"
             app:layout_scrollFlags="enterAlways"
-            app:popupTheme="@style/Theme.AppCompat.Light" />
+            app:popupTheme="@style/Theme.AppCompat" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -68,7 +73,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/layout_margin_left"
                         android:layout_toEndOf="@id/chatIcon"
-                        android:textColor="@android:color/white"
                         android:textSize="@dimen/page_header_text_size" />
                 </RelativeLayout>
 
@@ -83,7 +87,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/layout_margin_bottom"
-                        android:textColor="@android:color/white"
                         android:text="@string/combat_level"
                         android:textSize="@dimen/page_text_size"/>
 
@@ -93,7 +96,6 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/combat"
                         android:layout_marginBottom="@dimen/layout_margin_bottom"
-                        android:textColor="@android:color/white"
                         android:text="@string/combat_style"
                         android:textSize="@dimen/page_text_size"/>
 
@@ -103,7 +105,7 @@
         </RelativeLayout>
 
         <android.support.design.widget.TabLayout
-            android:background="@color/black_20"
+            app:tabBackground="@drawable/tab_background"
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -111,14 +113,14 @@
             app:tabGravity="fill"
             app:tabSelectedTextColor="@android:color/white"
             app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-            app:tabTextColor="@color/colorAccent" />
+            app:tabTextColor="@color/colorAccent"
+            android:layout_below="@id/statsHeader" />
 
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tabs" />
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
