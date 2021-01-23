@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -75,7 +76,10 @@ public class hiscoreFragment extends Fragment {
             hunterRankValue, hunterLvlValue, hunterXpValue,
             constructionRankValue, constructionLvlValue, constructionXpValue;
 
-    double warrior, ranger, mager, baseCombatLevel, warriorCombatLevel, rangeCombatLevel, mageCombatLevel;
+    ImageView chatHead;
+
+    double warrior, ranger, mager, baseCombatLevel, warriorCombatLevel, rangeCombatLevel, mageCombatLevel,
+            prayer, range, magic;
 
     private ProgressDialog pDialog;
 
@@ -94,6 +98,7 @@ public class hiscoreFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.hiscorefragment, container, false);
 
+        chatHead = getActivity().findViewById(R.id.chatHead);
         combat = getActivity().findViewById(R.id.combat);
         style = getActivity().findViewById(R.id.style);
 
@@ -472,149 +477,319 @@ public class hiscoreFragment extends Fragment {
                 if (overallRankValue.trim().length() > 0) {
                     overallrank.setText(df.format(Long.valueOf(overallRankValue)));
                 }
-                overalllvl.setText(df.format(Long.valueOf(overallLvlValue)));
-                overallxp.setText(df.format(Long.valueOf(overallXpValue)));
+                if (overallLvlValue.trim().length() > 0) {
+                    overalllvl.setText(df.format(Long.valueOf(overallLvlValue)));
+                } else {
+                    overallLvlValue = "0";
+                }
+                if (overallXpValue.trim().length() > 0) {
+                    overallxp.setText(df.format(Long.valueOf(overallXpValue)));
+                }
+
                 if (attackRankValue.trim().length() > 0) {
                     attackrank.setText(df.format(Long.valueOf(attackRankValue)));
                 }
-                attacklvl.setText(df.format(Long.valueOf(attackLvlValue)));
-                attackxp.setText(df.format(Long.valueOf(attackXpValue)));
+                if (attackLvlValue.trim().length() > 0) {
+                    attacklvl.setText(df.format(Long.valueOf(attackLvlValue)));
+                } else {
+                    attackLvlValue = "0";
+                }
+                if (attackXpValue.trim().length() > 0) {
+                    attackxp.setText(df.format(Long.valueOf(attackXpValue)));
+                }
+
                 if (defenceRankValue.trim().length() > 0) {
                     defencerank.setText(df.format(Long.valueOf(defenceRankValue)));
                 }
-                defencelvl.setText(df.format(Long.valueOf(defenceLvlValue)));
-                defencexp.setText(df.format(Long.valueOf(defenceXpValue)));
+                if (defenceLvlValue.trim().length() > 0) {
+                    defencelvl.setText(df.format(Long.valueOf(defenceLvlValue)));
+                } else {
+                    defenceLvlValue = "0";
+                }
+                if (defenceXpValue.trim().length() > 0) {
+                    defencexp.setText(df.format(Long.valueOf(defenceXpValue)));
+                }
+
                 if (strengthRankValue.trim().length() > 0) {
                     strengthrank.setText(df.format(Long.valueOf(strengthRankValue)));
                 }
-                strengthlvl.setText(df.format(Long.valueOf(strengthLvlValue)));
-                strengthxp.setText(df.format(Long.valueOf(strengthXpValue)));
+                if (strengthLvlValue.trim().length() > 0) {
+                    strengthlvl.setText(df.format(Long.valueOf(strengthLvlValue)));
+                } else {
+                    strengthLvlValue = "0";
+                }
+                if (strengthXpValue.trim().length() > 0) {
+                    strengthxp.setText(df.format(Long.valueOf(strengthXpValue)));
+                }
+
                 if (hitpointsRankValue.trim().length() > 0) {
                     hitpointsrank.setText(df.format(Long.valueOf(hitpointsRankValue)));
                 }
-                hitpointslvl.setText(df.format(Long.valueOf(hitpointsLvlValue)));
-                hitpointsxp.setText(df.format(Long.valueOf(hitpointsXpValue)));
+                if (hitpointsLvlValue.trim().length() > 0) {
+                    hitpointslvl.setText(df.format(Long.valueOf(hitpointsLvlValue)));
+                } else {
+                    hitpointsLvlValue = "0";
+                }
+                if (hitpointsXpValue.trim().length() > 0) {
+                    hitpointsxp.setText(df.format(Long.valueOf(hitpointsXpValue)));
+                }
+
                 if (rangedRankValue.trim().length() > 0) {
                     rangedrank.setText(df.format(Long.valueOf(rangedRankValue)));
                 }
-                rangedlvl.setText(df.format(Long.valueOf(rangedLvlValue)));
-                rangedxp.setText(df.format(Long.valueOf(rangedXpValue)));
+                if (rangedLvlValue.trim().length() > 0) {
+                    rangedlvl.setText(df.format(Long.valueOf(rangedLvlValue)));
+                } else {
+                    rangedLvlValue = "0";
+                }
+                if (rangedXpValue.trim().length() > 0) {
+                    rangedxp.setText(df.format(Long.valueOf(rangedXpValue)));
+                }
+
                 if (prayerRankValue.trim().length() > 0) {
                     prayerrank.setText(df.format(Long.valueOf(prayerRankValue)));
                 }
-                prayerlvl.setText(df.format(Long.valueOf(prayerLvlValue)));
-                prayerxp.setText(df.format(Long.valueOf(prayerXpValue)));
+                if (prayerLvlValue.trim().length() > 0) {
+                    prayerlvl.setText(df.format(Long.valueOf(prayerLvlValue)));
+                } else {
+                    prayerLvlValue = "0";
+                }
+                if (prayerXpValue.trim().length() > 0) {
+                    prayerxp.setText(df.format(Long.valueOf(prayerXpValue)));
+                }
+
                 if (magicRankValue.trim().length() > 0) {
                     magicrank.setText(df.format(Long.valueOf(magicRankValue)));
                 }
-                magiclvl.setText(df.format(Long.valueOf(magicLvlValue)));
-                magicxp.setText(df.format(Long.valueOf(magicXpValue)));
+                if (magicLvlValue.trim().length() > 0) {
+                    magiclvl.setText(df.format(Long.valueOf(magicLvlValue)));
+                } else {
+                    magicLvlValue = "0";
+                }
+                if (magicXpValue.trim().length() > 0) {
+                    magicxp.setText(df.format(Long.valueOf(magicXpValue)));
+                }
+
                 if (cookingRankValue.trim().length() > 0) {
                     cookingrank.setText(df.format(Long.valueOf(cookingRankValue)));
                 }
-                cookinglvl.setText(df.format(Long.valueOf(cookingLvlValue)));
-                cookingxp.setText(df.format(Long.valueOf(cookingXpValue)));
+                if (cookingLvlValue.trim().length() > 0) {
+                    cookinglvl.setText(df.format(Long.valueOf(cookingLvlValue)));
+                } else {
+                    cookingLvlValue = "0";
+                }
+                if (cookingXpValue.trim().length() > 0) {
+                    cookingxp.setText(df.format(Long.valueOf(cookingXpValue)));
+                }
+
                 if (woodcuttingRankValue.trim().length() > 0) {
                     woodcuttingrank.setText(df.format(Long.valueOf(woodcuttingRankValue)));
                 }
-                woodcuttinglvl.setText(df.format(Long.valueOf(woodcuttingLvlValue)));
-                woodcuttingxp.setText(df.format(Long.valueOf(woodcuttingXpValue)));
+                if (woodcuttingLvlValue.trim().length() > 0) {
+                    woodcuttinglvl.setText(df.format(Long.valueOf(woodcuttingLvlValue)));
+                } else {
+                    woodcuttingLvlValue = "0";
+                }
+                if (woodcuttingXpValue.trim().length() > 0) {
+                    woodcuttingxp.setText(df.format(Long.valueOf(woodcuttingXpValue)));
+                }
+
                 if (fletchingRankValue.trim().length() > 0) {
                     fletchingrank.setText(df.format(Long.valueOf(fletchingRankValue)));
                 }
-                fletchinglvl.setText(df.format(Long.valueOf(fletchingLvlValue)));
-                fletchingxp.setText(df.format(Long.valueOf(fletchingXpValue)));
+                if (fletchingLvlValue.trim().length() > 0) {
+                    fletchinglvl.setText(df.format(Long.valueOf(fletchingLvlValue)));
+                } else {
+                    fletchingLvlValue = "0";
+                }
+                if (fletchingXpValue.trim().length() > 0) {
+                    fletchingxp.setText(df.format(Long.valueOf(fletchingXpValue)));
+                }
+
                 if (fishingRankValue.trim().length() > 0) {
                     fishingrank.setText(df.format(Long.valueOf(fishingRankValue)));
                 }
-                fishinglvl.setText(df.format(Long.valueOf(fishingLvlValue)));
-                fishingxp.setText(df.format(Long.valueOf(fishingXpValue)));
+                if (fishingLvlValue.trim().length() > 0) {
+                    fishinglvl.setText(df.format(Long.valueOf(fishingLvlValue)));
+                } else {
+                    fishingLvlValue = "0";
+                }
+                if (fishingXpValue.trim().length() > 0) {
+                    fishingxp.setText(df.format(Long.valueOf(fishingXpValue)));
+                }
+
                 if (firemakingRankValue.trim().length() > 0) {
                     firemakingrank.setText(df.format(Long.valueOf(firemakingRankValue)));
                 }
-                firemakinglvl.setText(df.format(Long.valueOf(firemakingLvlValue)));
-                firemakingxp.setText(df.format(Long.valueOf(firemakingXpValue)));
+                if (firemakingLvlValue.trim().length() > 0) {
+                    firemakinglvl.setText(df.format(Long.valueOf(firemakingLvlValue)));
+                } else {
+                    firemakingLvlValue = "0";
+                }
+                if (firemakingXpValue.trim().length() > 0) {
+                    firemakingxp.setText(df.format(Long.valueOf(firemakingXpValue)));
+                }
+
                 if (craftingRankValue.trim().length() > 0) {
                     craftingrank.setText(df.format(Long.valueOf(craftingRankValue)));
                 }
-                craftinglvl.setText(df.format(Long.valueOf(craftingLvlValue)));
-                craftingxp.setText(df.format(Long.valueOf(craftingXpValue)));
+                if (craftingLvlValue.trim().length() > 0) {
+                    craftinglvl.setText(df.format(Long.valueOf(craftingLvlValue)));
+                } else {
+                    craftingLvlValue = "0";
+                }
+                if (craftingXpValue.trim().length() > 0) {
+                    craftingxp.setText(df.format(Long.valueOf(craftingXpValue)));
+                }
+
                 if (smithingRankValue.trim().length() > 0) {
                     smithingrank.setText(df.format(Long.valueOf(smithingRankValue)));
                 }
-                smithinglvl.setText(df.format(Long.valueOf(smithingLvlValue)));
-                smithingxp.setText(df.format(Long.valueOf(smithingXpValue)));
+                if (smithingLvlValue.trim().length() > 0) {
+                    smithinglvl.setText(df.format(Long.valueOf(smithingLvlValue)));
+                } else {
+                    smithingLvlValue = "0";
+                }
+                if (smithingXpValue.trim().length() > 0) {
+                    smithingxp.setText(df.format(Long.valueOf(smithingXpValue)));
+                }
+
                 if (miningRankValue.trim().length() > 0) {
                     miningrank.setText(df.format(Long.valueOf(miningRankValue)));
                 }
-                mininglvl.setText(df.format(Long.valueOf(miningLvlValue)));
-                miningxp.setText(df.format(Long.valueOf(miningXpValue)));
+                if (miningLvlValue.trim().length() > 0) {
+                    mininglvl.setText(df.format(Long.valueOf(miningLvlValue)));
+                } else {
+                    miningLvlValue = "0";
+                }
+                if (miningXpValue.trim().length() > 0) {
+                    miningxp.setText(df.format(Long.valueOf(miningXpValue)));
+                }
+
                 if (herbloreRankValue.trim().length() > 0) {
                     herblorerank.setText(df.format(Long.valueOf(herbloreRankValue)));
                 }
-                herblorelvl.setText(df.format(Long.valueOf(herbloreLvlValue)));
-                herblorexp.setText(df.format(Long.valueOf(herbloreXpValue)));
+                if (herbloreLvlValue.trim().length() > 0) {
+                    herblorelvl.setText(df.format(Long.valueOf(herbloreLvlValue)));
+                } else {
+                    herbloreLvlValue = "0";
+                }
+                if (herbloreXpValue.trim().length() > 0) {
+                    herblorexp.setText(df.format(Long.valueOf(herbloreXpValue)));
+                }
+
                 if (agilityRankValue.trim().length() > 0) {
                     agilityrank.setText(df.format(Long.valueOf(agilityRankValue)));
                 }
-                agilitylvl.setText(df.format(Long.valueOf(agilityLvlValue)));
-                agilityxp.setText(df.format(Long.valueOf(agilityXpValue)));
+                if (agilityLvlValue.trim().length() > 0) {
+                    agilitylvl.setText(df.format(Long.valueOf(agilityLvlValue)));
+                } else {
+                    agilityLvlValue = "0";
+                }
+                if (agilityXpValue.trim().length() > 0) {
+                    agilityxp.setText(df.format(Long.valueOf(agilityXpValue)));
+                }
+
                 if (thievingRankValue.trim().length() > 0) {
                     thievingrank.setText(df.format(Long.valueOf(thievingRankValue)));
                 }
-                thievinglvl.setText(df.format(Long.valueOf(thievingLvlValue)));
-                thievingxp.setText(df.format(Long.valueOf(thievingXpValue)));
+                if (thievingLvlValue.trim().length() > 0) {
+                    thievinglvl.setText(df.format(Long.valueOf(thievingLvlValue)));
+                } else {
+                    thievingLvlValue = "0";
+                }
+                if (thievingXpValue.trim().length() > 0) {
+                    thievingxp.setText(df.format(Long.valueOf(thievingXpValue)));
+                }
+
                 if (slayerRankValue.trim().length() > 0) {
                     slayerrank.setText(df.format(Long.valueOf(slayerRankValue)));
                 }
-                slayerlvl.setText(df.format(Long.valueOf(slayerLvlValue)));
-                slayerxp.setText(df.format(Long.valueOf(slayerXpValue)));
+                if (slayerLvlValue.trim().length() > 0) {
+                    slayerlvl.setText(df.format(Long.valueOf(slayerLvlValue)));
+                } else {
+                    slayerLvlValue = "0";
+                }
+                if (slayerXpValue.trim().length() > 0) {
+                    slayerxp.setText(df.format(Long.valueOf(slayerXpValue)));
+                }
+
                 if (farmingRankValue.trim().length() > 0) {
                     farmingrank.setText(df.format(Long.valueOf(farmingRankValue)));
                 }
-                farminglvl.setText(df.format(Long.valueOf(farmingLvlValue)));
-                farmingxp.setText(df.format(Long.valueOf(farmingXpValue)));
+                if (farmingLvlValue.trim().length() > 0) {
+                    farminglvl.setText(df.format(Long.valueOf(farmingLvlValue)));
+                } else {
+                    farmingLvlValue = "0";
+                }
+                if (farmingXpValue.trim().length() > 0) {
+                    farmingxp.setText(df.format(Long.valueOf(farmingXpValue)));
+                }
+
                 if (runecraftingRankValue.trim().length() > 0) {
                     runecraftingrank.setText(df.format(Long.valueOf(runecraftingRankValue)));
                 }
-                runecraftinglvl.setText(df.format(Long.valueOf(runecraftingLvlValue)));
-                runecraftingxp.setText(df.format(Long.valueOf(runecraftingXpValue)));
+                if (runecraftingLvlValue.trim().length() > 0) {
+                    runecraftinglvl.setText(df.format(Long.valueOf(runecraftingLvlValue)));
+                } else {
+                    runecraftingLvlValue = "0";
+                }
+                if (runecraftingXpValue.trim().length() > 0) {
+                    runecraftingxp.setText(df.format(Long.valueOf(runecraftingXpValue)));
+                }
+
                 if (hunterRankValue.trim().length() > 0) {
                     hunterrank.setText(df.format(Long.valueOf(hunterRankValue)));
                 }
-                hunterlvl.setText(df.format(Long.valueOf(hunterLvlValue)));
-                hunterxp.setText(df.format(Long.valueOf(hunterXpValue)));
+                if (hunterLvlValue.trim().length() > 0) {
+                    hunterlvl.setText(df.format(Long.valueOf(hunterLvlValue)));
+                } else {
+                    hunterLvlValue = "0";
+                }
+                if (hunterXpValue.trim().length() > 0) {
+                    hunterxp.setText(df.format(Long.valueOf(hunterXpValue)));
+                }
+
                 if (constructionRankValue.trim().length() > 0) {
                     constructionrank.setText(df.format(Long.valueOf(constructionRankValue)));
                 }
-                constructionlvl.setText(df.format(Long.valueOf(constructionLvlValue)));
-                constructionxp.setText(df.format(Long.valueOf(constructionXpValue)));
+                if (constructionLvlValue.trim().length() > 0) {
+                    constructionlvl.setText(df.format(Long.valueOf(constructionLvlValue)));
+                } else {
+                    constructionLvlValue = "0";
+                }
+                if (constructionXpValue.trim().length() > 0) {
+                    constructionxp.setText(df.format(Long.valueOf(constructionXpValue)));
+                }
 
-                baseCombatLevel = 0.25 * (Integer.parseInt(defenceLvlValue) + Integer.parseInt(hitpointsLvlValue) + floor(Integer.parseInt(prayerLvlValue)/2));
+                prayer = Integer.parseInt(prayerLvlValue);
+                range = Integer.parseInt(rangedLvlValue);
+                magic = Integer.parseInt(magicLvlValue);
+
+                baseCombatLevel = 0.25 * (Integer.parseInt(defenceLvlValue) + Integer.parseInt(hitpointsLvlValue) + floor(prayer/2));
                 warrior = 0.325 * (Integer.parseInt(attackLvlValue) + Integer.parseInt(strengthLvlValue));
-                ranger = 0.325 * (floor(Integer.parseInt(rangedLvlValue)/2) + Integer.parseInt(rangedLvlValue));
-                mager =  0.325 * (floor(Integer.parseInt(magicLvlValue)/2) + Integer.parseInt(magicLvlValue));
+                ranger = 0.325 * (floor(range/2) + Integer.parseInt(rangedLvlValue));
+                mager =  0.325 * (floor(magic/2) + Integer.parseInt(magicLvlValue));
 
                 if (warrior > mager  && warrior > ranger)
                 {
                     warriorCombatLevel = baseCombatLevel + warrior;
                     warriorCombatLevel = Double.parseDouble(df1.format(warriorCombatLevel));
-                    combat.setText("Combat Level:  " + warriorCombatLevel);
-                    style.setText("Combat Style: Warrior");
-                }
-                if (mager > warrior && mager > ranger)
-                {
+                    combat.setText(String.valueOf(warriorCombatLevel));
+                    style.setText("Warrior");
+                    chatHead.setImageResource(R.drawable.app_icon_meleechat);
+                } else if (mager > warrior && mager > ranger) {
                     mageCombatLevel = baseCombatLevel + mager;
                     mageCombatLevel = Double.parseDouble(df1.format(mageCombatLevel));
-                    combat.setText("Combat Level:  " + mageCombatLevel);
-                    style.setText("Combat Style: Mage");
-                }
-                if (ranger > warrior && ranger > mager)
-                {
+                    combat.setText(String.valueOf(mageCombatLevel));
+                    style.setText("Mage");
+                    chatHead.setImageResource(R.drawable.app_icon_magicchat);
+                } else if (ranger > warrior && ranger > mager) {
                     rangeCombatLevel = baseCombatLevel + ranger;
                     rangeCombatLevel = Double.parseDouble(df1.format(rangeCombatLevel));
-                    combat.setText("Combat Level:  " + rangeCombatLevel);
-                    style.setText("Combat Style: Archer");
+                    combat.setText(String.valueOf(rangeCombatLevel));
+                    style.setText("Archer");
+                    chatHead.setImageResource(R.drawable.app_icon_rangedchat);
                 }
             } else {
                 if (pDialog.isShowing())

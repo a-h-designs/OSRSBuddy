@@ -16,6 +16,9 @@
             android:layout_gravity="center|start"
             android:layout_margin="@dimen/layout_margin_top"
             android:text="@string/skill"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="@dimen/page_text_size"
             android:visibility="invisible"
             android:drawableStart="@drawable/skill_icon_overall" />
         <TextView
@@ -24,21 +27,30 @@
             android:layout_weight="0.25"
             android:layout_gravity="center|start"
             android:layout_marginStart="@dimen/layout_margin_start"
-            android:text="@string/rank" />
+            android:text="@string/rank"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="@dimen/page_text_size" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.15"
             android:layout_gravity="center|start"
             android:layout_marginStart="@dimen/layout_margin_start"
-            android:text="@string/level" />
+            android:text="@string/level"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="@dimen/page_text_size" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"
             android:layout_gravity="center|start"
             android:layout_marginStart="@dimen/layout_margin_start"
-            android:text="@string/exp" />
+            android:text="@string/exp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="@dimen/page_text_size" />
     </TableRow>
 
     <ScrollView
@@ -80,7 +92,7 @@
                     android:id="@+id/overalllvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -89,7 +101,7 @@
                     android:id="@+id/overallxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -124,7 +136,7 @@
                     android:id="@+id/attacklvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -133,7 +145,7 @@
                     android:id="@+id/attackxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -168,7 +180,7 @@
                     android:id="@+id/defencelvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -177,7 +189,7 @@
                     android:id="@+id/defencexp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -212,7 +224,7 @@
                     android:id="@+id/strengthlvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -221,7 +233,7 @@
                     android:id="@+id/strengthxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -256,7 +268,7 @@
                     android:id="@+id/hitpointslvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -265,7 +277,7 @@
                     android:id="@+id/hitpointsxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -300,7 +312,7 @@
                     android:id="@+id/rangedlvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -309,7 +321,7 @@
                     android:id="@+id/rangedxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -344,7 +356,7 @@
                     android:id="@+id/prayerlvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -353,7 +365,7 @@
                     android:id="@+id/prayerxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -388,7 +400,7 @@
                     android:id="@+id/magiclvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -397,7 +409,7 @@
                     android:id="@+id/magicxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -432,7 +444,7 @@
                     android:id="@+id/cookinglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -441,7 +453,7 @@
                     android:id="@+id/cookingxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -476,7 +488,7 @@
                     android:id="@+id/woodcuttinglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -485,7 +497,7 @@
                     android:id="@+id/woodcuttingxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -520,7 +532,7 @@
                     android:id="@+id/fletchinglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -529,7 +541,7 @@
                     android:id="@+id/fletchingxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -564,7 +576,7 @@
                     android:id="@+id/fishinglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -573,7 +585,7 @@
                     android:id="@+id/fishingxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -608,7 +620,7 @@
                     android:id="@+id/firemakinglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -617,7 +629,7 @@
                     android:id="@+id/firemakingxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -652,7 +664,7 @@
                     android:id="@+id/craftinglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -661,7 +673,7 @@
                     android:id="@+id/craftingxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -697,7 +709,7 @@
                     android:id="@+id/smithinglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -706,7 +718,7 @@
                     android:id="@+id/smithingxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -741,7 +753,7 @@
                     android:id="@+id/mininglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -750,7 +762,7 @@
                     android:id="@+id/miningxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -785,7 +797,7 @@
                     android:id="@+id/herblorelvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -794,7 +806,7 @@
                     android:id="@+id/herblorexp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -829,7 +841,7 @@
                     android:id="@+id/agilitylvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -838,7 +850,7 @@
                     android:id="@+id/agilityxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -873,7 +885,7 @@
                     android:id="@+id/thievinglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -882,7 +894,7 @@
                     android:id="@+id/thievingxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -918,7 +930,7 @@
                     android:id="@+id/slayerlvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -926,7 +938,7 @@
                     android:id="@+id/slayerxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -961,7 +973,7 @@
                     android:id="@+id/farminglvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -970,7 +982,7 @@
                     android:id="@+id/farmingxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -1005,7 +1017,7 @@
                     android:id="@+id/runecraftlvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -1014,7 +1026,7 @@
                     android:id="@+id/runecraftxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -1049,7 +1061,7 @@
                     android:id="@+id/hunterlvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -1058,7 +1070,7 @@
                     android:id="@+id/hunterxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
 
@@ -1093,7 +1105,7 @@
                     android:id="@+id/constructionlvl"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_1" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -1102,7 +1114,7 @@
                     android:id="@+id/constructionxp"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="@dimen/layout_margin_start"
-                    android:text="@string/text" />
+                    android:text="@string/text_0" />
 
             </TableRow>
         </TableLayout>

@@ -41,6 +41,7 @@
                 android:layout_marginBottom="@dimen/layout_margin_bottom"
                 android:autofillHints="@string/stats_searcheg"
                 android:hint="@string/stats_searcheg"
+                android:textColorHint="@color/colorAccent"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:maxLength="100" />
@@ -49,8 +50,7 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_edges">
+            android:layout_gravity="center">
 
             <TableRow
                 android:layout_width="match_parent"

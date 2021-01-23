@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,7 +19,9 @@ public class statsDetailScreen extends AppCompatActivity {
 
     TextView user;
 
-    String username;
+    ImageView chatIcon;
+
+    String username, url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,9 @@ public class statsDetailScreen extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         assert extras != null;
         username = extras.getString("username");
+        url = extras.getString("url");
+
+        chatIcon = findViewById(R.id.chatIcon);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -41,6 +47,17 @@ public class statsDetailScreen extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
+        switch (url) {
+            case "ironman":
+                chatIcon.setImageResource(R.drawable.game_icon_ironman);
+                break;
+            case "ultimate":
+                chatIcon.setImageResource(R.drawable.game_icon_ultimate_ironman);
+                break;
+            case "hardcore":
+                chatIcon.setImageResource(R.drawable.game_icon_hardcore_ironman);
+                break;
+        }
         user = findViewById(R.id.user);
         user.setText(username);
     }

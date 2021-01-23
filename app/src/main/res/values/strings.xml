@@ -4,6 +4,7 @@
     <string name="logo">OSRS Buddy Logo</string>
     <string name="copyright">AHDesigns&#169; Copyright&#160;</string>
     <string name="version">Version :&#160;</string>
+    <string name="hiscores_version">Hiscores Version</string>
     <!-- End general app strings. -->
 
     <!-- mainScreen strings. -->
@@ -39,6 +40,15 @@
     <string name="hiscore_header">Old School Hiscores</string>
     <string name="stats_header">Search Player Stats</string>
     <string name="stats_searcheg">e.g. Lynx Titan</string>
+    <string-array name = "versions">
+        <item>Normal</item>
+        <item>Ironman</item>
+        <item>Ultimate Ironman</item>
+        <item>Hardcore Ironman</item>
+        <item>Deadman mode</item>
+        <item>Leagues</item>
+        <item>Tournament</item>
+    </string-array>
     <!-- End statsMainScreen. -->
 
     <!-- statsSearchScreen. -->
@@ -57,86 +67,86 @@
     <string name="activity">Activity</string>
     <string name="score">Score</string>
     <string name="overall">Overall</string>
-    <string name="attack">Attack</string>
-    <string name="defence">Defence</string>
-    <string name="strength">Strength</string>
-    <string name="hitpoints">Hitpoints</string>
-    <string name="ranged">Ranged</string>
-    <string name="prayer">Prayer</string>
-    <string name="magic">Magic</string>
-    <string name="cooking">Cooking</string>
-    <string name="woodcutting">Woodcutting</string>
-    <string name="fletching">Fletching</string>
-    <string name="fishing">Fishing</string>
-    <string name="firemaking">Firemaking</string>
-    <string name="crafting">Crafting</string>
-    <string name="smithing">Smithing</string>
-    <string name="mining">Mining</string>
-    <string name="herblore">Herblore</string>
-    <string name="agility">Agility</string>
-    <string name="thieving">Thieving</string>
-    <string name="slayer">Slayer</string>
-    <string name="farming">Farming</string>
-    <string name="runecraft">Runecraft</string>
-    <string name="hunter">Hunter</string>
-    <string name="construction">Construction</string>
+    <string name="attack">&#160;Attack</string>
+    <string name="defence">&#160;Defence</string>
+    <string name="strength">&#160;Strength</string>
+    <string name="hitpoints">&#160;Hitpoints</string>
+    <string name="ranged">&#160;Ranged</string>
+    <string name="prayer">&#160;Prayer</string>
+    <string name="magic">&#160;Magic</string>
+    <string name="cooking">&#160;Cooking</string>
+    <string name="woodcutting">&#160;Woodcutting</string>
+    <string name="fletching">&#160;Fletching</string>
+    <string name="fishing">&#160;Fishing</string>
+    <string name="firemaking">&#160;Firemaking</string>
+    <string name="crafting">&#160;Crafting</string>
+    <string name="smithing">&#160;Smithing</string>
+    <string name="mining">&#160;Mining</string>
+    <string name="herblore">&#160;Herblore</string>
+    <string name="agility">&#160;Agility</string>
+    <string name="thieving">&#160;Thieving</string>
+    <string name="slayer">&#160;Slayer</string>
+    <string name="farming">&#160;Farming</string>
+    <string name="runecraft">&#160;Runecraft</string>
+    <string name="hunter">&#160;Hunter</string>
+    <string name="construction">&#160;Construction</string>
 
-    <string name="league">League Points</string>
-    <string name="bhh">Bounty Hunter - Hunter</string>
-    <string name="bhr">Bounty Hunter - Rogue</string>
-    <string name="csa">Clue Scrolls (all)</string>
-    <string name="csb">Clue Scrolls (beginner)</string>
-    <string name="cse">Clue Scrolls (easy)</string>
-    <string name="csm">Clue Scrolls (medium)</string>
-    <string name="csh">Clue Scrolls (hard)</string>
-    <string name="csel">Clue Scrolls (elite)</string>
-    <string name="csma">Clue Scrolls (master)</string>
-    <string name="lms">LMS - Rank</string>
-    <string name="zeal">Soul Wars Zeal</string>
-    <string name="sire">Abyssal Sire</string>
-    <string name="hydra">Alchemical Hydra</string>
-    <string name="barrows">Barrows Chests</string>
-    <string name="bryophyta">Bryophyta</string>
-    <string name="callisto">Callisto</string>
-    <string name="cerberus">Cerberus</string>
-    <string name="cox">Chambers of Xeric</string>
-    <string name="coxcm">Chambers of Xeric: Challenge Mode</string>
-    <string name="elemental">Chaos Elemental</string>
-    <string name="fanatic">Chaos Fanatic</string>
-    <string name="zilyana">Commander Zilyana</string>
-    <string name="corporeal">Corporeal Beast</string>
-    <string name="carchaeologist">Crazy Archaeologist</string>
-    <string name="prime">Dagannoth Prime</string>
-    <string name="rex">Dagannoth Rex</string>
-    <string name="supreme">Dagannoth Supreme</string>
-    <string name="darchaeologist">Deranged Archaeologist</string>
-    <string name="graardor">General Graardor</string>
-    <string name="mole">Giant Mole</string>
-    <string name="guardians">Grotesque Guardians</string>
-    <string name="hespori">Hespori</string>
-    <string name="kqueen">Kalphite Queen</string>
-    <string name="kbd">King Black Dragon</string>
-    <string name="kraken">Kraken</string>
-    <string name="kree">Kree\'Arra</string>
-    <string name="kril">K\'ril Tsutsaroth</string>
-    <string name="mimic">Mimic</string>
-    <string name="nightmare">Nightmare</string>
-    <string name="obor">Obor</string>
-    <string name="sarachnis">Sarachnis</string>
-    <string name="scorpia">Scorpia</string>
-    <string name="skotizo">Skotizo</string>
-    <string name="gauntlet">The Gauntlet</string>
-    <string name="cgauntlet">The Corrupted Gauntlet</string>
-    <string name="tob">Theatre of Blood</string>
-    <string name="tsd">Thermonuclear Smoke Devil</string>
-    <string name="zuk">TzKal-Zuk</string>
-    <string name="jad">TzTok-Jad</string>
-    <string name="venenatis">Venenatis</string>
-    <string name="vetion">Vet\'ion</string>
-    <string name="vorkath">Vorkath</string>
-    <string name="wintertodt">Wintertodt</string>
-    <string name="zalcano">Zalcano</string>
-    <string name="zulrah">Zulrah</string>
+    <string name="league">&#160;League Points</string>
+    <string name="bhh">&#160;Bounty Hunter - Hunter</string>
+    <string name="bhr">&#160;Bounty Hunter - Rogue</string>
+    <string name="csa">&#160;Clue Scrolls (all)</string>
+    <string name="csb">&#160;Clue Scrolls (beginner)</string>
+    <string name="cse">&#160;Clue Scrolls (easy)</string>
+    <string name="csm">&#160;Clue Scrolls (medium)</string>
+    <string name="csh">&#160;Clue Scrolls (hard)</string>
+    <string name="csel">&#160;Clue Scrolls (elite)</string>
+    <string name="csma">&#160;Clue Scrolls (master)</string>
+    <string name="lms">&#160;LMS - Rank</string>
+    <string name="zeal">&#160;Soul Wars Zeal</string>
+    <string name="sire">&#160;Abyssal Sire</string>
+    <string name="hydra">&#160;Alchemical Hydra</string>
+    <string name="barrows">&#160;Barrows Chests</string>
+    <string name="bryophyta">&#160;Bryophyta</string>
+    <string name="callisto">&#160;Callisto</string>
+    <string name="cerberus">&#160;Cerberus</string>
+    <string name="cox">&#160;Chambers of Xeric</string>
+    <string name="coxcm">&#160;Chambers of Xeric: Challenge Mode</string>
+    <string name="elemental">&#160;Chaos Elemental</string>
+    <string name="fanatic">&#160;Chaos Fanatic</string>
+    <string name="zilyana">&#160;Commander Zilyana</string>
+    <string name="corporeal">&#160;Corporeal Beast</string>
+    <string name="carchaeologist">&#160;Crazy Archaeologist</string>
+    <string name="prime">&#160;Dagannoth Prime</string>
+    <string name="rex">&#160;Dagannoth Rex</string>
+    <string name="supreme">&#160;Dagannoth Supreme</string>
+    <string name="darchaeologist">&#160;Deranged Archaeologist</string>
+    <string name="graardor">&#160;General Graardor</string>
+    <string name="mole">&#160;Giant Mole</string>
+    <string name="guardians">&#160;Grotesque Guardians</string>
+    <string name="hespori">&#160;Hespori</string>
+    <string name="kqueen">&#160;Kalphite Queen</string>
+    <string name="kbd">&#160;King Black Dragon</string>
+    <string name="kraken">&#160;Kraken</string>
+    <string name="kree">&#160;Kree\'Arra</string>
+    <string name="kril">&#160;K\'ril Tsutsaroth</string>
+    <string name="mimic">&#160;Mimic</string>
+    <string name="nightmare">&#160;Nightmare</string>
+    <string name="obor">&#160;Obor</string>
+    <string name="sarachnis">&#160;Sarachnis</string>
+    <string name="scorpia">&#160;Scorpia</string>
+    <string name="skotizo">&#160;Skotizo</string>
+    <string name="gauntlet">&#160;The Gauntlet</string>
+    <string name="cgauntlet">&#160;The Corrupted Gauntlet</string>
+    <string name="tob">&#160;Theatre of Blood</string>
+    <string name="tsd">&#160;Thermonuclear Smoke Devil</string>
+    <string name="zuk">&#160;TzKal-Zuk</string>
+    <string name="jad">&#160;TzTok-Jad</string>
+    <string name="venenatis">&#160;Venenatis</string>
+    <string name="vetion">&#160;Vet\'ion</string>
+    <string name="vorkath">&#160;Vorkath</string>
+    <string name="wintertodt">&#160;Wintertodt</string>
+    <string name="zalcano">&#160;Zalcano</string>
+    <string name="zulrah">&#160;Zulrah</string>
 
     <!-- skillCalculatorSearchScreen. -->
     <string name="calculator_header">Skill Calculator</string>

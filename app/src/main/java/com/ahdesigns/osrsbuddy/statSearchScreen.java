@@ -1,9 +1,11 @@
 package com.ahdesigns.osrsbuddy;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -23,9 +25,6 @@ public class statSearchScreen extends AppCompatActivity {
 
     EditText searchText;
     ImageButton buttonSearch;
-    RadioButton normal, ironman, uironman,
-            hironman, deadman, leagues,
-            tournament;
 
     String username;
 
@@ -42,13 +41,6 @@ public class statSearchScreen extends AppCompatActivity {
 
         searchText = findViewById(R.id.searchText);
         buttonSearch = findViewById(R.id.buttonSearch);
-        normal = findViewById(R.id.normal);
-        ironman = findViewById(R.id.ironman);
-        uironman = findViewById(R.id.uironman);
-        hironman = findViewById(R.id.hironman);
-        deadman = findViewById(R.id.deadman);
-        leagues = findViewById(R.id.leagues);
-        tournament = findViewById(R.id.tournament);
 
         searchText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
@@ -77,25 +69,12 @@ public class statSearchScreen extends AppCompatActivity {
                 imm.hideSoftInputFromWindow(searchText.getWindowToken(), 0);
 
                 username = searchText.getText().toString();
-                Intent intent = new Intent(getApplicationContext(), statsDetailScreen.class);
-                intent.putExtra("username", username);
 
-                if (normal.isChecked()) {
-                    intent.putExtra("url", "normal");
-                } else if (ironman.isChecked()) {
-                    intent.putExtra("url", "ironman");
-                } else if (uironman.isChecked()) {
-                    intent.putExtra("url", "ultimate");
-                } else if (hironman.isChecked()) {
-                    intent.putExtra("url", "hardcore");
-                } else if (deadman.isChecked()) {
-                    intent.putExtra("url", "deadman");
-                } else if (leagues.isChecked()) {
-                    intent.putExtra("url", "seasonal");
-                } else  if (tournament.isChecked()) {
-                    intent.putExtra("url", "tournament");
-                }
-                startActivity(intent);
+                DialogFragment dialog = new hiscoresDialogFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("username", username);
+                dialog.setArguments(bundle);
+                dialog.show(this.getSupportFragmentManager(),"Hiscores Dialog");
             }
         } else {
             Toast.makeText(getApplicationContext(), "No Network Connection", Toast.LENGTH_SHORT).show();
