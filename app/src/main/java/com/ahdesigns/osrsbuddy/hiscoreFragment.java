@@ -98,7 +98,7 @@ public class hiscoreFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.hiscorefragment, container, false);
 
-        chatHead = getActivity().findViewById(R.id.chatHead);
+        chatHead = Objects.requireNonNull(getActivity()).findViewById(R.id.chatHead);
         combat = getActivity().findViewById(R.id.combat);
         style = getActivity().findViewById(R.id.style);
 
@@ -575,8 +575,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (cookingLvlValue.trim().length() > 0) {
                     cookinglvl.setText(df.format(Long.valueOf(cookingLvlValue)));
-                } else {
-                    cookingLvlValue = "0";
                 }
                 if (cookingXpValue.trim().length() > 0) {
                     cookingxp.setText(df.format(Long.valueOf(cookingXpValue)));
@@ -587,8 +585,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (woodcuttingLvlValue.trim().length() > 0) {
                     woodcuttinglvl.setText(df.format(Long.valueOf(woodcuttingLvlValue)));
-                } else {
-                    woodcuttingLvlValue = "0";
                 }
                 if (woodcuttingXpValue.trim().length() > 0) {
                     woodcuttingxp.setText(df.format(Long.valueOf(woodcuttingXpValue)));
@@ -599,8 +595,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (fletchingLvlValue.trim().length() > 0) {
                     fletchinglvl.setText(df.format(Long.valueOf(fletchingLvlValue)));
-                } else {
-                    fletchingLvlValue = "0";
                 }
                 if (fletchingXpValue.trim().length() > 0) {
                     fletchingxp.setText(df.format(Long.valueOf(fletchingXpValue)));
@@ -611,8 +605,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (fishingLvlValue.trim().length() > 0) {
                     fishinglvl.setText(df.format(Long.valueOf(fishingLvlValue)));
-                } else {
-                    fishingLvlValue = "0";
                 }
                 if (fishingXpValue.trim().length() > 0) {
                     fishingxp.setText(df.format(Long.valueOf(fishingXpValue)));
@@ -623,8 +615,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (firemakingLvlValue.trim().length() > 0) {
                     firemakinglvl.setText(df.format(Long.valueOf(firemakingLvlValue)));
-                } else {
-                    firemakingLvlValue = "0";
                 }
                 if (firemakingXpValue.trim().length() > 0) {
                     firemakingxp.setText(df.format(Long.valueOf(firemakingXpValue)));
@@ -635,8 +625,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (craftingLvlValue.trim().length() > 0) {
                     craftinglvl.setText(df.format(Long.valueOf(craftingLvlValue)));
-                } else {
-                    craftingLvlValue = "0";
                 }
                 if (craftingXpValue.trim().length() > 0) {
                     craftingxp.setText(df.format(Long.valueOf(craftingXpValue)));
@@ -647,8 +635,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (smithingLvlValue.trim().length() > 0) {
                     smithinglvl.setText(df.format(Long.valueOf(smithingLvlValue)));
-                } else {
-                    smithingLvlValue = "0";
                 }
                 if (smithingXpValue.trim().length() > 0) {
                     smithingxp.setText(df.format(Long.valueOf(smithingXpValue)));
@@ -659,8 +645,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (miningLvlValue.trim().length() > 0) {
                     mininglvl.setText(df.format(Long.valueOf(miningLvlValue)));
-                } else {
-                    miningLvlValue = "0";
                 }
                 if (miningXpValue.trim().length() > 0) {
                     miningxp.setText(df.format(Long.valueOf(miningXpValue)));
@@ -671,8 +655,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (herbloreLvlValue.trim().length() > 0) {
                     herblorelvl.setText(df.format(Long.valueOf(herbloreLvlValue)));
-                } else {
-                    herbloreLvlValue = "0";
                 }
                 if (herbloreXpValue.trim().length() > 0) {
                     herblorexp.setText(df.format(Long.valueOf(herbloreXpValue)));
@@ -683,8 +665,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (agilityLvlValue.trim().length() > 0) {
                     agilitylvl.setText(df.format(Long.valueOf(agilityLvlValue)));
-                } else {
-                    agilityLvlValue = "0";
                 }
                 if (agilityXpValue.trim().length() > 0) {
                     agilityxp.setText(df.format(Long.valueOf(agilityXpValue)));
@@ -695,8 +675,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (thievingLvlValue.trim().length() > 0) {
                     thievinglvl.setText(df.format(Long.valueOf(thievingLvlValue)));
-                } else {
-                    thievingLvlValue = "0";
                 }
                 if (thievingXpValue.trim().length() > 0) {
                     thievingxp.setText(df.format(Long.valueOf(thievingXpValue)));
@@ -707,8 +685,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (slayerLvlValue.trim().length() > 0) {
                     slayerlvl.setText(df.format(Long.valueOf(slayerLvlValue)));
-                } else {
-                    slayerLvlValue = "0";
                 }
                 if (slayerXpValue.trim().length() > 0) {
                     slayerxp.setText(df.format(Long.valueOf(slayerXpValue)));
@@ -719,8 +695,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (farmingLvlValue.trim().length() > 0) {
                     farminglvl.setText(df.format(Long.valueOf(farmingLvlValue)));
-                } else {
-                    farmingLvlValue = "0";
                 }
                 if (farmingXpValue.trim().length() > 0) {
                     farmingxp.setText(df.format(Long.valueOf(farmingXpValue)));
@@ -731,8 +705,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (runecraftingLvlValue.trim().length() > 0) {
                     runecraftinglvl.setText(df.format(Long.valueOf(runecraftingLvlValue)));
-                } else {
-                    runecraftingLvlValue = "0";
                 }
                 if (runecraftingXpValue.trim().length() > 0) {
                     runecraftingxp.setText(df.format(Long.valueOf(runecraftingXpValue)));
@@ -743,8 +715,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (hunterLvlValue.trim().length() > 0) {
                     hunterlvl.setText(df.format(Long.valueOf(hunterLvlValue)));
-                } else {
-                    hunterLvlValue = "0";
                 }
                 if (hunterXpValue.trim().length() > 0) {
                     hunterxp.setText(df.format(Long.valueOf(hunterXpValue)));
@@ -755,8 +725,6 @@ public class hiscoreFragment extends Fragment {
                 }
                 if (constructionLvlValue.trim().length() > 0) {
                     constructionlvl.setText(df.format(Long.valueOf(constructionLvlValue)));
-                } else {
-                    constructionLvlValue = "0";
                 }
                 if (constructionXpValue.trim().length() > 0) {
                     constructionxp.setText(df.format(Long.valueOf(constructionXpValue)));

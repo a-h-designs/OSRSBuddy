@@ -15,6 +15,7 @@ import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
+@SuppressWarnings("ALL")
 public class ServiceHandler {
 
     static String response = null;

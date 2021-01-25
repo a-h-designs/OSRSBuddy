@@ -26,12 +26,11 @@
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/searchView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:gravity="center">
 
             <EditText
                 android:id="@+id/searchText"
@@ -44,240 +43,267 @@
                 android:textColorHint="@color/colorAccent"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
-                android:maxLength="100" />
-        </LinearLayout>
+                android:maxLength="12" />
+        </RelativeLayout>
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/attack"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_attack"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/attack" />
-                <ImageView
-                    android:id="@+id/hitpoints"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_hitpoints"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/hitpoints" />
-                <ImageView
-                    android:id="@+id/mining"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_mining"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/mining" />
-            </TableRow>
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/strength"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_strength"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/strength" />
-                <ImageView
-                    android:id="@+id/agility"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_agility"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/agility" />
-                <ImageView
-                    android:id="@+id/smithing"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_smithing"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/smithing" />
-            </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/defence"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_defence"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/defence" />
-                <ImageView
-                    android:id="@+id/herblore"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_herblore"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/herblore" />
-                <ImageView
-                    android:id="@+id/fishing"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_fishing"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/fishing" />
-            </TableRow>
+                    <ImageView
+                        android:id="@+id/attack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/attack"
+                        android:onClick="calculatorSearch"
+                        android:src="@drawable/calculator_attack_button" />
+                    <ImageView
+                        android:id="@+id/hitpoints"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_hitpoints_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/hitpoints" />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/ranged"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_ranged"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/ranged" />
-                <ImageView
-                    android:id="@+id/thieving"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_thieving"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/thieving" />
-                <ImageView
-                    android:id="@+id/cooking"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_cooking"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/cooking" />
-            </TableRow>
+                    <ImageView
+                        android:id="@+id/mining"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/mining"
+                        android:onClick="calculatorSearch"
+                        android:src="@drawable/calculator_mining_button" />
+                </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/prayer"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_prayer"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/prayer" />
-                <ImageView
-                    android:id="@+id/crafting"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_crafting"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/crafting" />
-                <ImageView
-                    android:id="@+id/firemaking"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_firemaking"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/firemaking" />
-            </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/strength"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_strength_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/strength" />
+                    <ImageView
+                        android:id="@+id/agility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_agility_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/agility" />
+                    <ImageView
+                        android:id="@+id/smithing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_smithing_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/smithing" />
+                </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/magic"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_magic"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/magic" />
-                <ImageView
-                    android:id="@+id/fletching"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_fletching"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/fletching" />
-                <ImageView
-                    android:id="@+id/woodcutting"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_woodcutting"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/woodcutting" />
-            </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/defence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_defence_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/defence" />
+                    <ImageView
+                        android:id="@+id/herblore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_herblore_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/herblore" />
+                    <ImageView
+                        android:id="@+id/fishing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_fishing_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/fishing" />
+                </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/runecraft"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_runecraft"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/runecraft" />
-                <ImageView
-                    android:id="@+id/slayer"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_slayer"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/slayer" />
-                <ImageView
-                    android:id="@+id/farming"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_farming"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/farming" />
-            </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/ranged"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_ranged_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/ranged" />
+                    <ImageView
+                        android:id="@+id/thieving"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_thieving_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/thieving" />
+                    <ImageView
+                        android:id="@+id/cooking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_cooking_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/cooking" />
+                </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/construction"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_construction"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/construction" />
-                <ImageView
-                    android:id="@+id/hunter"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="@dimen/layout_margin_top"
-                    android:src="@drawable/calculator_icon_hunter"
-                    android:onClick="calculatorSearch"
-                    android:contentDescription="@string/hunter" />
-            </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/prayer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_prayer_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/prayer" />
+                    <ImageView
+                        android:id="@+id/crafting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_crafting_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/crafting" />
+                    <ImageView
+                        android:id="@+id/firemaking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_firemaking_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/firemaking" />
+                </TableRow>
 
-        </TableLayout>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/magic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_magic_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/magic" />
+                    <ImageView
+                        android:id="@+id/fletching"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_fletching_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/fletching" />
+                    <ImageView
+                        android:id="@+id/woodcutting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_woodcutting_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/woodcutting" />
+                </TableRow>
 
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/runecraft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_runecraft_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/runecraft" />
+                    <ImageView
+                        android:id="@+id/slayer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_slayer_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/slayer" />
+                    <ImageView
+                        android:id="@+id/farming"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_farming_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/farming" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/construction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_construction_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/construction" />
+                    <ImageView
+                        android:id="@+id/hunter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/layout_margin_top"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calculator_hunter_button"
+                        android:onClick="calculatorSearch"
+                        android:contentDescription="@string/hunter" />
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
     </LinearLayout>
-
 </android.support.design.widget.CoordinatorLayout>

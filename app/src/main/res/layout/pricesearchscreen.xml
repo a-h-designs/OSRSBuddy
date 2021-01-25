@@ -21,16 +21,19 @@
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/searchView"
         android:orientation="horizontal"
+        android:gravity="center"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:id="@+id/searchText"
+            android:autofillHints="@string/search_ge_eg"
             android:hint="@string/search_ge_eg"
+            android:textColorHint="@color/colorAccent"
             android:imeOptions="actionSearch"
             android:maxLength="100"
             android:inputType="text"
@@ -42,10 +45,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonSearch"
             android:src="@drawable/app_icon_search"
-            android:background="@color/windowBackground"
+            android:background="@null"
             android:onClick="itemSearch"
             android:layout_marginTop="@dimen/layout_margin_top"
-            android:layout_marginBottom="@dimen/layout_margin_bottom" />
+            android:layout_marginBottom="@dimen/layout_margin_bottom"
+            android:contentDescription="@string/stats_header" />
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
