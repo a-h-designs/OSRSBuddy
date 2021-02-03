@@ -2,13 +2,13 @@ package com.ahdesigns.osrsbuddy;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -24,14 +24,17 @@ import java.util.Objects;
 
 public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
+    ImageButton minus, plus;
+
     ImageView skillImage;
 
     TextView currentLevel, nextLevel, nextXP;
 
-    View mining;
+    View smithing, mining;
 
-    String username, skill, num,
-            nextLvl,
+    String username, skill, num, smelting,
+            artisan, wisdom,
+            nextLvl, bar, stringValue,
             title, imageSrc, jsonURL,
             //hiscore strings
             currentLvl, overallRankValue, attackLvlValue, attackXpValue, defenceLvlValue,
@@ -53,6 +56,17 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
     private RelativeLayout layout;
     private LayoutInflater inflate;
 
+    calculateXP calcXP = new calculateXP();
+
+    barsSmithingCalculator barsSmithCalc = null;
+    bronzeSmithingCalculator bronzeSmithCalc = null;
+    ironSmithingCalculator ironSmithCalc = null;
+    steelSmithingCalculator steelSmithCalc = null;
+    mithSmithingCalculator mithSmithCalc = null;
+    addySmithingCalculator addySmithCalc = null;
+    runeSmithingCalculator runeSmithCalc = null;
+    miningCalculator mineCalc = null;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +76,9 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
         inflate = LayoutInflater.from(getApplicationContext());
         layout = findViewById(R.id.calculatorItems);
 
+        minus = findViewById(R.id.buttonMinus);
+        plus = findViewById(R.id.buttonPlus);
+
         skillImage = findViewById(R.id.chatHead);
 
         currentLevel = findViewById(R.id.currentLevel);
@@ -70,8 +87,12 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         assert extras != null;
+        smelting = extras.getString("smelting");
+        artisan = extras.getString("artisan");
+        wisdom = extras.getString("wisdom");
         username = extras.getString("username");
         skill = extras.getString("skill");
+        bar = extras.getString("bar");
         title = skill.substring(0, 1).toUpperCase() + skill.substring(1);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -91,7 +112,6 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
         skillImage.setImageResource(resImage);
         //Call the GetData class
         new GetData().execute();
-
     }
 
     //Get data class to get json data
@@ -335,8 +355,6 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
             if(overallRankValue != null) {
 
-                calculateXP calcXP = new calculateXP();
-
                 //After we have obtained the JSON data
                 // Dismiss the progress dialog
                 if (pDialog.isShowing())
@@ -348,171 +366,359 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
                 if(skill.equals("attack")) {
                     num = attackXpValue;
+                    num2 = Integer.parseInt(attackLvlValue);
                     currentLevel.setText(attackLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("defence")) {
                     num = defenceXpValue;
+                    num2 = Integer.parseInt(defenceLvlValue);
                     currentLevel.setText(defenceLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("strength")) {
                     num = strengthXpValue;
+                    num2 = Integer.parseInt(strengthLvlValue);
                     currentLevel.setText(strengthLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("hitpoints")) {
                     num = hitpointsXpValue;
+                    num2 = Integer.parseInt(hitpointsLvlValue);
                     currentLevel.setText(hitpointsLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("ranged")) {
                     num = rangedXpValue;
+                    num2 = Integer.parseInt(rangedLvlValue);
                     currentLevel.setText(rangedLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("prayer")) {
                     num = prayerXpValue;
+                    num2 = Integer.parseInt(prayerLvlValue);
                     currentLevel.setText(prayerLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("magic")) {
                     num = magicXpValue;
+                    num2 = Integer.parseInt(magicLvlValue);
                     currentLevel.setText(magicLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("cooking")) {
                     num = cookingXpValue;
+                    num2 = Integer.parseInt(cookingLvlValue);
                     currentLevel.setText(cookingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("woodcutting")) {
                     num = woodcuttingXpValue;
+                    num2 = Integer.parseInt(woodcuttingLvlValue);
                     currentLevel.setText(woodcuttingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("fletching")) {
                     num = fletchingXpValue;
+                    num2 = Integer.parseInt(fletchingLvlValue);
                     currentLevel.setText(fletchingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("fishing")) {
                     num = fishingXpValue;
+                    num2 = Integer.parseInt(fishingLvlValue);
                     currentLevel.setText(fishingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("firemaking")) {
                     num = firemakingXpValue;
+                    num2 = Integer.parseInt(firemakingLvlValue);
                     currentLevel.setText(firemakingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("crafting")) {
                     num = craftingXpValue;
+                    num2 = Integer.parseInt(craftingLvlValue);
                     currentLevel.setText(craftingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("smithing")) {
                     num = smithingXpValue;
+                    num2 = Integer.parseInt(smithingLvlValue);
                     currentLevel.setText(smithingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    if (bar.equals("smelting")) {
+                        smithing = inflate.inflate(R.layout.barssmithingcalculator, null, false);
+                        RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                                RelativeLayout.LayoutParams.MATCH_PARENT,
+                                RelativeLayout.LayoutParams.MATCH_PARENT);
+                        smithing.setLayoutParams(imageViewParam);
+                        layout.addView(smithing);
+                        barsSmithCalc = new barsSmithingCalculator();
+                        barsSmithCalc.calculate(num2, xpLeft, smithing, artisan, wisdom);
+                    }
+                    if (bar.equals("bronze")) {
+                        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.bronze_title);
+                        smithing = inflate.inflate(R.layout.bronzesmithingcalculator, null, false);
+                        RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                                RelativeLayout.LayoutParams.MATCH_PARENT,
+                                RelativeLayout.LayoutParams.MATCH_PARENT);
+                        smithing.setLayoutParams(imageViewParam);
+                        layout.addView(smithing);
+                        bronzeSmithCalc = new bronzeSmithingCalculator();
+                        bronzeSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+                    }
+                    if (bar.equals("iron")) {
+                        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.iron_title);
+                        smithing = inflate.inflate(R.layout.ironsmithingcalculator, null, false);
+                        RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                                RelativeLayout.LayoutParams.MATCH_PARENT,
+                                RelativeLayout.LayoutParams.MATCH_PARENT);
+                        smithing.setLayoutParams(imageViewParam);
+                        layout.addView(smithing);
+                        ironSmithCalc = new ironSmithingCalculator();
+                        ironSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+                    }
+                    if (bar.equals("steel")) {
+                        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.steel_title);
+                        smithing = inflate.inflate(R.layout.steelsmithingcalculator, null, false);
+                        RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                                RelativeLayout.LayoutParams.MATCH_PARENT,
+                                RelativeLayout.LayoutParams.MATCH_PARENT);
+                        smithing.setLayoutParams(imageViewParam);
+                        layout.addView(smithing);
+                        steelSmithCalc = new steelSmithingCalculator();
+                        steelSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+                    }
+                    if (bar.equals("mithril")) {
+                        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.mith_title);
+                        smithing = inflate.inflate(R.layout.mithsmithingcalculator, null, false);
+                        RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                                RelativeLayout.LayoutParams.MATCH_PARENT,
+                                RelativeLayout.LayoutParams.MATCH_PARENT);
+                        smithing.setLayoutParams(imageViewParam);
+                        layout.addView(smithing);
+                        mithSmithCalc = new mithSmithingCalculator();
+                        mithSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+                    }
+                    if (bar.equals("adamant")) {
+                        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.addy_title);
+                        smithing = inflate.inflate(R.layout.addysmithingcalculator, null, false);
+                        RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                                RelativeLayout.LayoutParams.MATCH_PARENT,
+                                RelativeLayout.LayoutParams.MATCH_PARENT);
+                        smithing.setLayoutParams(imageViewParam);
+                        layout.addView(smithing);
+                        addySmithCalc = new addySmithingCalculator();
+                        addySmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+                    }
+                    if (bar.equals("rune")) {
+                        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.rune_title);
+                        smithing = inflate.inflate(R.layout.runesmithingcalculator, null, false);
+                        RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                                RelativeLayout.LayoutParams.MATCH_PARENT,
+                                RelativeLayout.LayoutParams.MATCH_PARENT);
+                        smithing.setLayoutParams(imageViewParam);
+                        layout.addView(smithing);
+                        runeSmithCalc = new runeSmithingCalculator();
+                        runeSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+                    }
                 }
                 if(skill.equals("mining")) {
                     mining = inflate.inflate(R.layout.miningcalculator , null, false);
@@ -521,114 +727,186 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                             RelativeLayout.LayoutParams.MATCH_PARENT);
                     mining.setLayoutParams(imageViewParam);
                     layout.addView(mining);
-                    miningCalculator mineCalc = new miningCalculator();
                     num = miningXpValue;
+                    num2 = Integer.parseInt(miningLvlValue);
                     currentLevel.setText(miningLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
+                    mineCalc = new miningCalculator();
                     mineCalc.calculate(num2, xpLeft, mining);
                 }
                 if(skill.equals("herblore")) {
                     num = herbloreXpValue;
+                    num2 = Integer.parseInt(herbloreLvlValue);
                     currentLevel.setText(herbloreLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("agility")) {
                     num = agilityXpValue;
+                    num2 = Integer.parseInt(agilityLvlValue);
                     currentLevel.setText(agilityLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("thieving")) {
                     num = thievingXpValue;
+                    num2 = Integer.parseInt(thievingLvlValue);
                     currentLevel.setText(thievingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("slayer")) {
                     num = slayerXpValue;
+                    num2 = Integer.parseInt(slayerLvlValue);
                     currentLevel.setText(slayerLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("farming")) {
                     num = farmingXpValue;
+                    num2 = Integer.parseInt(farmingLvlValue);
                     currentLevel.setText(farmingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("runecraft")) {
                     num = runecraftingXpValue;
+                    num2 = Integer.parseInt(runecraftingLvlValue);
                     currentLevel.setText(runecraftingLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("hunter")) {
                     num = hunterXpValue;
+                    num2 = Integer.parseInt(hunterLvlValue);
                     currentLevel.setText(hunterLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("construction")) {
                     num = constructionXpValue;
+                    num2 = Integer.parseInt(constructionLvlValue);
                     currentLevel.setText(constructionLvlValue);
                     currentLvl = currentLevel.getText().toString();
-                    num2 = Integer.parseInt(miningLvlValue);
-                    calcXP.calculate(num, currentLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);
-                    nextLevel.setText(nextLvl);
+                    if (sum == 2) {
+                        minus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(nextLvl);
+                    } else if (sum == 100) {
+                        plus.setVisibility(View.INVISIBLE);
+                        nextLevel.setText(R.string.text_max);
+                    } else {
+                        nextLevel.setText(nextLvl);
+                    }
+                    calcXP.calculate(num, nextLevel);
+                    xpLeft = calculateXP.xpLeft;
+                    nextXP.setText(df.format(xpLeft));
                 }
             } else {
                 if (pDialog.isShowing())
@@ -636,6 +914,73 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), username + " was not found in the Overall table", Toast.LENGTH_SHORT).show();
                 finish();
             }
+        }
+    }
+
+    public void minusLevel(View view) {
+        sum--;
+        stringValue = Integer.toString(sum);
+
+        if (Integer.parseInt(stringValue) == 1) {
+            minus.setVisibility(View.INVISIBLE);
+        } else {
+            if (Integer.parseInt(stringValue) == 99) {
+                plus.setVisibility(View.VISIBLE);
+            }
+            nextLevel.setText(stringValue);
+        }
+    }
+    
+    public void plusLevel(View view) {
+        sum++;
+        stringValue = Integer.toString(sum);
+
+        if (Integer.parseInt(stringValue) > 99) {
+            plus.setVisibility(View.INVISIBLE);
+            nextLevel.setText(R.string.text_max);
+        } else {
+            if (Integer.parseInt(stringValue) == 2) {
+                minus.setVisibility(View.VISIBLE);
+            }
+            nextLevel.setText(stringValue);
+        }
+    }
+
+    public void update(View view) {
+
+        DecimalFormat df = new DecimalFormat();
+        df.setGroupingUsed(true);
+        df.setGroupingSize(3);
+
+        calcXP.calculate(num, nextLevel);
+        xpLeft = calculateXP.xpLeft;
+        nextXP.setText(df.format(xpLeft));
+
+        if(skill.equals("smithing")) {
+            if (bar.equals("smelting")) {
+                barsSmithCalc.calculate(num2, xpLeft, smithing, artisan, wisdom);
+            }
+            if (bar.equals("bronze")) {
+                bronzeSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+            }
+            if (bar.equals("iron")) {
+                ironSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+            }
+            if (bar.equals("steel")) {
+                steelSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+            }
+            if (bar.equals("mithril")) {
+                mithSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+            }
+            if (bar.equals("adamant")) {
+                addySmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+            }
+            if (bar.equals("rune")) {
+                runeSmithCalc.calculate(num2, xpLeft, smithing, smelting, artisan, wisdom);
+            }
+        }
+        if(skill.equals("mining")) {
+            mineCalc.calculate(num2, xpLeft, mining);
         }
     }
 

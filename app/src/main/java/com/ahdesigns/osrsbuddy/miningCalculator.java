@@ -1,6 +1,5 @@
 package com.ahdesigns.osrsbuddy;
 
-import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -8,6 +7,18 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 
 public class miningCalculator {
+
+    TableRow limestonerow, ironrow, silverrow, pure_essencerow, coalrow, paydirtrow,
+            sandstone_1kgrow, sandstone_2kgrow, sandstone_5kgrow, sandstone_10kgrow,
+            dense_essencerow, goldrow, gemrow, granite_500grow, granite_2kgrow,
+            granite_5kgrow,  mithrow, addyrow, runerow, amethystrow;
+
+    TextView claytxt, rune_esstxt, coppertxt, tintxt, limestonetxt,irontxt,
+            silvertxt, pure_esstxt, coalTxt, paydirtTxt, sandstone1txt, sandstone2txt,
+            sandstone5txt, sandstone10txt, denseesstxt, goldTxt, gemTxt, granite500Txt,
+            granite2Txt, granite5Txt, mithTxt, addyTxt, runeTxt, amethystTxt;
+
+    String cl, co, l, i, s, c, pd, ss1, de, g, g5, m, a, r, am;
 
     int  clay, clayToGo, copperToGo, limestoneToGo, iron, ironToGo,
             silver, silverToGo, coal, coalToGo, paydirt, paydirtToGo,
@@ -17,53 +28,54 @@ public class miningCalculator {
 
     double copper, limestone;
 
-    @SuppressLint("InflateParams")
     public void calculate(Integer num2, Integer xpLeft, View mining) {
 
-        TableRow limestonerow = mining.findViewById(R.id.limestonerow);
-        TableRow ironrow = mining.findViewById(R.id.ironrow);
-        TableRow silverrow = mining.findViewById(R.id.silverrow);
-        TableRow pure_essencerow = mining.findViewById(R.id.pure_essencerow);
-        TableRow coalrow = mining.findViewById(R.id.coalrow);
-        TableRow paydirtrow = mining.findViewById(R.id.paydirtrow);
-        TableRow sandstone_1kgrow = mining.findViewById(R.id.sandstone_1kgrow);
-        TableRow sandstone_2kgrow = mining.findViewById(R.id.sandstone_2kgrow);
-        TableRow sandstone_5kgrow = mining.findViewById(R.id.sandstone_5kgrow);
-        TableRow sandstone_10kgrow = mining.findViewById(R.id.sandstone_10kgrow);
-        TableRow dense_essencerow = mining.findViewById(R.id.dense_essencerow);
-        TableRow goldrow = mining.findViewById(R.id.goldrow);
-        TableRow gemrow = mining.findViewById(R.id.gemrow);
-        TableRow granite_500grow = mining.findViewById(R.id.granite_500grow);
-        TableRow granite_2kgrow = mining.findViewById(R.id.granite_2kgrow);
-        TableRow granite_5kgrow = mining.findViewById(R.id.granite_5kgrow);
-        TableRow mithrow = mining.findViewById(R.id.mithrow);
-        TableRow addyrow = mining.findViewById(R.id.addyrow);
-        TableRow runerow = mining.findViewById(R.id.runerow);
-        TableRow amethystrow = mining.findViewById(R.id.amethystrow);
-        TextView claytxt = mining.findViewById(R.id.claytxt);
-        TextView rune_esstxt = mining.findViewById(R.id.rune_essencetxt);
-        TextView coppertxt = mining.findViewById(R.id.coppertxt);
-        TextView tintxt = mining.findViewById(R.id.tintxt);
-        TextView limestonetxt = mining.findViewById(R.id.limestonetxt);
-        TextView irontxt = mining.findViewById(R.id.irontxt);
-        TextView silvertxt = mining.findViewById(R.id.silvertxt);
-        TextView pure_esstxt = mining.findViewById(R.id.pure_essencetxt);
-        TextView coalTxt = mining.findViewById(R.id.coaltxt);
-        TextView paydirtTxt = mining.findViewById(R.id.paydirttxt);
-        TextView sandstone1txt = mining.findViewById(R.id.sandstone_1kgtxt);
-        TextView sandstone2txt = mining.findViewById(R.id.sandstone_2kgtxt);
-        TextView sandstone5txt = mining.findViewById(R.id.sandstone_5kgtxt);
-        TextView sandstone10txt = mining.findViewById(R.id.sandstone_10kgtxt);
-        TextView denseesstxt = mining.findViewById(R.id.dense_essencetxt);
-        TextView goldTxt = mining.findViewById(R.id.goldtxt);
-        TextView gemTxt = mining.findViewById(R.id.gemtxt);
-        TextView granite500Txt = mining.findViewById(R.id.granite_500gtxt);
-        TextView granite2Txt = mining.findViewById(R.id.granite_2kgtxt);
-        TextView granite5Txt = mining.findViewById(R.id.granite_5kgtxt);
-        TextView mithTxt = mining.findViewById(R.id.mithtxt);
-        TextView addyTxt = mining.findViewById(R.id.addytxt);
-        TextView runeTxt = mining.findViewById(R.id.runetxt);
-        TextView amethystTxt = mining.findViewById(R.id.amethysttxt);
+        limestonerow = mining.findViewById(R.id.limestonerow);
+        ironrow = mining.findViewById(R.id.ironrow);
+        silverrow = mining.findViewById(R.id.silverrow);
+        pure_essencerow = mining.findViewById(R.id.pure_essencerow);
+        coalrow = mining.findViewById(R.id.coalrow);
+        paydirtrow = mining.findViewById(R.id.paydirtrow);
+        sandstone_1kgrow = mining.findViewById(R.id.sandstone_1kgrow);
+        sandstone_2kgrow = mining.findViewById(R.id.sandstone_2kgrow);
+        sandstone_5kgrow = mining.findViewById(R.id.sandstone_5kgrow);
+        sandstone_10kgrow = mining.findViewById(R.id.sandstone_10kgrow);
+        dense_essencerow = mining.findViewById(R.id.dense_essencerow);
+        goldrow = mining.findViewById(R.id.goldrow);
+        gemrow = mining.findViewById(R.id.gemrow);
+        granite_500grow = mining.findViewById(R.id.granite_500grow);
+        granite_2kgrow = mining.findViewById(R.id.granite_2kgrow);
+        granite_5kgrow = mining.findViewById(R.id.granite_5kgrow);
+        mithrow = mining.findViewById(R.id.mithrow);
+        addyrow = mining.findViewById(R.id.addyrow);
+        runerow = mining.findViewById(R.id.runerow);
+        amethystrow = mining.findViewById(R.id.amethystrow);
+
+        claytxt = mining.findViewById(R.id.claytxt);
+        rune_esstxt = mining.findViewById(R.id.rune_essencetxt);
+        coppertxt = mining.findViewById(R.id.coppertxt);
+        tintxt = mining.findViewById(R.id.tintxt);
+        limestonetxt = mining.findViewById(R.id.limestonetxt);
+        irontxt = mining.findViewById(R.id.irontxt);
+        silvertxt = mining.findViewById(R.id.silvertxt);
+        pure_esstxt = mining.findViewById(R.id.pure_essencetxt);
+        coalTxt = mining.findViewById(R.id.coaltxt);
+        paydirtTxt = mining.findViewById(R.id.paydirttxt);
+        sandstone1txt = mining.findViewById(R.id.sandstone_1kgtxt);
+        sandstone2txt = mining.findViewById(R.id.sandstone_2kgtxt);
+        sandstone5txt = mining.findViewById(R.id.sandstone_5kgtxt);
+        sandstone10txt = mining.findViewById(R.id.sandstone_10kgtxt);
+        denseesstxt = mining.findViewById(R.id.dense_essencetxt);
+        goldTxt = mining.findViewById(R.id.goldtxt);
+        gemTxt = mining.findViewById(R.id.gemtxt);
+        granite500Txt = mining.findViewById(R.id.granite_500gtxt);
+        granite2Txt = mining.findViewById(R.id.granite_2kgtxt);
+        granite5Txt = mining.findViewById(R.id.granite_5kgtxt);
+        mithTxt = mining.findViewById(R.id.mithtxt);
+        addyTxt = mining.findViewById(R.id.addytxt);
+        runeTxt = mining.findViewById(R.id.runetxt);
+        amethystTxt = mining.findViewById(R.id.amethysttxt);
+
         clay = 5;
         denseess = 12;
         copper = 17.5;
@@ -79,36 +91,39 @@ public class miningCalculator {
         addy = 95;
         rune = 125;
         amethyst = 240;
-        clayToGo = xpLeft / clay;
-        denseessToGo = xpLeft / denseess;
-        copperToGo = (int) (xpLeft / copper);
-        limestoneToGo = (int) (xpLeft / limestone);
-        sandstone1ToGo = xpLeft / sandstone1;
-        ironToGo = xpLeft / iron;
-        silverToGo = xpLeft / silver;
-        coalToGo = xpLeft / coal;
-        paydirtToGo = xpLeft / paydirt;
-        goldToGo = xpLeft / gold;
-        granite5ToGo = xpLeft / granite5;
-        mithToGo = xpLeft / mith;
-        addyToGo = xpLeft / addy;
-        runeToGo = xpLeft / rune;
-        amethystToGo = xpLeft / amethyst;
-        String cl = NumberFormat.getIntegerInstance().format(clayToGo);
-        String co = NumberFormat.getIntegerInstance().format(copperToGo);
-        String l = NumberFormat.getIntegerInstance().format(limestoneToGo);
-        String i = NumberFormat.getIntegerInstance().format(ironToGo);
-        String s = NumberFormat.getIntegerInstance().format(silverToGo);
-        String c = NumberFormat.getIntegerInstance().format(coalToGo);
-        String pd = NumberFormat.getIntegerInstance().format(paydirtToGo);
-        String ss1 = NumberFormat.getIntegerInstance().format(sandstone1ToGo);
-        String de = NumberFormat.getIntegerInstance().format(denseessToGo);
-        String g = NumberFormat.getIntegerInstance().format(goldToGo);
-        String g5 = NumberFormat.getIntegerInstance().format(granite5ToGo);
-        String m = NumberFormat.getIntegerInstance().format(mithToGo);
-        String a = NumberFormat.getIntegerInstance().format(addyToGo);
-        String r = NumberFormat.getIntegerInstance().format(runeToGo);
-        String am = NumberFormat.getIntegerInstance().format(amethystToGo);
+
+        clayToGo = xpLeft / clay + 1;
+        denseessToGo = xpLeft / denseess + 1;
+        copperToGo = (int) (xpLeft / copper + 1);
+        limestoneToGo = (int) (xpLeft / limestone + 1);
+        sandstone1ToGo = xpLeft / sandstone1 + 1;
+        ironToGo = xpLeft / iron + 1;
+        silverToGo = xpLeft / silver + 1;
+        coalToGo = xpLeft / coal + 1;
+        paydirtToGo = xpLeft / paydirt + 1;
+        goldToGo = xpLeft / gold + 1;
+        granite5ToGo = xpLeft / granite5 + 1;
+        mithToGo = xpLeft / mith + 1;
+        addyToGo = xpLeft / addy + 1;
+        runeToGo = xpLeft / rune + 1;
+        amethystToGo = xpLeft / amethyst + 1;
+
+        cl = NumberFormat.getIntegerInstance().format(clayToGo);
+        co = NumberFormat.getIntegerInstance().format(copperToGo);
+        l = NumberFormat.getIntegerInstance().format(limestoneToGo);
+        i = NumberFormat.getIntegerInstance().format(ironToGo);
+        s = NumberFormat.getIntegerInstance().format(silverToGo);
+        c = NumberFormat.getIntegerInstance().format(coalToGo);
+        pd = NumberFormat.getIntegerInstance().format(paydirtToGo);
+        ss1 = NumberFormat.getIntegerInstance().format(sandstone1ToGo);
+        de = NumberFormat.getIntegerInstance().format(denseessToGo);
+        g = NumberFormat.getIntegerInstance().format(goldToGo);
+        g5 = NumberFormat.getIntegerInstance().format(granite5ToGo);
+        m = NumberFormat.getIntegerInstance().format(mithToGo);
+        a = NumberFormat.getIntegerInstance().format(addyToGo);
+        r = NumberFormat.getIntegerInstance().format(runeToGo);
+        am = NumberFormat.getIntegerInstance().format(amethystToGo);
+
         claytxt.setText(cl);
         rune_esstxt.setText(cl);
         coppertxt.setText(co);

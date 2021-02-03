@@ -51,7 +51,7 @@
 
             <RelativeLayout
                 android:id="@+id/calculatorLevels"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/calculatorChat"
                 android:layout_centerVertical="true">
@@ -92,6 +92,42 @@
                     android:layout_marginBottom="@dimen/layout_margin_bottom"
                     android:text="@string/text"
                     android:textSize="@dimen/page_text_size"/>
+                <ImageButton
+                    android:layout_toEndOf="@id/nextLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/currentLevel"
+                    android:layout_marginStart="@dimen/p2p_icon"
+                    android:id="@+id/buttonMinus"
+                    android:src="@drawable/app_icon_minus"
+                    android:background="@null"
+                    android:onClick="minusLevel"
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    android:contentDescription="@string/search_ge_header" />
+                <ImageButton
+                    android:layout_toEndOf="@id/buttonMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/currentLevel"
+                    android:layout_marginStart="@dimen/p2p_icon"
+                    android:id="@+id/buttonPlus"
+                    android:src="@drawable/app_icon_plus"
+                    android:background="@null"
+                    android:onClick="plusLevel"
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    android:contentDescription="@string/search_ge_header" />
+                <TextView
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/currentLevel"
+                    android:layout_marginEnd="@dimen/layout_margin_end"
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    android:text="@string/update"
+                    android:textSize="@dimen/page_text_back"
+                    android:textColor="@android:color/holo_red_light"
+                    android:onClick="update"/>
                 <TextView
                     android:id="@+id/xpLeftHeader"
                     android:layout_width="wrap_content"

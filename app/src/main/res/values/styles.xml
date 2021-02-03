@@ -4,7 +4,12 @@
     </style>
 
     <style name="DialogTheme" parent="Theme.AppCompat.Dialog.Alert">
-        <item name="android:background">@color/windowBackground</item>
+        <item name="android:alertDialogTheme">@style/DialogBox</item>
+    </style>
+
+    <style name="DialogBox" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_background</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <!--<style name="MyMaterialSplashTheme" parent="MyMaterialTheme.Base">

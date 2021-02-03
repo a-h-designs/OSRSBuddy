@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/smelting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin_top"
+        android:text="@string/include_smelting"/>
+
+    <TextView
+        android:id="@+id/bonus_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/smelting"
+        android:layout_margin="@dimen/layout_margin_top"
+        android:text="@string/bonuses"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
+
+    <CheckBox
+        android:id="@+id/artisan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bonus_header"
+        android:layout_margin="@dimen/layout_margin_top"
+        android:text="@string/bonus_artisan"/>
+
+    <CheckBox
+        android:id="@+id/wisdom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/artisan"
+        android:layout_margin="@dimen/layout_margin_top"
+        android:text="@string/bonus_wisdom"/>
+
+
+</RelativeLayout>

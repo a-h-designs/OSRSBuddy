@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -85,52 +86,78 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
                 int id = view.getId();
                 if (id == R.id.attack) {
                     intent.putExtra("skill", "attack");
+                    startActivity(intent);
                 } else if (id == R.id.hitpoints) {
                     intent.putExtra("skill", "hitpoints");
+                    startActivity(intent);
                 } else if (id == R.id.mining) {
                     intent.putExtra("skill", "mining");
+                    startActivity(intent);
                 } else if (id == R.id.strength) {
                     intent.putExtra("skill", "strength");
+                    startActivity(intent);
                 } else if (id == R.id.agility) {
                     intent.putExtra("skill", "agility");
+                    startActivity(intent);
                 } else if (id == R.id.smithing) {
-                    intent.putExtra("skill", "smithing");
+                    DialogFragment dialog = new smithingDialogFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("username", username);
+                    bundle.putString("skill", "smithing");
+                    dialog.setArguments(bundle);
+                    dialog.show(this.getSupportFragmentManager(),"Smithing Dialog");
                 } else if (id == R.id.defence) {
                     intent.putExtra("skill", "defence");
+                    startActivity(intent);
                 } else if (id == R.id.herblore) {
                     intent.putExtra("skill", "herblore");
+                    startActivity(intent);
                 } else if (id == R.id.fishing) {
                     intent.putExtra("skill", "fishing");
+                    startActivity(intent);
                 } else if (id == R.id.ranged) {
                     intent.putExtra("skill", "ranged");
+                    startActivity(intent);
                 } else if (id == R.id.thieving) {
                     intent.putExtra("skill", "thieving");
+                    startActivity(intent);
                 } else if (id == R.id.cooking) {
                     intent.putExtra("skill", "cooking");
+                    startActivity(intent);
                 } else if (id == R.id.prayer) {
                     intent.putExtra("skill", "prayer");
+                    startActivity(intent);
                 } else if (id == R.id.crafting) {
                     intent.putExtra("skill", "crafting");
+                    startActivity(intent);
                 } else if (id == R.id.firemaking) {
                     intent.putExtra("skill", "firemaking");
+                    startActivity(intent);
                 } else if (id == R.id.magic) {
                     intent.putExtra("skill", "magic");
+                    startActivity(intent);
                 } else if (id == R.id.fletching) {
                     intent.putExtra("skill", "fletching");
+                    startActivity(intent);
                 } else if (id == R.id.woodcutting) {
                     intent.putExtra("skill", "woodcutting");
+                    startActivity(intent);
                 } else if (id == R.id.runecraft) {
                     intent.putExtra("skill", "runecraft");
+                    startActivity(intent);
                 } else if (id == R.id.slayer) {
                     intent.putExtra("skill", "slayer");
+                    startActivity(intent);
                 } else if (id == R.id.farming) {
                     intent.putExtra("skill", "farming");
+                    startActivity(intent);
                 } else if (id == R.id.construction) {
                     intent.putExtra("skill", "construction");
+                    startActivity(intent);
                 } else if (id == R.id.hunter) {
                     intent.putExtra("skill", "hunter");
+                    startActivity(intent);
                 }
-                startActivity(intent);
             }
         } else {
             Toast.makeText(getApplicationContext(), "No Network Connection", Toast.LENGTH_SHORT).show();
