@@ -91,8 +91,12 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
                     intent.putExtra("skill", "hitpoints");
                     startActivity(intent);
                 } else if (id == R.id.mining) {
-                    intent.putExtra("skill", "mining");
-                    startActivity(intent);
+                    DialogFragment dialog = new miningDialogFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("username", username);
+                    bundle.putString("skill", "mining");
+                    dialog.setArguments(bundle);
+                    dialog.show(this.getSupportFragmentManager(),"Mining Dialog");
                 } else if (id == R.id.strength) {
                     intent.putExtra("skill", "strength");
                     startActivity(intent);
@@ -131,8 +135,12 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
                     intent.putExtra("skill", "crafting");
                     startActivity(intent);
                 } else if (id == R.id.firemaking) {
-                    intent.putExtra("skill", "firemaking");
-                    startActivity(intent);
+                    DialogFragment dialog = new firemakingDialogFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("username", username);
+                    bundle.putString("skill", "firemaking");
+                    dialog.setArguments(bundle);
+                    dialog.show(this.getSupportFragmentManager(),"Firemaking Dialog");
                 } else if (id == R.id.magic) {
                     intent.putExtra("skill", "magic");
                     startActivity(intent);

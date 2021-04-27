@@ -13,22 +13,26 @@ public class miningCalculator {
             dense_essencerow, goldrow, gemrow, granite_500grow, granite_2kgrow,
             granite_5kgrow,  mithrow, addyrow, runerow, amethystrow;
 
-    TextView claytxt, rune_esstxt, coppertxt, tintxt, limestonetxt,irontxt,
+    TextView claytxt, rune_esstxt, coppertxt, tintxt, limestonetxt, irontxt,
             silvertxt, pure_esstxt, coalTxt, paydirtTxt, sandstone1txt, sandstone2txt,
             sandstone5txt, sandstone10txt, denseesstxt, goldTxt, gemTxt, granite500Txt,
             granite2Txt, granite5Txt, mithTxt, addyTxt, runeTxt, amethystTxt;
 
     String cl, co, l, i, s, c, pd, ss1, de, g, g5, m, a, r, am;
 
-    int  clay, clayToGo, copperToGo, limestoneToGo, iron, ironToGo,
-            silver, silverToGo, coal, coalToGo, paydirt, paydirtToGo,
-            sandstone1, sandstone1ToGo, denseess, denseessToGo,
+    double clay, clayToGo, copper, copperToGo, limestone, limestoneToGo,
+            iron, ironToGo, silver, silverToGo, coal, coalToGo, paydirt,
+            paydirtToGo, sandstone1, sandstone1ToGo, denseess, denseessToGo,
             gold, goldToGo, granite5, granite5ToGo, mith, mithToGo,
-            addy, addyToGo, rune, runeToGo, amethyst, amethystToGo;
+            addy, addyToGo, rune, runeToGo, amethyst, amethystToGo,
+            clayPercent = 0, copperPercent = 0, limestonePercent = 0,
+            ironPercent = 0, silverPercent = 0, coalPercent = 0, paydirtPercent = 0,
+            sandstone1Percent = 0, denseessPercent = 0, goldPercent = 0,
+            granite5Percent = 0, mithPercent = 0, addyPercent = 0, runePercent = 0,
+            amethystPercent = 0, bonus = 1;
 
-    double copper, limestone;
-
-    public void calculate(Integer num2, Integer xpLeft, View mining) {
+    public void calculate(Integer num2, Integer xpLeft, View mining, String prospect,
+                          String gatherer, String wisdom) {
 
         limestonerow = mining.findViewById(R.id.limestonerow);
         ironrow = mining.findViewById(R.id.ironrow);
@@ -76,21 +80,97 @@ public class miningCalculator {
         runeTxt = mining.findViewById(R.id.runetxt);
         amethystTxt = mining.findViewById(R.id.amethysttxt);
 
-        clay = 5;
-        denseess = 12;
-        copper = 17.5;
-        limestone = 26.5;
-        sandstone1 = 30;
-        iron = 35;
-        silver = 40;
-        coal = 50;
-        paydirt = 60;
-        gold = 65;
-        granite5 = 75;
-        mith = 80;
-        addy = 95;
-        rune = 125;
-        amethyst = 240;
+        if (prospect.equals("true") && gatherer.equals("true") && wisdom.equals("true")) {
+            bonus = 4;
+            clayPercent = 5 + (5 * 2.5) / 100.0;
+            denseessPercent = 12 + (12 * 2.5) / 100.0;
+            copperPercent = 17.5 + (17.5 * 2.5) / 100.0;
+            limestonePercent = 26.5 + (26.5 * 2.5) / 100.0;
+            sandstone1Percent = 30 + (30 * 2.5) / 100.0;
+            ironPercent = 35 + (35 * 2.5) / 100.0;
+            silverPercent = 40 + (40 * 2.5) / 100.0;
+            coalPercent = 50 + (50 * 2.5) / 100.0;
+            paydirtPercent = 60 + (60 * 2.5) / 100.0;
+            goldPercent = 65 + (65 * 2.5) / 100.0;
+            granite5Percent = 75 + (75 * 2.5) / 100.0;
+            mithPercent = 80 + (80 * 2.5) / 100.0;
+            addyPercent = 95 + (95 * 2.5) / 100.0;
+            runePercent = 125 + (125 * 2.5) / 100.0;
+            amethystPercent = 240 + (240 * 2.5) / 100.0;
+        } else if (prospect.equals("true") && gatherer.equals("true") && wisdom.equals("false")) {
+            bonus = 2;
+            clayPercent = 5 + (5 * 2.5) / 100.0;
+            denseessPercent = 12 + (12 * 2.5) / 100.0;
+            copperPercent = 17.5 + (17.5 * 2.5) / 100.0;
+            limestonePercent = 26.5 + (26.5 * 2.5) / 100.0;
+            sandstone1Percent = 30 + (30 * 2.5) / 100.0;
+            ironPercent = 35 + (35 * 2.5) / 100.0;
+            silverPercent = 40 + (40 * 2.5) / 100.0;
+            coalPercent = 50 + (50 * 2.5) / 100.0;
+            paydirtPercent = 60 + (60 * 2.5) / 100.0;
+            goldPercent = 65 + (65 * 2.5) / 100.0;
+            granite5Percent = 75 + (75 * 2.5) / 100.0;
+            mithPercent = 80 + (80 * 2.5) / 100.0;
+            addyPercent = 95 + (95 * 2.5) / 100.0;
+            runePercent = 125 + (125 * 2.5) / 100.0;
+            amethystPercent = 240 + (240 * 2.5) / 100.0;
+        } else if (prospect.equals("true") && gatherer.equals("false") && wisdom.equals("true")) {
+            bonus = 2;
+            clayPercent = 5 + (5 * 2.5) / 100.0;
+            denseessPercent = 12 + (12 * 2.5) / 100.0;
+            copperPercent = 17.5 + (17.5 * 2.5) / 100.0;
+            limestonePercent = 26.5 + (26.5 * 2.5) / 100.0;
+            sandstone1Percent = 30 + (30 * 2.5) / 100.0;
+            ironPercent = 35 + (35 * 2.5) / 100.0;
+            silverPercent = 40 + (40 * 2.5) / 100.0;
+            coalPercent = 50 + (50 * 2.5) / 100.0;
+            paydirtPercent = 60 + (60 * 2.5) / 100.0;
+            goldPercent = 65 + (65 * 2.5) / 100.0;
+            granite5Percent = 75 + (75 * 2.5) / 100.0;
+            mithPercent = 80 + (80 * 2.5) / 100.0;
+            addyPercent = 95 + (95 * 2.5) / 100.0;
+            runePercent = 125 + (125 * 2.5) / 100.0;
+            amethystPercent = 240 + (240 * 2.5) / 100.0;
+        } else if (prospect.equals("true") && gatherer.equals("false") && wisdom.equals("false")) {
+            clayPercent = (5 * 2.5) / 100.0;
+            denseessPercent = (12 * 2.5) / 100.0;
+            copperPercent = (17.5 * 2.5) / 100.0;
+            limestonePercent = (26.5 * 2.5) / 100.0;
+            sandstone1Percent = (30 * 2.5) / 100.0;
+            ironPercent = (35 * 2.5) / 100.0;
+            silverPercent =(40 * 2.5) / 100.0;
+            coalPercent = (50 * 2.5) / 100.0;
+            paydirtPercent = (60 * 2.5) / 100.0;
+            goldPercent = (65 * 2.5) / 100.0;
+            granite5Percent = (75 * 2.5) / 100.0;
+            mithPercent = (80 * 2.5) / 100.0;
+            addyPercent = (95 * 2.5) / 100.0;
+            runePercent = (125 * 2.5) / 100.0;
+            amethystPercent = (240 * 2.5) / 100.0;
+        } else if (prospect.equals("false") && gatherer.equals("true") && wisdom.equals("true")) {
+            bonus = 4;
+        } else if (prospect.equals("false") && gatherer.equals("true") && wisdom.equals("false")) {
+            bonus = 2;
+        } else if (prospect.equals("false") && gatherer.equals("false") && wisdom.equals("true")) {
+            bonus = 2;
+
+        }
+
+        clay = (5 * bonus) + clayPercent;
+        denseess = (12 * bonus) + denseessPercent;
+        copper = (17.5 * bonus) + copperPercent;
+        limestone = (26.5 * bonus) + limestonePercent;
+        sandstone1 = (30 * bonus) + sandstone1Percent;
+        iron = (35 * bonus) + ironPercent;
+        silver = (40 * bonus) + silverPercent;
+        coal = (50 * bonus) + coalPercent;
+        paydirt = (60 * bonus) + paydirtPercent;
+        gold = (65 * bonus) + goldPercent;
+        granite5 = (75 * bonus) + granite5Percent;
+        mith = (80 * bonus) + mithPercent;
+        addy = (95 * bonus) + addyPercent;
+        rune = (125 * bonus) + runePercent;
+        amethyst = (240 * bonus) + amethystPercent;
 
         clayToGo = xpLeft / clay + 1;
         denseessToGo = xpLeft / denseess + 1;

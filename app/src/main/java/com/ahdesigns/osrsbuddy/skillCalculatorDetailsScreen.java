@@ -30,9 +30,11 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
     TextView currentLevel, nextLevel, nextXP;
 
-    View smithing, mining;
+    View smithing, mining, firemaking;
 
     String username, skill, num, smelting,
+            pyro,
+            prospect, gatherer,
             artisan, wisdom,
             nextLvl, bar, stringValue,
             title, imageSrc, jsonURL,
@@ -66,6 +68,7 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
     addySmithingCalculator addySmithCalc = null;
     runeSmithingCalculator runeSmithCalc = null;
     miningCalculator mineCalc = null;
+    firemakingCalculator fireCalc = null;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -88,6 +91,9 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         assert extras != null;
         smelting = extras.getString("smelting");
+        pyro = extras.getString("pyro");
+        prospect = extras.getString("prospect");
+        gatherer = extras.getString("gatherer");
         artisan = extras.getString("artisan");
         wisdom = extras.getString("wisdom");
         username = extras.getString("username");
@@ -585,6 +591,12 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("firemaking")) {
+                    firemaking = inflate.inflate(R.layout.firemakingcalculator , null, false);
+                    RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                            RelativeLayout.LayoutParams.MATCH_PARENT,
+                            RelativeLayout.LayoutParams.MATCH_PARENT);
+                    firemaking.setLayoutParams(imageViewParam);
+                    layout.addView(firemaking);
                     num = firemakingXpValue;
                     num2 = Integer.parseInt(firemakingLvlValue);
                     currentLevel.setText(firemakingLvlValue);
@@ -603,6 +615,8 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     calcXP.calculate(num, nextLevel);
                     xpLeft = calculateXP.xpLeft;
                     nextXP.setText(df.format(xpLeft));
+                    fireCalc = new firemakingCalculator();
+                    fireCalc.calculate(num2, xpLeft, firemaking, pyro, gatherer, wisdom);
                 }
                 if(skill.equals("crafting")) {
                     num = craftingXpValue;
@@ -746,7 +760,7 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     xpLeft = calculateXP.xpLeft;
                     nextXP.setText(df.format(xpLeft));
                     mineCalc = new miningCalculator();
-                    mineCalc.calculate(num2, xpLeft, mining);
+                    mineCalc.calculate(num2, xpLeft, mining, prospect, gatherer, wisdom);
                 }
                 if(skill.equals("herblore")) {
                     num = herbloreXpValue;
@@ -980,7 +994,10 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
             }
         }
         if(skill.equals("mining")) {
-            mineCalc.calculate(num2, xpLeft, mining);
+            mineCalc.calculate(num2, xpLeft, mining, prospect, gatherer, wisdom);
+        }
+        if(skill.equals("firemaking")) {
+            fireCalc.calculate(num2, xpLeft, firemaking, pyro, gatherer, wisdom);
         }
     }
 

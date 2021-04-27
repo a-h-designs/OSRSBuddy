@@ -8,7 +8,7 @@
     <string name="hiscores_version">Hiscores version</string>
     <string name="bar_option">What are you smithing?</string>
     <string name="include_smelting">Include smelting bars?</string>
-    <string name="bonuses">Bonuses:</string>
+    <string name="bonuses">Bonuses</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <!-- End general app strings. -->
@@ -115,9 +115,9 @@
     <string name="text_98">98</string>
     <string name="text_99">99</string>
     <string name="text_max">Max</string>
-    <!-- End Levels. -->
+    <!-- End levels. -->
 
-    <!-- mainScreen strings. -->
+    <!-- Main screen strings. -->
     <string name="main_header">Welcome</string>
     <string name="price">Price Checker</string>
     <string name="stats">Player Stats</string>
@@ -125,12 +125,11 @@
     <string name="quests">Quests</string>
     <string name="maps">Maps</string>
     <string name="rss">Runescape News</string>
-    <!-- End mainScreen strings. -->
+    <!-- End main screen strings. -->
 
+    <!-- Grand exchange strings. -->
     <string name="search_ge_header">Search the Grand Exchange</string>
     <string name="search_ge_eg">e.g. Old school bond</string>
-
-    <!-- priceDetailsScreen. -->
     <string name="price_iteminfo">Item info</string>
     <string name="price_itemicon">Item icon</string>
     <string name="price_p2p">Members</string>
@@ -144,33 +143,12 @@
     <string name="alch_prices">&#160;Alchemy prices</string>
     <string name="high_alch">&#160;High alch</string>
     <string name="low_alch">&#160;Low alch</string>
-    <!-- End priceDetailsScreen. -->
+    <!-- End grand exchange strings. -->
 
-    <!-- statsMainScreen. -->
+    <!-- Hiscores strings. -->
     <string name="hiscore_header">Hiscores</string>
     <string name="stats_header">Search Player Stats</string>
     <string name="stats_searcheg">e.g. Lynx Titan</string>
-    <string-array name="hiscore_versions">
-        <item>Normal</item>
-        <item>Ironman</item>
-        <item>Ultimate Ironman</item>
-        <item>Hardcore Ironman</item>
-        <item>Deadman mode</item>
-        <item>Leagues</item>
-        <item>Tournament</item>
-    </string-array>
-    <string-array name="bar_versions">
-        <item>Smelting only</item>
-        <item>Bronze</item>
-        <item>Iron</item>
-        <item>Steel</item>
-        <item>Mithril</item>
-        <item>Adamant</item>
-        <item>Rune</item>
-    </string-array>
-    <!-- End statsMainScreen. -->
-
-    <!-- statsSearchScreen. -->
     <string name="chat_head">Chat Head</string>
     <string name="combat_level">Combat level:&#160;</string>
     <string name="combat_style">Combat style:&#160;</string>
@@ -205,7 +183,6 @@
     <string name="runecraft">&#160;Runecraft</string>
     <string name="hunter">&#160;Hunter</string>
     <string name="construction">&#160;Construction</string>
-
     <string name="league">&#160;League Points</string>
     <string name="bhh">&#160;Bounty Hunter - Hunter</string>
     <string name="bhr">&#160;Bounty Hunter - Rogue</string>
@@ -262,16 +239,33 @@
     <string name="wintertodt">&#160;Wintertodt</string>
     <string name="zalcano">&#160;Zalcano</string>
     <string name="zulrah">&#160;Zulrah</string>
+    <!-- End hiscores strings. -->
 
-    <!-- skillCalculatorSearchScreen. -->
+    <!-- Skill calculator strings. -->
+    <string-array name="hiscore_versions">
+        <item>Normal</item>
+        <item>Ironman</item>
+        <item>Ultimate Ironman</item>
+        <item>Hardcore Ironman</item>
+        <item>Deadman mode</item>
+        <item>Leagues</item>
+        <item>Tournament</item>
+    </string-array>
+    <string-array name="bar_versions">
+        <item>Smelting only</item>
+        <item>Bronze</item>
+        <item>Iron</item>
+        <item>Steel</item>
+        <item>Mithril</item>
+        <item>Adamant</item>
+        <item>Rune</item>
+    </string-array>
     <string name="calculator_header">Skill Calculator</string>
-    <string name="bonus_prospector">Prospector Kit (+2.5% exp)</string>
+    <string name="bonus_prospect">Prospector Kit (+2.5% exp)</string>
+    <string name="bonus_pyro">Pyromancer Outfit (+2.5% exp)</string>
     <string name="bonus_artisan">Relic: Eye of the Artisan (200% xp)</string>
     <string name="bonus_gatherer">Relic: Gift of the Gatherer (200% xp)</string>
-    <string name="bonus_wisdom">Relic: Xeric\'s Wisdom (200% xp)</string>
-    <!-- End skillCalculatorSearchScreen. -->
-
-    <!-- skillCalculatorDetailsScreen. -->
+    <string name="bonus_wisdom">Relic: Xeric\'s Wisdom (200% xp)</string>=
     <string name="current_level">Current Level:&#160;</string>
     <string name="next_level">Next Level:&#160;</string>
     <string name="xp_left">XP Left:&#160;</string>
@@ -284,9 +278,8 @@
     <string name="addy_title">Smithing - Adamant</string>
     <string name="rune_title">Smithing - Rune</string>
     <string name="na">Calculator not available for your level</string>
-    <!-- End skillCalculatorDetailsScreen. -->
 
-    <!-- ores. -->
+    <!-- Ores. -->
     <string name="ores_clay">&#160;Clay</string>
     <string name="ores_rune_ess">&#160;Rune essence</string>
     <string name="ores_copper">&#160;Copper ore</string>
@@ -323,7 +316,7 @@
     <string name="bars_mith">&#160;Mithril bar</string>
     <string name="bars_addy">&#160;Adamantite bar</string>
     <string name="bars_rune">&#160;Runite bar</string>
-    <!-- End Bars. -->
+    <!-- End bars. -->
 
     <!-- Smithing. -->
     <string name="smithing_bar">&#160;Bar</string>
@@ -359,6 +352,21 @@
     <string name="smithing_skirt">&#160;Plateskirt</string>
     <string name="smithing_body">&#160;Platebody</string>
     <string name="smithing_bullseye">&#160;Unfinished bullseye lantern</string>
-    <!-- End Smithing. -->
+    <!-- End smithing. -->
 
+    <!-- Firemaking. -->
+    <string name="firemaking_logs">&#160;Logs</string>
+    <string name="firemaking_achey">&#160;Achey tree logs</string>
+    <string name="firemaking_oak">&#160;Oak logs</string>
+    <string name="firemaking_willow">&#160;Willow logs</string>
+    <string name="firemaking_teak">&#160;Teak logs</string>
+    <string name="firemaking_arctic">&#160;Arctic pine logs</string>
+    <string name="firemaking_maple">&#160;Maple logs</string>
+    <string name="firemaking_mahogany">&#160;Mahogany logs</string>
+    <string name="firemaking_yew">&#160;Yew logs</string>
+    <string name="firemaking_blisterwood">&#160;Blisterwood logs</string>
+    <string name="firemaking_magic">&#160;Magic logs</string>
+    <string name="firemaking_redwood">&#160;Redwood logs</string>
+    <!-- End firemaking. -->
+    <!-- End skill calculator strings. -->
 </resources>
