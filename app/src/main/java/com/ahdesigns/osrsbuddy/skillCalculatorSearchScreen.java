@@ -148,8 +148,12 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
                     intent.putExtra("skill", "fletching");
                     startActivity(intent);
                 } else if (id == R.id.woodcutting) {
-                    intent.putExtra("skill", "woodcutting");
-                    startActivity(intent);
+                    DialogFragment dialog = new woodcuttingDialogFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("username", username);
+                    bundle.putString("skill", "woodcutting");
+                    dialog.setArguments(bundle);
+                    dialog.show(this.getSupportFragmentManager(),"Woodcutting Dialog");
                 } else if (id == R.id.runecraft) {
                     intent.putExtra("skill", "runecraft");
                     startActivity(intent);

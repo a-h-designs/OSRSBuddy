@@ -24,32 +24,32 @@ public class firemakingCalculator {
             mahoganyPercent = 0, yewPercent = 0, blisterwoodPercent = 0,
             magicPercent = 0, redwoodPercent = 0, bonus = 1;
 
-    public void calculate(Integer num2, Integer xpLeft, View mining, String pyro,
+    public void calculate(Integer num2, Integer xpLeft, View firemaking, String pyro,
                           String gatherer, String wisdom) {
 
-        oakrow = mining.findViewById(R.id.oakrow);
-        willowrow = mining.findViewById(R.id.willowrow);
-        teakrow = mining.findViewById(R.id.teakrow);
-        arcticrow = mining.findViewById(R.id.arcticrow);
-        maplerow = mining.findViewById(R.id.maplerow);
-        mahoganyrow = mining.findViewById(R.id.mahoganyrow);
-        yewrow = mining.findViewById(R.id.yewrow);
-        blisterwoodrow = mining.findViewById(R.id.blisterwoodrow);
-        magicrow = mining.findViewById(R.id.magicrow);
-        redwoodrow = mining.findViewById(R.id.redwoodrow);
+        oakrow = firemaking.findViewById(R.id.oakrow);
+        willowrow = firemaking.findViewById(R.id.willowrow);
+        teakrow = firemaking.findViewById(R.id.teakrow);
+        arcticrow = firemaking.findViewById(R.id.arcticrow);
+        maplerow = firemaking.findViewById(R.id.maplerow);
+        mahoganyrow = firemaking.findViewById(R.id.mahoganyrow);
+        yewrow = firemaking.findViewById(R.id.yewrow);
+        blisterwoodrow = firemaking.findViewById(R.id.blisterwoodrow);
+        magicrow = firemaking.findViewById(R.id.magicrow);
+        redwoodrow = firemaking.findViewById(R.id.redwoodrow);
 
-        logstxt = mining.findViewById(R.id.logstxt);
-        acheytxt = mining.findViewById(R.id.acheytxt);
-        oaktxt = mining.findViewById(R.id.oaktxt);
-        willowtxt = mining.findViewById(R.id.willowtxt);
-        teaktxt = mining.findViewById(R.id.teaktxt);
-        arctictxt = mining.findViewById(R.id.arctictxt);
-        mapletxt = mining.findViewById(R.id.mapletxt);
-        mahoganytxt = mining.findViewById(R.id.mahoganytxt);
-        yewtxt = mining.findViewById(R.id.yewtxt);
-        blisterwoodtxt = mining.findViewById(R.id.blisterwoodtxt);
-        magictxt = mining.findViewById(R.id.magictxt);
-        redwoodtxt = mining.findViewById(R.id.redwoodtxt);
+        logstxt = firemaking.findViewById(R.id.logstxt);
+        acheytxt = firemaking.findViewById(R.id.acheytxt);
+        oaktxt = firemaking.findViewById(R.id.oaktxt);
+        willowtxt = firemaking.findViewById(R.id.willowtxt);
+        teaktxt = firemaking.findViewById(R.id.teaktxt);
+        arctictxt = firemaking.findViewById(R.id.arctictxt);
+        mapletxt = firemaking.findViewById(R.id.mapletxt);
+        mahoganytxt = firemaking.findViewById(R.id.mahoganytxt);
+        yewtxt = firemaking.findViewById(R.id.yewtxt);
+        blisterwoodtxt = firemaking.findViewById(R.id.blisterwoodtxt);
+        magictxt = firemaking.findViewById(R.id.magictxt);
+        redwoodtxt = firemaking.findViewById(R.id.redwoodtxt);
 
         if (pyro.equals("true") && gatherer.equals("true") && wisdom.equals("true")) {
             bonus = 4;

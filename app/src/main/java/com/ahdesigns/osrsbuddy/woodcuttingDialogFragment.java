@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.CheckBox;
 
 @SuppressWarnings("ALL")
-public class firemakingDialogFragment extends DialogFragment {
+public class woodcuttingDialogFragment extends DialogFragment {
 
     String username, skill;
 
@@ -24,8 +24,8 @@ public class firemakingDialogFragment extends DialogFragment {
         username = bundle.getString("username","");
         skill = bundle.getString("skill", "");
 
-        View options = View.inflate(getContext(), R.layout.firemakingoptions, null);
-        final CheckBox prospect = options.findViewById(R.id.pyro);
+        View options = View.inflate(getContext(), R.layout.woodcuttingoptions, null);
+        final CheckBox lumber = options.findViewById(R.id.lumber);
         final CheckBox gatherer = options.findViewById(R.id.gatherer);
         final CheckBox wisdom = options.findViewById(R.id.wisdom);
         final Intent intent = new Intent(getActivity(), skillCalculatorDetailsScreen.class);
@@ -37,10 +37,10 @@ public class firemakingDialogFragment extends DialogFragment {
                 .setCancelable(false)
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        if (prospect.isChecked()) {
-                            intent.putExtra("pyro", "true");
+                        if (lumber.isChecked()) {
+                            intent.putExtra("lumber", "true");
                         } else {
-                            intent.putExtra("pyro", "false");
+                            intent.putExtra("lumber", "false");
                         }
                         if (gatherer.isChecked()) {
                             intent.putExtra("gatherer", "true");

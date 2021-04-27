@@ -263,6 +263,7 @@
     <string name="calculator_header">Skill Calculator</string>
     <string name="bonus_prospect">Prospector Kit (+2.5% exp)</string>
     <string name="bonus_pyro">Pyromancer Outfit (+2.5% exp)</string>
+    <string name="bonus_lumber">Lumberjack Outfit (+2.5% exp)</string>
     <string name="bonus_artisan">Relic: Eye of the Artisan (200% xp)</string>
     <string name="bonus_gatherer">Relic: Gift of the Gatherer (200% xp)</string>
     <string name="bonus_wisdom">Relic: Xeric\'s Wisdom (200% xp)</string>=
@@ -368,5 +369,22 @@
     <string name="firemaking_magic">&#160;Magic logs</string>
     <string name="firemaking_redwood">&#160;Redwood logs</string>
     <!-- End firemaking. -->
+
+    <!-- Woodcutting. -->
+    <string name="woodcutting_tree">&#160;Tree</string>
+    <string name="woodcutting_achey">&#160;Achey tree</string>
+    <string name="woodcutting_oak">&#160;Oak tree</string>
+    <string name="woodcutting_willow">&#160;Willow tree</string>
+    <string name="woodcutting_teak">&#160;Teak tree</string>
+    <string name="woodcutting_hollow">&#160;Hollow tree</string>
+    <string name="woodcutting_maple">&#160;Maple tree</string>
+    <string name="woodcutting_mahogany">&#160;Mahogany tree</string>
+    <string name="woodcutting_arctic">&#160;Arctic pine tree</string>
+    <string name="woodcutting_yew">&#160;Yew tree</string>
+    <string name="woodcutting_blisterwood">&#160;Blisterwood tree</string>
+    <string name="woodcutting_sulliuscep">&#160;Sulliuscep</string>
+    <string name="woodcutting_magic">&#160;Magic tree</string>
+    <string name="woodcutting_redwood">&#160;Redwood tree</string>
+    <!-- End woodcutting. -->
     <!-- End skill calculator strings. -->
 </resources>

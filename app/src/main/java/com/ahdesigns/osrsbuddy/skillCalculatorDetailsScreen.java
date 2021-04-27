@@ -30,10 +30,11 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
 
     TextView currentLevel, nextLevel, nextXP;
 
-    View smithing, mining, firemaking;
+    View smithing, mining, firemaking,
+            woodcutting;
 
     String username, skill, num, smelting,
-            pyro,
+            pyro, lumber,
             prospect, gatherer,
             artisan, wisdom,
             nextLvl, bar, stringValue,
@@ -69,6 +70,7 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
     runeSmithingCalculator runeSmithCalc = null;
     miningCalculator mineCalc = null;
     firemakingCalculator fireCalc = null;
+    woodcuttingCalculator woodCalc = null;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -93,6 +95,7 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
         smelting = extras.getString("smelting");
         pyro = extras.getString("pyro");
         prospect = extras.getString("prospect");
+        lumber = extras.getString("lumber");
         gatherer = extras.getString("gatherer");
         artisan = extras.getString("artisan");
         wisdom = extras.getString("wisdom");
@@ -531,6 +534,12 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("woodcutting")) {
+                    woodcutting = inflate.inflate(R.layout.woodcuttingcalculator , null, false);
+                    RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                            RelativeLayout.LayoutParams.MATCH_PARENT,
+                            RelativeLayout.LayoutParams.MATCH_PARENT);
+                    woodcutting.setLayoutParams(imageViewParam);
+                    layout.addView(woodcutting);
                     num = woodcuttingXpValue;
                     num2 = Integer.parseInt(woodcuttingLvlValue);
                     currentLevel.setText(woodcuttingLvlValue);
@@ -549,6 +558,8 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     calcXP.calculate(num, nextLevel);
                     xpLeft = calculateXP.xpLeft;
                     nextXP.setText(df.format(xpLeft));
+                    woodCalc = new woodcuttingCalculator();
+                    woodCalc.calculate(num2, xpLeft, woodcutting, lumber, gatherer, wisdom);
                 }
                 if(skill.equals("fletching")) {
                     num = fletchingXpValue;
@@ -998,6 +1009,9 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
         }
         if(skill.equals("firemaking")) {
             fireCalc.calculate(num2, xpLeft, firemaking, pyro, gatherer, wisdom);
+        }
+        if(skill.equals("woodcutting")) {
+            woodCalc.calculate(num2, xpLeft, woodcutting, lumber, gatherer, wisdom);
         }
     }
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/lumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin_top"
+        android:text="@string/bonus_lumber"/>
+
+    <CheckBox
+        android:id="@+id/gatherer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lumber"
+        android:layout_margin="@dimen/layout_margin_top"
+        android:text="@string/bonus_gatherer"/>
+
+    <CheckBox
+        android:id="@+id/wisdom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gatherer"
+        android:layout_margin="@dimen/layout_margin_top"
+        android:text="@string/bonus_wisdom"/>
+
+
+</RelativeLayout>
