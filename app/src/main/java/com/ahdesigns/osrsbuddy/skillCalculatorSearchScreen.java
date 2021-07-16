@@ -19,13 +19,12 @@ import java.util.Objects;
 public class skillCalculatorSearchScreen extends AppCompatActivity {
 
     EditText searchText;
-    ImageView attack, hitpoints, mining,
-            strength, agility, smithing,
-            defence, herblore, fishing,
-            ranged, thieving, cooking,
-            prayer, crafting, firemaking,
-            magic, fletching, woodcutting,
-            runecraft, slayer, farming,
+
+    ImageView mining, agility, smithing,
+            herblore, fishing, thieving,
+            cooking, prayer, crafting,
+            firemaking, magic, fletching,
+            woodcutting, runecraft, farming,
             construction, hunter;
 
     String username;
@@ -42,16 +41,12 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.calculator_header);
 
         searchText = findViewById(R.id.searchText);
-        attack = findViewById(R.id.attack);
-        hitpoints = findViewById(R.id.hitpoints);
+
         mining = findViewById(R.id.mining);
-        strength = findViewById(R.id.strength);
         agility = findViewById(R.id.agility);
         smithing = findViewById(R.id.smithing);
-        defence = findViewById(R.id.defence);
         herblore = findViewById(R.id.herblore);
         fishing = findViewById(R.id.fishing);
-        ranged = findViewById(R.id.ranged);
         thieving = findViewById(R.id.thieving);
         cooking = findViewById(R.id.cooking);
         prayer = findViewById(R.id.prayer);
@@ -61,7 +56,6 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
         fletching = findViewById(R.id.fletching);
         woodcutting = findViewById(R.id.woodcutting);
         runecraft = findViewById(R.id.runecraft);
-        slayer = findViewById(R.id.slayer);
         farming = findViewById(R.id.farming);
         construction = findViewById(R.id.construction);
         hunter = findViewById(R.id.hunter);
@@ -84,22 +78,13 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
                 intent.putExtra("username", username);
 
                 int id = view.getId();
-                if (id == R.id.attack) {
-                    intent.putExtra("skill", "attack");
-                    startActivity(intent);
-                } else if (id == R.id.hitpoints) {
-                    intent.putExtra("skill", "hitpoints");
-                    startActivity(intent);
-                } else if (id == R.id.mining) {
+                if (id == R.id.mining) {
                     DialogFragment dialog = new miningDialogFragment();
                     Bundle bundle = new Bundle();
                     bundle.putString("username", username);
                     bundle.putString("skill", "mining");
                     dialog.setArguments(bundle);
                     dialog.show(this.getSupportFragmentManager(),"Mining Dialog");
-                } else if (id == R.id.strength) {
-                    intent.putExtra("skill", "strength");
-                    startActivity(intent);
                 } else if (id == R.id.agility) {
                     intent.putExtra("skill", "agility");
                     startActivity(intent);
@@ -110,17 +95,11 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
                     bundle.putString("skill", "smithing");
                     dialog.setArguments(bundle);
                     dialog.show(this.getSupportFragmentManager(),"Smithing Dialog");
-                } else if (id == R.id.defence) {
-                    intent.putExtra("skill", "defence");
-                    startActivity(intent);
                 } else if (id == R.id.herblore) {
                     intent.putExtra("skill", "herblore");
                     startActivity(intent);
                 } else if (id == R.id.fishing) {
                     intent.putExtra("skill", "fishing");
-                    startActivity(intent);
-                } else if (id == R.id.ranged) {
-                    intent.putExtra("skill", "ranged");
                     startActivity(intent);
                 } else if (id == R.id.thieving) {
                     intent.putExtra("skill", "thieving");
@@ -156,9 +135,6 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
                     dialog.show(this.getSupportFragmentManager(),"Woodcutting Dialog");
                 } else if (id == R.id.runecraft) {
                     intent.putExtra("skill", "runecraft");
-                    startActivity(intent);
-                } else if (id == R.id.slayer) {
-                    intent.putExtra("skill", "slayer");
                     startActivity(intent);
                 } else if (id == R.id.farming) {
                     intent.putExtra("skill", "farming");

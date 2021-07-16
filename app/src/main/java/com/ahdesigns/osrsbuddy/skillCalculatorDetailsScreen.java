@@ -40,17 +40,14 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
             nextLvl, bar, stringValue,
             title, imageSrc, jsonURL,
             //hiscore strings
-            currentLvl, overallRankValue, attackLvlValue, attackXpValue, defenceLvlValue,
-            defenceXpValue, strengthLvlValue, strengthXpValue, hitpointsLvlValue,hitpointsXpValue,
-            rangedLvlValue, rangedXpValue, prayerLvlValue, prayerXpValue, magicLvlValue,
+            currentLvl, overallRankValue, prayerLvlValue, prayerXpValue, magicLvlValue,
             magicXpValue, cookingLvlValue, cookingXpValue, woodcuttingLvlValue, woodcuttingXpValue,
             fletchingLvlValue, fletchingXpValue, fishingLvlValue, fishingXpValue,
             firemakingLvlValue, firemakingXpValue, craftingLvlValue, craftingXpValue,
             smithingLvlValue, smithingXpValue, miningLvlValue, miningXpValue, herbloreLvlValue,
             herbloreXpValue, agilityLvlValue, agilityXpValue, thievingLvlValue, thievingXpValue,
-            slayerLvlValue, slayerXpValue, farmingLvlValue, farmingXpValue, runecraftingLvlValue,
-            runecraftingXpValue, hunterLvlValue, hunterXpValue, constructionLvlValue,
-            constructionXpValue;
+            farmingLvlValue, farmingXpValue, runecraftingLvlValue, runecraftingXpValue,
+            hunterLvlValue, hunterXpValue, constructionLvlValue, constructionXpValue;
 
     int resImage, sum, xpLeft, num2;
 
@@ -164,47 +161,6 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     //Assign all string and int to variables
                     overallRankValue = overall.getString("rank");
 
-
-                    // Getting the 'attack' object from the JSON object
-                    JSONObject attack = jsonObj.getJSONObject("attack");
-
-                    //From the 'attack' object, we want the below strings
-                    //Assign all string and int to variables
-                    attackLvlValue = attack.getString("level");
-                    attackXpValue = attack.getString("xp");
-
-                    // Getting the 'defence' object from the JSON object
-                    JSONObject defence = jsonObj.getJSONObject("defence");
-
-                    //From the 'defence' object, we want the below strings
-                    //Assign all string and int to variables
-                    defenceLvlValue = defence.getString("level");
-                    defenceXpValue = defence.getString("xp");
-
-                    // Getting the 'strength' object from the JSON object
-                    JSONObject strength = jsonObj.getJSONObject("strength");
-
-                    //From the 'strength' object, we want the below strings
-                    //Assign all string and int to variables
-                    strengthLvlValue = strength.getString("level");
-                    strengthXpValue = strength.getString("xp");
-
-                    // Getting the 'constitution' object from the JSON object
-                    JSONObject hitpoints = jsonObj.getJSONObject("hitpoints");
-
-                    //From the 'constitution' object, we want the below strings
-                    //Assign all string and int to variables
-                    hitpointsLvlValue = hitpoints.getString("level");
-                    hitpointsXpValue = hitpoints.getString("xp");
-
-                    // Getting the 'ranged' object from the JSON object
-                    JSONObject ranged = jsonObj.getJSONObject("ranged");
-
-                    //From the 'ranged' object, we want the below strings
-                    //Assign all string and int to variables
-                    rangedLvlValue = ranged.getString("level");
-                    rangedXpValue = ranged.getString("xp");
-
                     // Getting the 'prayer' object from the JSON object
                     JSONObject prayer = jsonObj.getJSONObject("prayer");
 
@@ -309,14 +265,6 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     thievingLvlValue = thieving.getString("level");
                     thievingXpValue = thieving.getString("xp");
 
-                    // Getting the 'slayer' object from the JSON object
-                    JSONObject slayer = jsonObj.getJSONObject("slayer");
-
-                    //From the 'slayer' object, we want the below strings
-                    //Assign all string and int to variables
-                    slayerLvlValue = slayer.getString("level");
-                    slayerXpValue = slayer.getString("xp");
-
                     // Getting the 'farming' object from the JSON object
                     JSONObject farming = jsonObj.getJSONObject("farming");
 
@@ -373,106 +321,6 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                 df.setGroupingUsed(true);
                 df.setGroupingSize(3);
 
-                if(skill.equals("attack")) {
-                    num = attackXpValue;
-                    num2 = Integer.parseInt(attackLvlValue);
-                    currentLevel.setText(attackLvlValue);
-                    currentLvl = currentLevel.getText().toString();
-                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
-                    nextLvl = String.valueOf(sum);
-                    if (sum == 2) {
-                        minus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(nextLvl);
-                    } else if (sum == 100) {
-                        plus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(R.string.text_max);
-                    } else {
-                        nextLevel.setText(nextLvl);
-                    }
-                    calcXP.calculate(num, nextLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
-                }
-                if(skill.equals("defence")) {
-                    num = defenceXpValue;
-                    num2 = Integer.parseInt(defenceLvlValue);
-                    currentLevel.setText(defenceLvlValue);
-                    currentLvl = currentLevel.getText().toString();
-                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
-                    nextLvl = String.valueOf(sum);
-                    if (sum == 2) {
-                        minus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(nextLvl);
-                    } else if (sum == 100) {
-                        plus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(R.string.text_max);
-                    } else {
-                        nextLevel.setText(nextLvl);
-                    }
-                    calcXP.calculate(num, nextLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
-                }
-                if(skill.equals("strength")) {
-                    num = strengthXpValue;
-                    num2 = Integer.parseInt(strengthLvlValue);
-                    currentLevel.setText(strengthLvlValue);
-                    currentLvl = currentLevel.getText().toString();
-                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
-                    nextLvl = String.valueOf(sum);
-                    if (sum == 2) {
-                        minus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(nextLvl);
-                    } else if (sum == 100) {
-                        plus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(R.string.text_max);
-                    } else {
-                        nextLevel.setText(nextLvl);
-                    }
-                    calcXP.calculate(num, nextLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
-                }
-                if(skill.equals("hitpoints")) {
-                    num = hitpointsXpValue;
-                    num2 = Integer.parseInt(hitpointsLvlValue);
-                    currentLevel.setText(hitpointsLvlValue);
-                    currentLvl = currentLevel.getText().toString();
-                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
-                    nextLvl = String.valueOf(sum);
-                    if (sum == 2) {
-                        minus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(nextLvl);
-                    } else if (sum == 100) {
-                        plus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(R.string.text_max);
-                    } else {
-                        nextLevel.setText(nextLvl);
-                    }
-                    calcXP.calculate(num, nextLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
-                }
-                if(skill.equals("ranged")) {
-                    num = rangedXpValue;
-                    num2 = Integer.parseInt(rangedLvlValue);
-                    currentLevel.setText(rangedLvlValue);
-                    currentLvl = currentLevel.getText().toString();
-                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
-                    nextLvl = String.valueOf(sum);
-                    if (sum == 2) {
-                        minus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(nextLvl);
-                    } else if (sum == 100) {
-                        plus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(R.string.text_max);
-                    } else {
-                        nextLevel.setText(nextLvl);
-                    }
-                    calcXP.calculate(num, nextLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
-                }
                 if(skill.equals("prayer")) {
                     num = prayerXpValue;
                     num2 = Integer.parseInt(prayerLvlValue);
@@ -817,26 +665,6 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     num = thievingXpValue;
                     num2 = Integer.parseInt(thievingLvlValue);
                     currentLevel.setText(thievingLvlValue);
-                    currentLvl = currentLevel.getText().toString();
-                    sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
-                    nextLvl = String.valueOf(sum);
-                    if (sum == 2) {
-                        minus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(nextLvl);
-                    } else if (sum == 100) {
-                        plus.setVisibility(View.INVISIBLE);
-                        nextLevel.setText(R.string.text_max);
-                    } else {
-                        nextLevel.setText(nextLvl);
-                    }
-                    calcXP.calculate(num, nextLevel);
-                    xpLeft = calculateXP.xpLeft;
-                    nextXP.setText(df.format(xpLeft));
-                }
-                if(skill.equals("slayer")) {
-                    num = slayerXpValue;
-                    num2 = Integer.parseInt(slayerLvlValue);
-                    currentLevel.setText(slayerLvlValue);
                     currentLvl = currentLevel.getText().toString();
                     sum = Integer.parseInt(currentLvl) + Integer.parseInt("1");
                     nextLvl = String.valueOf(sum);

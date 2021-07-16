@@ -64,6 +64,7 @@ public class activityFragment extends Fragment {
             sarachnisrank, sarachnisscore,
             scorpiarank, scorpiascore,
             skotizorank, skotizoscore,
+            temprank, tempscore,
             gauntletrank, gauntletscore,
             cgauntletrank, cgauntletscore,
             tobrank, tobscore,
@@ -122,6 +123,7 @@ public class activityFragment extends Fragment {
             sarachnisRankValue, sarachnisScoreValue,
             scorpiaRankValue, scorpiaScoreValue,
             skotizoRankValue, skotizoScoreValue,
+            tempRankValue, tempScoreValue,
             gauntletRankValue, gauntletScoreValue,
             cgauntletRankValue, cgauntletScoreValue,
             tobRankValue, tobScoreValue,
@@ -236,6 +238,8 @@ public class activityFragment extends Fragment {
         scorpiascore = view.findViewById(R.id.scorpiascore);
         skotizorank = view.findViewById(R.id.skotizorank);
         skotizoscore = view.findViewById(R.id.skotizoscore);
+        temprank = view.findViewById(R.id.temprank);
+        tempscore = view.findViewById(R.id.tempscore);
         gauntletrank = view.findViewById(R.id.gauntletrank);
         gauntletscore = view.findViewById(R.id.gauntletscore);
         cgauntletrank = view.findViewById(R.id.cgauntletrank);
@@ -670,6 +674,14 @@ public class activityFragment extends Fragment {
                     skotizoRankValue = skotizo.getString("rank");
                     skotizoScoreValue = skotizo.getString("score");
 
+                    // Getting the 'temp' object from the JSON object
+                    JSONObject temp = jsonObj.getJSONObject("temp");
+
+                    //From the 'temp' object, we want the below strings
+                    //Assign all string and int to variables
+                    tempRankValue = temp.getString("rank");
+                    tempScoreValue = temp.getString("score");
+
                     // Getting the 'gauntlet' object from the JSON object
                     JSONObject gauntlet = jsonObj.getJSONObject("gauntlet");
 
@@ -966,6 +978,10 @@ public class activityFragment extends Fragment {
                 if (skotizoRankValue.trim().length() > 0) {
                     skotizorank.setText(df.format(Long.valueOf(skotizoRankValue)));
                     skotizoscore.setText(df.format(Long.valueOf(skotizoScoreValue)));
+                }
+                if (tempRankValue.trim().length() > 0) {
+                    temprank.setText(df.format(Long.valueOf(tempRankValue)));
+                    tempscore.setText(df.format(Long.valueOf(tempScoreValue)));
                 }
                 if (gauntletRankValue.trim().length() > 0) {
                     gauntletrank.setText(df.format(Long.valueOf(gauntletRankValue)));

@@ -1590,8 +1590,43 @@
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/gauntlet"
+                android:id="@+id/temp"
                 android:background="@color/dark_row">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.62"
+                    android:layout_gravity="center|start"
+                    android:layout_margin="@dimen/layout_margin_top"
+                    android:text="@string/temp"
+                    android:drawableStart="@drawable/game_icon_bosses" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.19"
+                    android:id="@+id/temprank"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="@dimen/layout_margin_start"
+                    android:text="@string/text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.19"
+                    android:id="@+id/tempscore"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="@dimen/layout_margin_start"
+                    android:text="@string/text" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/gauntlet"
+                android:background="@color/light_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1626,7 +1661,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/cgauntlet"
-                android:background="@color/light_row">
+                android:background="@color/dark_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1661,7 +1696,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/tob"
-                android:background="@color/dark_row">
+                android:background="@color/light_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1696,7 +1731,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/tsd"
-                android:background="@color/light_row">
+                android:background="@color/dark_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1731,7 +1766,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/zuk"
-                android:background="@color/dark_row">
+                android:background="@color/light_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1766,7 +1801,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/jad"
-                android:background="@color/light_row">
+                android:background="@color/dark_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1801,7 +1836,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/venenatis"
-                android:background="@color/dark_row">
+                android:background="@color/light_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1836,7 +1871,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/vetion"
-                android:background="@color/light_row">
+                android:background="@color/dark_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1871,7 +1906,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/vorkath"
-                android:background="@color/dark_row">
+                android:background="@color/light_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1906,7 +1941,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/wintertodt"
-                android:background="@color/light_row">
+                android:background="@color/dark_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1941,7 +1976,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/zalcano"
-                android:background="@color/dark_row">
+                android:background="@color/light_row">
 
                 <TextView
                 android:layout_width="0dp"
@@ -1976,7 +2011,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/zulrah"
-                android:background="@color/light_row">
+                android:background="@color/dark_row">
 
                 <TextView
                 android:layout_width="0dp"
