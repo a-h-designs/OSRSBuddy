@@ -86,7 +86,7 @@ public class priceDetailsScreen extends AppCompatActivity {
         change6MonthTrend = findViewById(R.id.change6MonthTrend);
 
         // URL to get JSON
-        geURL = "http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=" + itemID;
+        geURL = "https://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=" + itemID;
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -116,11 +116,11 @@ public class priceDetailsScreen extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg0) {
 
-            // Creating service handler class
-            ServiceHandler sh = new ServiceHandler();
+            // Creating http handler class
+            HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(geURL, ServiceHandler.GET);
+            String jsonStr = sh.makeServiceCall(geURL);
 
             //Check to see if JSON string is not empty
             if (jsonStr != null) {

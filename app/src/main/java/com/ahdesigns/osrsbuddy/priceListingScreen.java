@@ -88,11 +88,11 @@ public class priceListingScreen extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg0) {
 
-            // Creating service handler class
-            ServiceHandler sh = new ServiceHandler();
+            // Creating http handler class
+            HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(getURL, ServiceHandler.GET);
+            String jsonStr = sh.makeServiceCall(getURL);
 
             //Log for debug, can be deleted later
             Log.d("Response: ", "> " + jsonStr);

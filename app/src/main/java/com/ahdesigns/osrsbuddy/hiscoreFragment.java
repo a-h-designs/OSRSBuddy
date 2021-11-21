@@ -218,11 +218,11 @@ public class hiscoreFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... arg0) {
 
-            // Creating service handler class
-            ServiceHandler sh = new ServiceHandler();
+            // Creating http handler class
+            HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(jsonURL, ServiceHandler.GET);
+            String jsonStr = sh.makeServiceCall(jsonURL);
 
             //Check to see if JSON string is not empty
             if (jsonStr != null) {
