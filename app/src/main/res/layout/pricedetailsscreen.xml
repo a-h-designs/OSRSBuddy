@@ -101,6 +101,65 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/timesText"
+                android:text="x"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_below="@id/itemPriceHeader"
+                android:layout_toEndOf="@id/itemPrice"
+                android:textSize="@dimen/page_text_size" />
+
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:id="@+id/amountText"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_below="@id/itemPriceHeader"
+                android:layout_toEndOf="@id/timesText"
+                android:text="@string/text_1"
+                android:hint="@string/text_1"
+                android:imeOptions="actionSearch"
+                android:maxLength="5"
+                android:inputType="number"
+                android:textAppearance="?android:attr/textAppearanceSmallInverse"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/equalsText"
+                android:text="="
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_below="@id/itemPriceHeader"
+                android:layout_toEndOf="@id/amountText"
+                android:textSize="@dimen/page_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/finalamountText"
+                android:text="0"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:layout_below="@id/itemPriceHeader"
+                android:layout_toEndOf="@id/equalsText"
+                android:textSize="@dimen/page_text_size" />
+            <TextView
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemPriceHeader"
+                android:layout_toEndOf="@id/finalamountText"
+                android:text="@string/update"
+                android:layout_marginStart="@dimen/layout_margin_left"
+                android:textSize="@dimen/page_text_back"
+                android:textColor="@android:color/holo_red_light"
+                android:onClick="update"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/changes"
                 android:id="@+id/changes"
                 android:layout_marginStart="@dimen/layout_margin_left"

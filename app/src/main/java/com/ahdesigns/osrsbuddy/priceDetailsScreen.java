@@ -9,8 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,17 +25,15 @@ import java.util.Objects;
 
 public class priceDetailsScreen extends AppCompatActivity {
 
+    private final String TAG = priceDetailsScreen.class.getSimpleName();
+
     /*
 
     IMPORTANT, THE BELOW ARE FOR THE TREE MENU SYSTEM
 
      */
 
-    String geURL;
-
-    int n1;
-    int itemID;
-    int itemPrice;
+    int n1, itemID, itemPrice, finalAmount;
 
     double sn, sn1, sum, sum1;
 
@@ -40,7 +41,10 @@ public class priceDetailsScreen extends AppCompatActivity {
     TextView itemDescription, currentPrice,
             changeToday, change1Month,
             change3Month, change6Month,
-            highAlch, lowAlch;
+            highAlch, lowAlch,
+            finalamountText;
+
+    EditText amountText;
 
     ImageView itemIcon, itemP2P,
             changeTodayTrend, change1MonthTrend,
@@ -77,6 +81,9 @@ public class priceDetailsScreen extends AppCompatActivity {
         change6Month = findViewById(R.id.change6Month);
         highAlch = findViewById(R.id.highAlch);
         lowAlch = findViewById(R.id.lowAlch);
+        finalamountText = findViewById(R.id.finalamountText);
+
+        amountText = findViewById(R.id.amountText);
         //Define icons
         itemIcon = findViewById(R.id.itemIcon);
         itemP2P = findViewById(R.id.itemP2P);
@@ -84,9 +91,6 @@ public class priceDetailsScreen extends AppCompatActivity {
         change1MonthTrend = findViewById(R.id.change1MonthTrend);
         change3MonthTrend = findViewById(R.id.change3MonthTrend);
         change6MonthTrend = findViewById(R.id.change6MonthTrend);
-
-        // URL to get JSON
-        geURL = "https://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=" + itemID;
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -120,7 +124,10 @@ public class priceDetailsScreen extends AppCompatActivity {
             HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
+            String geURL = "https://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=" + itemID;
             String jsonStr = sh.makeServiceCall(geURL);
+
+            Log.e(TAG, "Response from url: " + jsonStr);
 
             //Check to see if JSON string is not empty
             if (jsonStr != null) {
@@ -182,12 +189,29 @@ public class priceDetailsScreen extends AppCompatActivity {
                     change6MonthValue = day180.getString("change");
 
                     //Catch any errors
-                } catch (JSONException e) {
+                } catch (final JSONException e) {
                     e.printStackTrace();
+                    Log.e(TAG, "Json parsing error: " + e.getMessage());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),
+                                    "Json parsing error: " + e.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    });
                 }
             } else {
                 //JSON was empty, there was an error on URL
-                Log.e("ServiceHandler", "Couldn't get any data from the url");
+                Log.e(TAG, "Couldn't get any data from the url");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Couldn't get json from server. Check LogCat for possible errors!",
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
             }
 
             return null;
@@ -319,6 +343,17 @@ public class priceDetailsScreen extends AppCompatActivity {
         protected void onPostExecute(Bitmap result) {
             bmImage.setImageBitmap(result);
         }
+    }
+
+    public void update(View view) {
+
+        String value= amountText.getText().toString();
+        int amount = Integer.parseInt(value);
+        int original = Integer.parseInt(currentPriceValue);
+
+        finalAmount = original * amount;
+        String aString = Integer.toString(finalAmount);
+        finalamountText.setText(aString);
     }
 
     public void onBackPressed() {
