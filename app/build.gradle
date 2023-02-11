@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.ahdesigns.osrsbuddy"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 15
         versionName '0.1.1.13'
 
@@ -21,6 +20,7 @@ android {
         }
     }
     useLibrary 'org.apache.http.legacy'
+    namespace 'com.ahdesigns.osrsbuddy'
 }
 
 dependencies {
