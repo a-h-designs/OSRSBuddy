@@ -31,7 +31,7 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
     TextView currentLevel, nextLevel, nextXP;
 
     View smithing, mining, firemaking,
-            woodcutting;
+            woodcutting, agility;
 
     String username, skill, num, smelting,
             pyro, lumber,
@@ -68,6 +68,7 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
     miningCalculator mineCalc = null;
     firemakingCalculator fireCalc = null;
     woodcuttingCalculator woodCalc = null;
+    agilityCalculator agilCalc = null;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -642,6 +643,12 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     nextXP.setText(df.format(xpLeft));
                 }
                 if(skill.equals("agility")) {
+                    agility = inflate.inflate(R.layout.agilitycalculator , null, false);
+                    RelativeLayout.LayoutParams imageViewParam = new RelativeLayout.LayoutParams(
+                            RelativeLayout.LayoutParams.MATCH_PARENT,
+                            RelativeLayout.LayoutParams.MATCH_PARENT);
+                    agility.setLayoutParams(imageViewParam);
+                    layout.addView(agility);
                     num = agilityXpValue;
                     num2 = Integer.parseInt(agilityLvlValue);
                     currentLevel.setText(agilityLvlValue);
@@ -660,6 +667,8 @@ public class skillCalculatorDetailsScreen extends AppCompatActivity {
                     calcXP.calculate(num, nextLevel);
                     xpLeft = calculateXP.xpLeft;
                     nextXP.setText(df.format(xpLeft));
+                    agilCalc = new agilityCalculator();
+                    agilCalc.calculate(num2, xpLeft, agility, wisdom);
                 }
                 if(skill.equals("thieving")) {
                     num = thievingXpValue;

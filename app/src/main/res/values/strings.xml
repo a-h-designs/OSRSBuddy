@@ -272,6 +272,7 @@
     <string name="next_level">Next Level:&#160;</string>
     <string name="xp_left">XP Left:&#160;</string>
     <string name="text_product">Product</string>
+    <string name="text_action">Action</string>
     <string name="amount">Amount</string>
     <string name="bronze_title">Smithing - Bronze</string>
     <string name="iron_title">Smithing - Iron</string>
@@ -387,5 +388,45 @@
     <string name="woodcutting_magic">&#160;Magic tree</string>
     <string name="woodcutting_redwood">&#160;Redwood tree</string>
     <!-- End woodcutting. -->
+
+    <!-- Agility. -->
+    <string name="agility_gnome">Gnome Stronghold</string>
+    <string name="agility_plank">Plank</string>
+    <string name="agility_low_wall">Low Wall</string>
+    <string name="agility_balancing_rope">Balancing rope</string>
+    <string name="agility_log_balance">Log balance</string>
+    <string name="agility_monkey_bars">Monkey bars</string>
+    <string name="agility_balancing_ledge">Balancing ledge</string>
+    <string name="agility_pillar">Pillar</string>
+    <string name="agility_rope_swing">Rope swing</string>
+    <string name="agility_draynor">Draynor Village Rooftop</string>
+    <string name="agility_edgeville">Edgeville Monkey Bars</string>
+    <string name="agility_al_kharid">Al Kharid Rooftop</string>
+    <string name="agility_floor_spikes">Floor spikes</string>
+    <string name="agility_hand_holds">Hand holds</string>
+    <string name="agility_pressure_pads">Pressure pad</string>
+    <string name="agility_varrock">Varrock Rooftop</string>
+    <string name="agility_penguin">Penguin</string>
+    <string name="agility_pyramid">Agility Pyramid</string>
+    <string name="agility_barbarian">Barbarian Outpost</string>
+    <string name="agility_canifis">Canifis Rooftop</string>
+    <string name="agility_spinning_blades">Spinning blades</string>
+    <string name="agility_darts">Darts</string>
+    <string name="agility_ape_atoll">Ape Atoll</string>
+    <string name="agility_falador">Falador Rooftop</string>
+    <string name="agility_wilderness">Wilderness</string>
+    <string name="agility_hallowed_1">Hallowed Sepulchre (floor 1)</string>
+    <string name="agility_seers">Seers\' Village Rooftop</string>
+    <string name="agility_werewolf">Werewolf</string>
+    <string name="agility_hallowed_2">Hallowed Sepulchre (floor 1 &#8211; 2)</string>
+    <string name="agility_pollnivneach">Pollnivneach Rooftop</string>
+    <string name="agility_dorgesh">Dorgesh-Kaan</string>
+    <string name="agility_hallowed_3">Hallowed Sepulchre (floor 1 &#8211; 3)</string>
+    <string name="agility_prifddinas">Prifddinas (averaged)</string>
+    <string name="agility_rellekka">Rellekka Rooftop</string>
+    <string name="agility_hallowed_4">Hallowed Sepulchre (floor 1 &#8211; 4)</string>
+    <string name="agility_ardougne">Ardougne Rooftop</string>
+    <string name="agility_hallowed_5">Hallowed Sepulchre (floor 1 &#8211; 5)</string>
+    <!-- End Agility. -->
     <!-- End skill calculator strings. -->
 </resources>

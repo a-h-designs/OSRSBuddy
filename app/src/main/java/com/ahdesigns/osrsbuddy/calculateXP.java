@@ -18,6 +18,24 @@ public class calculateXP {
 
         if(nextLevel.getText() != null) {
             switch (nextLvl) {
+                case "10":
+                    xpLeft = Integer.parseInt("1154") - Integer.parseInt(num);
+                    break;
+                case "11":
+                    xpLeft = Integer.parseInt("1358") - Integer.parseInt(num);
+                    break;
+                case "12":
+                    xpLeft = Integer.parseInt("1584") - Integer.parseInt(num);
+                    break;
+                case "13":
+                    xpLeft = Integer.parseInt("1833") - Integer.parseInt(num);
+                    break;
+                case "14":
+                    xpLeft = Integer.parseInt("2107") - Integer.parseInt(num);
+                    break;
+                case "15":
+                    xpLeft = Integer.parseInt("2411") - Integer.parseInt(num);
+                    break;
                 case "16":
                     xpLeft = Integer.parseInt("2746") - Integer.parseInt(num);
                     break;

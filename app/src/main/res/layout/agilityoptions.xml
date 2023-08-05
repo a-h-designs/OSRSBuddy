@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/wisdom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_margin_top"
+        android:layout_marginTop="@dimen/layout_margin_top"
+        android:layout_marginEnd="@dimen/layout_margin_top"
+        android:layout_marginBottom="@dimen/layout_margin_top"
+        android:text="@string/bonus_wisdom" />
+
+</RelativeLayout>

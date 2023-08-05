@@ -86,8 +86,12 @@ public class skillCalculatorSearchScreen extends AppCompatActivity {
                     dialog.setArguments(bundle);
                     dialog.show(this.getSupportFragmentManager(),"Mining Dialog");
                 } else if (id == R.id.agility) {
-                    intent.putExtra("skill", "agility");
-                    startActivity(intent);
+                    DialogFragment dialog = new agilityDialogFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("username", username);
+                    bundle.putString("skill", "agility");
+                    dialog.setArguments(bundle);
+                    dialog.show(this.getSupportFragmentManager(),"Agility Dialog");
                 } else if (id == R.id.smithing) {
                     DialogFragment dialog = new smithingDialogFragment();
                     Bundle bundle = new Bundle();
